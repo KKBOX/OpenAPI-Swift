@@ -323,7 +323,7 @@ extension KKBOXOpenAPI {
 	}
 }
 
-//Mark: -
+//MARK: -
 
 extension KKBOXOpenAPI {
 
@@ -358,6 +358,14 @@ extension KKBOXOpenAPI {
 			case .error(let error):
 				callback(.error(error))
 			case .success(let data):
+				let decodedError = try? JSONDecoder().decode(KKAPIErrorResponse.self, from: data)
+				if let decodedError = decodedError {
+					let customError = NSError(domain: KKErrorDomain, code: decodedError.error.code, userInfo: [NSLocalizedDescriptionKey: decodedError.error.message ?? ""])
+					DispatchQueue.main.async {
+						callback(.error(customError))
+					}
+					return
+				}
 				do {
 					let decoder = JSONDecoder()
 					let track = try decoder.decode(T.self, from: data)
@@ -382,14 +390,6 @@ extension KKBOXOpenAPI {
 			guard let data = data else {
 				DispatchQueue.main.async {
 					callback(.error(KKBOXOpenAPIError.invalidResponse))
-				}
-				return
-			}
-			let decodedError = try? JSONDecoder().decode(KKAPIErrorResponse.self, from: data)
-			if let decodedError = decodedError {
-				let customError = NSError(domain: KKErrorDomain, code: decodedError.error.code, userInfo: [NSLocalizedDescriptionKey: decodedError.error.message ?? ""])
-				DispatchQueue.main.async {
-					callback(.error(customError))
 				}
 				return
 			}
