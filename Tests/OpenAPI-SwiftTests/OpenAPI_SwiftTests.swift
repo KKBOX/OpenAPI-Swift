@@ -184,6 +184,27 @@ class OpenAPI_SwiftTests: XCTestCase {
 		self.wait(for: [exp], timeout: 3)
 	}
 
+	func testFetchRelatedArtists() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchRelatedArtists")
+		_ = try? self.API.fetch(relatedArtistsOfArtist: "8q3_xzjl89Yakn_7GB") { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let artists):
+				XCTAssertNotNil(artists.artists)
+				XCTAssertTrue(artists.artists.count > 0)
+				for artist in artists.artists {
+					self.validate(artist: artist)
+				}
+				XCTAssertNotNil(artists.paging)
+				XCTAssertNotNil(artists.summary)
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
     static var allTests = [
         ("testFetchCredential", testFetchCredential),
     ]

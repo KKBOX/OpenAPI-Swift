@@ -37,6 +37,19 @@ public struct KKArtistInfo: Codable {
 	}
 }
 
+/// A list of artists.
+public struct KKArtistList: Codable {
+	public var artists: [KKArtistInfo]
+	public var paging: KKPagingInfo
+	public var summary: KKSummary
+
+	private enum CodingKeys: String, CodingKey {
+		case artists = "data"
+		case paging = "paging"
+		case summary = "summary"
+	}
+}
+
 /// A struct that represents an album.
 public struct KKAlbumInfo: Codable {
 	/// ID of the album.

@@ -341,6 +341,23 @@ extension KKBOXOpenAPI {
 	}
 
 
+	/// Fetch related artists of an artist.
+	///
+	/// See `https://docs-en.kkbox.codes/v1.1/reference#artists-artist_id-relatedartists`.
+	///
+	/// - Parameters:
+	///   - ID: ID of the artist
+	///   - territory: The Territory
+	///   - offset: The offset. 0 by default.
+	///   - limit: The limit. 20 by default.
+	///   - callback: The callback closure.
+	///	  - result: The result that contains related artists of the artist.
+	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
+	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
+	public func fetch(relatedArtistsOfArtist ID: String, territory: KKTerritoryCode = .taiwan, offset: Int = 0, limit: Int = 20, callback: @escaping (_ result: KKResult<KKArtistList>) -> ()) throws -> URLSessionTask {
+		let urlString = "\(KKBOXAPIPath)artists/\(escape(ID))/related-artists?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
+		return try self.call(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+	}
 }
 
 extension KKBOXOpenAPI {
