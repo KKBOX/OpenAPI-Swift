@@ -44,15 +44,36 @@ class OpenAPI_SwiftTests: XCTestCase {
 
     func testFetchTrack() {
 		self.testFetchCredential()
-		let exp = self.expectation(description: "testFetchCredential")
+		let exp = self.expectation(description: "testFetchTrack")
 		_ = try? self.API.fetch(track: "4kxvr3wPWkaL9_y3o_") { result in
 			exp.fulfill()
 			switch result {
 			case .error(let error):
 				XCTFail(error.localizedDescription)
 			case .success(let track):
-				
-				break
+				XCTAssertTrue(track.ID.count > 0)
+				XCTAssertTrue(track.name.count > 0)
+				XCTAssertNotNil(track.album)
+				XCTAssertTrue(track.trackOrderInAlbum > 0)
+				XCTAssertTrue(track.duration > 0)
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testFetchAlbum() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchAlbum")
+		_ = try? self.API.fetch(album: "WpTPGzNLeutVFHcFq6") { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let album):
+				XCTAssertTrue(album.ID.count > 0)
+				XCTAssertTrue(album.name.count > 0)
+				XCTAssertNotNil(album.artist)
+				XCTAssertTrue(album.images.count > 0)
 			}
 		}
 		self.wait(for: [exp], timeout: 3)

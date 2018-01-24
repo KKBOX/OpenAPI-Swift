@@ -3,6 +3,7 @@ import Foundation
 private let KKUserAgent = "KKBOX Open API Swift SDK"
 private let KKOauthTokenURL = "https://account.kkbox.com/oauth2/token"
 private let KKErrorDomain = "KKErrorDomain"
+private let KKBOXAPIPath = "https://api.kkbox.com/v1.1/"
 
 private func escape(_ string: String) -> String {
 	return string.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -215,6 +216,24 @@ public class KKBOXOpenAPI {
 }
 
 extension KKBOXOpenAPI {
+
+	private func apiCallBack<T: Codable>(callback: @escaping (KKResult<T>) -> ()) -> (KKResult<Data>) -> () {
+		return { result in
+			switch result {
+			case .error(let error):
+				callback(.error(error))
+			case .success(let data):
+				do {
+					let decoder = JSONDecoder()
+					let track = try decoder.decode(T.self, from: data)
+					callback(.success(track))
+				} catch {
+					callback(.error(error))
+				}
+			}
+		}
+	}
+
 	//MARK: Tracks
 
 	/// Fetch a song track by giving a song track ID.
@@ -225,26 +244,26 @@ extension KKBOXOpenAPI {
 	///   - callback: The callback closure.
 	///	  - result: The result that contains the song track info.
 	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
-	/// - Throws: KKBOXOpenAPIError.requireAccessToken
+	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
 	public func fetch(track ID: String, territory: KKTerritoryCode = .taiwan, callback: @escaping (_ result: KKResult<KKTrackInfo>) -> ()) throws -> URLSessionTask {
-		let urlString = "https://api.kkbox.com/v1.1/tracks/\(escape(ID))?territory=\(territory.toString())"
-		let url = URL(string: urlString)!
-		let task = try self.call(url: url) { result in
-			switch result {
-			case .error(let error):
-				callback(.error(error))
-			case .success(let data):
-				do {
-					let decoder = JSONDecoder()
-					let track = try decoder.decode(KKTrackInfo.self, from: data)
-					callback(.success(track))
-				} catch {
-					print("error: \(error)")
-					callback(.error(error))
-				}
-			}
-		}
-		return task
+		let urlString = "\(KKBOXAPIPath)tracks/\(escape(ID))?territory=\(territory.toString())"
+		return try self.call(url: URL(string: urlString)!, callback: self.apiCallBack(callback: callback))
+	}
+
+	//MARK: Albums
+
+	/// Fetch an album by giving an album ID.
+	///
+	/// - Parameters:
+	///   - ID: ID of the album.
+	///   - territory: The Territory
+	///   - callback: The callback closure.
+	///	  - result: The result that contains the album info.
+	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
+	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
+	public func fetch(album ID: String, territory: KKTerritoryCode = .taiwan, callback: @escaping (_ result: KKResult<KKAlbumInfo>) -> ()) throws -> URLSessionTask {
+		let urlString = "\(KKBOXAPIPath)albums/\(escape(ID))?territory=\(territory.toString())"
+		return try self.call(url: URL(string: urlString)!, callback: self.apiCallBack(callback: callback))
 	}
 }
 
