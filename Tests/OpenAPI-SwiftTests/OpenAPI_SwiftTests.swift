@@ -49,8 +49,8 @@ class OpenAPI_SwiftTests: XCTestCase {
 		XCTAssertTrue(track.duration > 0)
 		XCTAssertNotNil(track.url)
 		XCTAssertTrue(track.trackOrderInAlbum > 0)
-//		XCTAssertTrue(track.territoriesThatAvailanbleAt.count > 0)
-//		XCTAssertTrue(track.territoriesThatAvailanbleAt.contains(KKTerritoryCode.taiwan.rawValue as NSNumber))
+		XCTAssertTrue(track.territoriesThatAvailanbleAt.count > 0)
+		XCTAssertTrue(track.territoriesThatAvailanbleAt.contains(.taiwan))
 		if let album = track.album {
 			self.validate(album: album)
 		}
@@ -62,9 +62,9 @@ class OpenAPI_SwiftTests: XCTestCase {
 		XCTAssertTrue(album.name.count > 0)
 		XCTAssertNotNil(album.url)
 		XCTAssertTrue(album.images.count == 3)
-		//		XCTAssertTrue(album.releaseDate.count > 0)
-		//		XCTAssertTrue(album.territoriesThatAvailanbleAt.count > 0, "\(album.albumName)")
-		//		XCTAssertTrue(album.territoriesThatAvailanbleAt.contains(KKTerritoryCode.taiwan.rawValue as NSNumber))
+		XCTAssertTrue(album.releaseDate.count > 0)
+//		XCTAssertTrue(album.territoriesThatAvailanbleAt.count > 0, "\(album.name)")
+//		XCTAssertTrue(album.territoriesThatAvailanbleAt.contains(.taiwan))
 		self.validate(artist: album.artist!)
 	}
 

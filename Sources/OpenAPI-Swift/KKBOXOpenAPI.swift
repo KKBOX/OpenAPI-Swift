@@ -41,7 +41,7 @@ public struct KKAccessToken: Codable {
 /// - maylaysia: Maylaysia
 /// - japan: Japan
 /// - thailand: Thailand
-public enum KKTerritoryCode: String {
+public enum KKTerritory: String, Codable {
 	case taiwan = "TW"
 	case hongkong = "HK"
 	case singapore = "SG"
@@ -102,7 +102,7 @@ public struct KKScope: OptionSet {
 ///
 /// - error: the API retuns an error with an error object.
 /// - success: the API is successfully called and return an object.
-public enum KKResult<T> {
+public enum KKAPIResult<T> {
 	case success(T)
 	case error(Error)
 }
@@ -164,6 +164,9 @@ public class KKBOXOpenAPI {
 		self.clientID = clientID
 		self.clientSecret = secret
 	}
+}
+
+extension KKBOXOpenAPI {
 
 	/// Fetch an access token by passing client credential.
 	///
@@ -172,7 +175,7 @@ public class KKBOXOpenAPI {
 	///	  - result: The access token.
 	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
 	/// - Throws: KKBOXOpenAPIError.failedToCreateClientCredential
-	public func fetchAccessTokenByClientCredential(callback: @escaping (_ result: KKResult<KKAccessToken>) -> ()) throws -> URLSessionTask {
+	public func fetchAccessTokenByClientCredential(callback: @escaping (_ result: KKAPIResult<KKAccessToken>) -> ()) throws -> URLSessionTask {
 		func makeClientCredential() -> String? {
 			let base = "\(self.clientID):\(self.clientSecret)"
 			let credential = base.data(using: .utf8)?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
@@ -189,7 +192,6 @@ public class KKBOXOpenAPI {
 
 }
 
-
 extension KKBOXOpenAPI {
 
 	//MARK: Tracks
@@ -205,7 +207,7 @@ extension KKBOXOpenAPI {
 	///	  - result: The result that contains the song track info.
 	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
-	public func fetch(track ID: String, territory: KKTerritoryCode = .taiwan, callback: @escaping (_ result: KKResult<KKTrackInfo>) -> ()) throws -> URLSessionTask {
+	public func fetch(track ID: String, territory: KKTerritory = .taiwan, callback: @escaping (_ result: KKAPIResult<KKTrackInfo>) -> ()) throws -> URLSessionTask {
 		let urlString = "\(KKBOXAPIPath)tracks/\(escape(ID))?territory=\(territory.toString())"
 		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
 	}
@@ -226,7 +228,7 @@ extension KKBOXOpenAPI {
 	///	  - result: The result that contains the album info.
 	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
-	public func fetch(album ID: String, territory: KKTerritoryCode = .taiwan, callback: @escaping (_ result: KKResult<KKAlbumInfo>) -> ()) throws -> URLSessionTask {
+	public func fetch(album ID: String, territory: KKTerritory = .taiwan, callback: @escaping (_ result: KKAPIResult<KKAlbumInfo>) -> ()) throws -> URLSessionTask {
 		let urlString = "\(KKBOXAPIPath)albums/\(escape(ID))?territory=\(territory.toString())"
 		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
 	}
@@ -242,7 +244,7 @@ extension KKBOXOpenAPI {
 	///	  - result: The result that contains tracks of the album.
 	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
-	public func fetch(tracksInAlbum ID: String, territory: KKTerritoryCode = .taiwan, callback: @escaping (_ result: KKResult<KKTrackList>) -> ()) throws -> URLSessionTask {
+	public func fetch(tracksInAlbum ID: String, territory: KKTerritory = .taiwan, callback: @escaping (_ result: KKAPIResult<KKTrackList>) -> ()) throws -> URLSessionTask {
 		let urlString = "\(KKBOXAPIPath)albums/\(escape(ID))/tracks?territory=\(territory.toString())"
 		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
 	}
@@ -263,7 +265,7 @@ extension KKBOXOpenAPI {
 	///	  - result: The result that contains profile of the artist.
 	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
-	public func fetch(artist ID: String, territory: KKTerritoryCode = .taiwan, callback: @escaping (_ result: KKResult<KKArtistInfo>) -> ()) throws -> URLSessionTask {
+	public func fetch(artist ID: String, territory: KKTerritory = .taiwan, callback: @escaping (_ result: KKAPIResult<KKArtistInfo>) -> ()) throws -> URLSessionTask {
 		let urlString = "\(KKBOXAPIPath)artists/\(escape(ID))?territory=\(territory.toString())"
 		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
 	}
@@ -281,7 +283,7 @@ extension KKBOXOpenAPI {
 	///	  - result: The result that contains albums of the artist.
 	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
-	public func fetch(albumsBelongToArtist ID: String, territory: KKTerritoryCode = .taiwan, offset: Int = 0, limit: Int = 200, callback: @escaping (_ result: KKResult<KKAlbumList>) -> ()) throws -> URLSessionTask {
+	public func fetch(albumsBelongToArtist ID: String, territory: KKTerritory = .taiwan, offset: Int = 0, limit: Int = 200, callback: @escaping (_ result: KKAPIResult<KKAlbumList>) -> ()) throws -> URLSessionTask {
 		let urlString = "\(KKBOXAPIPath)artists/\(escape(ID))/albums?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
 		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
 	}
@@ -299,7 +301,7 @@ extension KKBOXOpenAPI {
 	///	  - result: The result that contains top tracks of the artist.
 	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
-	public func fetch(topTracksOfArtist ID: String, territory: KKTerritoryCode = .taiwan, offset: Int = 0, limit: Int = 200, callback: @escaping (_ result: KKResult<KKTrackList>) -> ()) throws -> URLSessionTask {
+	public func fetch(topTracksOfArtist ID: String, territory: KKTerritory = .taiwan, offset: Int = 0, limit: Int = 200, callback: @escaping (_ result: KKAPIResult<KKTrackList>) -> ()) throws -> URLSessionTask {
 		let urlString = "\(KKBOXAPIPath)artists/\(escape(ID))/top-tracks?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
 		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
 	}
@@ -317,7 +319,7 @@ extension KKBOXOpenAPI {
 	///	  - result: The result that contains related artists of the artist.
 	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
-	public func fetch(relatedArtistsOfArtist ID: String, territory: KKTerritoryCode = .taiwan, offset: Int = 0, limit: Int = 20, callback: @escaping (_ result: KKResult<KKArtistList>) -> ()) throws -> URLSessionTask {
+	public func fetch(relatedArtistsOfArtist ID: String, territory: KKTerritory = .taiwan, offset: Int = 0, limit: Int = 20, callback: @escaping (_ result: KKAPIResult<KKArtistList>) -> ()) throws -> URLSessionTask {
 		let urlString = "\(KKBOXAPIPath)artists/\(escape(ID))/related-artists?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
 		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
 	}
@@ -327,7 +329,7 @@ extension KKBOXOpenAPI {
 
 extension KKBOXOpenAPI {
 
-	private func loginAPICallback(callback: @escaping (KKResult<KKAccessToken>) -> ()) -> (KKResult<Data>) -> () {
+	private func loginAPICallback(callback: @escaping (KKAPIResult<KKAccessToken>) -> ()) -> (KKAPIResult<Data>) -> () {
 		return { result in
 			switch result {
 			case .error(let error):
@@ -352,7 +354,7 @@ extension KKBOXOpenAPI {
 		}
 	}
 
-	private func apiDataCallback<T: Codable>(callback: @escaping (KKResult<T>) -> ()) -> (KKResult<Data>) -> () {
+	private func apiDataCallback<T: Codable>(callback: @escaping (KKAPIResult<T>) -> ()) -> (KKAPIResult<Data>) -> () {
 		return { result in
 			switch result {
 			case .error(let error):
@@ -379,7 +381,7 @@ extension KKBOXOpenAPI {
 }
 
 extension KKBOXOpenAPI {
-	private func connectionHandler(callback: @escaping (KKResult<Data>) -> ()) -> (Data?, URLResponse?, Error?) -> () {
+	private func connectionHandler(callback: @escaping (KKAPIResult<Data>) -> ()) -> (Data?, URLResponse?, Error?) -> () {
 		return { data, response, error in
 			if let error = error {
 				DispatchQueue.main.async {
@@ -399,7 +401,7 @@ extension KKBOXOpenAPI {
 		}
 	}
 
-	private func post(url: URL, postParameters: [AnyHashable: Any], headers: [String: String], callback: @escaping (KKResult<Data>) -> ()) -> URLSessionTask {
+	private func post(url: URL, postParameters: [AnyHashable: Any], headers: [String: String], callback: @escaping (KKAPIResult<Data>) -> ()) -> URLSessionTask {
 		var headers = headers
 		headers["Content-type"] = "application/x-www-form-urlencoded"
 		let parameterString = postParameters.map {
@@ -408,7 +410,7 @@ extension KKBOXOpenAPI {
 		return post(url: url, data: parameterString.data(using: .utf8), headers: headers, callback: callback)
 	}
 
-	private func post(url: URL, data: Data?, headers: [String: String], callback: @escaping (KKResult<Data>) -> ()) -> URLSessionTask {
+	private func post(url: URL, data: Data?, headers: [String: String], callback: @escaping (KKAPIResult<Data>) -> ()) -> URLSessionTask {
 		var request = URLRequest(url: url)
 		request.httpMethod = "POST"
 		for (k, v) in headers {
@@ -421,7 +423,7 @@ extension KKBOXOpenAPI {
 		return task
 	}
 
-	private func get(url: URL, callback: @escaping (KKResult<Data>) -> ()) throws -> URLSessionTask {
+	private func get(url: URL, callback: @escaping (KKAPIResult<Data>) -> ()) throws -> URLSessionTask {
 		guard let accessToken = self.accessToken else {
 			throw KKBOXOpenAPIError.requireAccessToken
 		}
