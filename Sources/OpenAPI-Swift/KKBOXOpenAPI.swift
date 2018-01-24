@@ -325,6 +325,83 @@ extension KKBOXOpenAPI {
 	}
 }
 
+extension KKBOXOpenAPI {
+	//MARK: Shared Playlists
+
+	/// Fetch a playlist's metadat and tracks by giving the playlist ID
+	///
+	/// See `https://docs-en.kkbox.codes/v1.1/reference#sharedplaylists-playlist_id`.
+	///
+	/// - Parameters:
+	///   - ID: The playlist ID.
+	///   - territory: The Territory
+	///   - callback: The callback closure.
+	///	  - result: The result that contains the metadata and tracks of the playlist.
+	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
+	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
+	public func fetch(playlist ID: String, territory: KKTerritory = .taiwan, callback: @escaping (_ result: KKAPIResult<KKPlaylistInfo>) -> ()) throws -> URLSessionTask {
+		let urlString = "\(KKBOXAPIPath)shared-playlists/\(escape(ID))?territory=\(territory.toString())"
+		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+	}
+
+	/// Fetch tracks contained in a playlist.
+	///
+	/// See `https://docs-en.kkbox.codes/v1.1/reference#sharedplaylists-playlist_id-tracks`.
+	///
+	/// - Parameters:
+	///   - ID: The playlist ID.
+	///   - territory: The Territory
+	///   - offset: The offset. 0 by default.
+	///   - limit: The limit. 20 by default.
+	///	  - result: The result that contains the metadata of the playlist.
+	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
+	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
+	public func fetch(tracksInPlaylist ID: String, territory: KKTerritory = .taiwan, offset: Int = 0, limit: Int = 20, callback: @escaping (_ result: KKAPIResult<KKTrackList>) -> ()) throws -> URLSessionTask {
+		let urlString = "\(KKBOXAPIPath)shared-playlists/\(escape(ID))/tracks?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
+		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+	}
+}
+
+extension KKBOXOpenAPI {
+	//MARK: Featured Playlists
+
+	/// Fetch the featued playlists.
+	///
+	/// See `https://docs-en.kkbox.codes/v1.1/reference#featuredplaylists`.
+	///
+	/// - Parameters:
+	///   - territory: The Territory.
+	///   - offset: The offset. 0 by default.
+	///   - limit: The limit. 100 by default.
+	///	  - result: The result that contains the featured playlists.
+	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
+	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
+	public func fetchFeaturedPlaylists(territory: KKTerritory = .taiwan, offset: Int = 0, limit: Int = 100, callback: @escaping (_ result: KKAPIResult<KKPlaylistList>) -> ())  throws -> URLSessionTask {
+		let urlString = "\(KKBOXAPIPath)featured-playlists?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
+		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+	}
+}
+
+extension KKBOXOpenAPI {
+	//MARK: New-Hits Playlists
+
+	/// Fetch the New-Hits playlists.
+	///
+	/// See `https://docs-en.kkbox.codes/v1.1/reference#newhitsplaylists`.
+	///
+	/// - Parameters:
+	///   - territory: The Territory.
+	///   - offset: The offset. 0 by default.
+	///   - limit: The limit. 10 by default.
+	///	  - result: The result that contains the New-Hits playlists.
+	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
+	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
+	public func fetchNewHitsPlaylists(territory: KKTerritory = .taiwan, offset: Int = 0, limit: Int = 10, callback: @escaping (_ result: KKAPIResult<KKPlaylistList>) -> ())  throws -> URLSessionTask {
+		let urlString = "\(KKBOXAPIPath)new-hits-playlists?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
+		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+	}
+}
+
 //MARK: -
 
 extension KKBOXOpenAPI {

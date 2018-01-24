@@ -76,6 +76,26 @@ class OpenAPI_SwiftTests: XCTestCase {
 		XCTAssertTrue(artist.images.count == 2)
 	}
 
+	func validate(playlist: KKPlaylistInfo) {
+		XCTAssertNotNil(playlist);
+		XCTAssertTrue(playlist.ID.count > 0);
+		XCTAssertTrue(playlist.title.count > 0);
+		XCTAssertNotNil(playlist.url);
+//		if (playlist.tracks.count > 0) {
+//			for track in playlist.tracks {
+//				self.validate(track: track)
+//			}
+//		}
+	}
+
+	func validate(user: KKUserInfo) {
+		XCTAssertTrue(user.ID.count > 0)
+		XCTAssertTrue(user.name.count > 0)
+		XCTAssertNotNil(user.url)
+		XCTAssertNotNil(user.userDescription)
+		XCTAssertTrue(user.images.count > 0)
+	}
+
 	func testFetchTrack() {
 		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchTrack")
@@ -200,6 +220,89 @@ class OpenAPI_SwiftTests: XCTestCase {
 				}
 				XCTAssertNotNil(artists.paging)
 				XCTAssertNotNil(artists.summary)
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testFetchPlaylist() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchPlaylist")
+		_ = try? self.API.fetch(playlist: "OsyceCHOw-NvK5j6Vo") {
+			result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let playlist):
+				self.validate(playlist: playlist)
+				XCTAssertTrue(playlist.tracks?.tracks.count ?? 0 > 0)
+				if let tracks = playlist.tracks?.tracks {
+					for track in tracks {
+						self.validate(track: track)
+					}
+				}
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testFetchTracksInPlaylist() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchTracksInPlaylist")
+		_ = try? self.API.fetch(tracksInPlaylist: "OsyceCHOw-NvK5j6Vo") { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let tracks):
+				XCTAssertNotNil(tracks.tracks)
+				XCTAssertTrue(tracks.tracks.count > 0)
+				for track in tracks.tracks {
+					self.validate(track: track)
+				}
+				XCTAssertNotNil(tracks.paging)
+				XCTAssertNotNil(tracks.summary)
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testFetchFeaturedPlaylists() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchFeaturedPlaylists")
+		_ = try? self.API.fetchFeaturedPlaylists { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let playlists):
+				XCTAssertNotNil(playlists.playlists)
+				for playlist in playlists.playlists {
+					self.validate(playlist: playlist)
+				}
+				XCTAssertNotNil(playlists.paging)
+				XCTAssertNotNil(playlists.summary)
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testFetchNewHitsPlaylists() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchNewHitsPlaylists")
+		_ = try? self.API.fetchNewHitsPlaylists { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let playlists):
+				XCTAssertNotNil(playlists.playlists)
+				for playlist in playlists.playlists {
+					self.validate(playlist: playlist)
+				}
+				XCTAssertNotNil(playlists.paging)
+				XCTAssertNotNil(playlists.summary)
 			}
 		}
 		self.wait(for: [exp], timeout: 3)
