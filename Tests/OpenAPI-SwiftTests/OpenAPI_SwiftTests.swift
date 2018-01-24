@@ -42,6 +42,40 @@ class OpenAPI_SwiftTests: XCTestCase {
 		self.wait(for: [exp], timeout: 3)
     }
 
+	func validate(track: KKTrackInfo) {
+		XCTAssertNotNil(track)
+		XCTAssertTrue(track.ID.count > 0)
+		XCTAssertTrue(track.name.count > 0)
+		XCTAssertTrue(track.duration > 0)
+		XCTAssertNotNil(track.url)
+		XCTAssertTrue(track.trackOrderInAlbum > 0)
+//		XCTAssertTrue(track.territoriesThatAvailanbleAt.count > 0)
+//		XCTAssertTrue(track.territoriesThatAvailanbleAt.contains(KKTerritoryCode.taiwan.rawValue as NSNumber))
+		if let album = track.album {
+			self.validate(album: album)
+		}
+	}
+
+	func validate(album: KKAlbumInfo) {
+		XCTAssertNotNil(album)
+		XCTAssertTrue(album.ID.count > 0)
+		XCTAssertTrue(album.name.count > 0)
+		XCTAssertNotNil(album.url)
+		XCTAssertTrue(album.images.count == 3)
+		//		XCTAssertTrue(album.releaseDate.count > 0)
+		//		XCTAssertTrue(album.territoriesThatAvailanbleAt.count > 0, "\(album.albumName)")
+		//		XCTAssertTrue(album.territoriesThatAvailanbleAt.contains(KKTerritoryCode.taiwan.rawValue as NSNumber))
+		self.validate(artist: album.artist!)
+	}
+
+	func validate(artist: KKArtistInfo) {
+		XCTAssertNotNil(artist)
+		XCTAssertTrue(artist.ID.count > 0)
+		XCTAssertTrue(artist.name.count > 0)
+		XCTAssertNotNil(artist.url)
+		XCTAssertTrue(artist.images.count == 2)
+	}
+
     func testFetchTrack() {
 		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchTrack")
@@ -51,11 +85,7 @@ class OpenAPI_SwiftTests: XCTestCase {
 			case .error(let error):
 				XCTFail(error.localizedDescription)
 			case .success(let track):
-				XCTAssertTrue(track.ID.count > 0)
-				XCTAssertTrue(track.name.count > 0)
-				XCTAssertNotNil(track.album)
-				XCTAssertTrue(track.trackOrderInAlbum > 0)
-				XCTAssertTrue(track.duration > 0)
+				self.validate(track: track)
 			}
 		}
 		self.wait(for: [exp], timeout: 3)
@@ -70,10 +100,85 @@ class OpenAPI_SwiftTests: XCTestCase {
 			case .error(let error):
 				XCTFail(error.localizedDescription)
 			case .success(let album):
-				XCTAssertTrue(album.ID.count > 0)
-				XCTAssertTrue(album.name.count > 0)
-				XCTAssertNotNil(album.artist)
-				XCTAssertTrue(album.images.count > 0)
+				self.validate(album: album)
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testFetchTracksInAlbum() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchTracksInAlbum")
+		_ = try? self.API.fetch(tracksInAlbum: "WpTPGzNLeutVFHcFq6") { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let tracks):
+				XCTAssertNotNil(tracks.tracks)
+				XCTAssertTrue(tracks.tracks.count > 0)
+				for track in tracks.tracks {
+					self.validate(track: track)
+				}
+				XCTAssertNotNil(tracks.paging)
+				XCTAssertNotNil(tracks.summary)
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testFetchArtist() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchArtist")
+		_ = try? self.API.fetch(artist: "8q3_xzjl89Yakn_7GB") { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let artist):
+				self.validate(artist: artist)
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testFetchAlbumsOfArtist() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchAlbumsOfArtist")
+		_ = try? self.API.fetch(albumsBelongToArtist: "8q3_xzjl89Yakn_7GB") { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let albums):
+				XCTAssertNotNil(albums.albums)
+				XCTAssertTrue(albums.albums.count > 0)
+				for album in albums.albums {
+					self.validate(album: album)
+				}
+				XCTAssertNotNil(albums.paging)
+				XCTAssertNotNil(albums.summary)
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testFetchTopTracksOfArtist() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchTopTracksOfArtist")
+		_ = try? self.API.fetch(topTracksOfArtist: "8q3_xzjl89Yakn_7GB") { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let tracks):
+				XCTAssertNotNil(tracks.tracks)
+				XCTAssertTrue(tracks.tracks.count > 0)
+				for track in tracks.tracks {
+					self.validate(track: track)
+				}
+				XCTAssertNotNil(tracks.paging)
+				XCTAssertNotNil(tracks.summary)
 			}
 		}
 		self.wait(for: [exp], timeout: 3)

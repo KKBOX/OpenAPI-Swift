@@ -217,7 +217,7 @@ public class KKBOXOpenAPI {
 
 extension KKBOXOpenAPI {
 
-	private func apiCallBack<T: Codable>(callback: @escaping (KKResult<T>) -> ()) -> (KKResult<Data>) -> () {
+	private func apiDataCallback<T: Codable>(callback: @escaping (KKResult<T>) -> ()) -> (KKResult<Data>) -> () {
 		return { result in
 			switch result {
 			case .error(let error):
@@ -238,6 +238,8 @@ extension KKBOXOpenAPI {
 
 	/// Fetch a song track by giving a song track ID.
 	///
+	/// See `https://docs-en.kkbox.codes/v1.1/reference#tracks-track_id`.
+	///
 	/// - Parameters:
 	///   - ID: ID of the track.
 	///   - territory: The Territory
@@ -247,24 +249,98 @@ extension KKBOXOpenAPI {
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
 	public func fetch(track ID: String, territory: KKTerritoryCode = .taiwan, callback: @escaping (_ result: KKResult<KKTrackInfo>) -> ()) throws -> URLSessionTask {
 		let urlString = "\(KKBOXAPIPath)tracks/\(escape(ID))?territory=\(territory.toString())"
-		return try self.call(url: URL(string: urlString)!, callback: self.apiCallBack(callback: callback))
+		return try self.call(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
 	}
 
 	//MARK: Albums
 
 	/// Fetch an album by giving an album ID.
 	///
+	/// See `https://docs-en.kkbox.codes/v1.1/reference#albums-album_id`.
+	///
 	/// - Parameters:
 	///   - ID: ID of the album.
-	///   - territory: The Territory
+	///   - territory: The Territory.
 	///   - callback: The callback closure.
 	///	  - result: The result that contains the album info.
 	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
 	public func fetch(album ID: String, territory: KKTerritoryCode = .taiwan, callback: @escaping (_ result: KKResult<KKAlbumInfo>) -> ()) throws -> URLSessionTask {
 		let urlString = "\(KKBOXAPIPath)albums/\(escape(ID))?territory=\(territory.toString())"
-		return try self.call(url: URL(string: urlString)!, callback: self.apiCallBack(callback: callback))
+		return try self.call(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
 	}
+
+	/// Fetch tracks contained in an album.
+	///
+	/// See `https://docs-en.kkbox.codes/v1.1/reference#albums-album_id-tracks`.
+	///
+	/// - Parameters:
+	///   - ID: ID of the album.
+	///   - territory: The Territory.
+	///   - callback: The callback closure.
+	///	  - result: The result that contains tracks of the album.
+	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
+	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
+	public func fetch(tracksInAlbum ID: String, territory: KKTerritoryCode = .taiwan, callback: @escaping (_ result: KKResult<KKTrackList>) -> ()) throws -> URLSessionTask {
+		let urlString = "\(KKBOXAPIPath)albums/\(escape(ID))/tracks?territory=\(territory.toString())"
+		return try self.call(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+	}
+
+	//MARK: Artist
+
+	/// Fetch the profile by giving an artist ID.
+	///
+	/// See `https://docs-en.kkbox.codes/v1.1/reference#artists-artist_id`.
+	///
+	/// - Parameters:
+	///   - ID: ID of the artist.
+	///   - territory: The Territory.
+	///   - callback: The callback closure.
+	///	  - result: The result that contains profile of the artist.
+	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
+	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
+	public func fetch(artist ID: String, territory: KKTerritoryCode = .taiwan, callback: @escaping (_ result: KKResult<KKArtistInfo>) -> ()) throws -> URLSessionTask {
+		let urlString = "\(KKBOXAPIPath)artists/\(escape(ID))?territory=\(territory.toString())"
+		return try self.call(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+	}
+
+	/// Fetch albums of an artist.
+	///
+	/// See `https://docs-en.kkbox.codes/v1.1/reference#artists-artist_id-albums`.
+	///
+	/// - Parameters:
+	///   - ID: ID of the artist
+	///   - territory: The Territory
+	///   - offset: The offset. 0 by default.
+	///   - limit: The limit. 200 by default.
+	///   - callback: The callback closure.
+	///	  - result: The result that contains albums of the artist.
+	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
+	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
+	public func fetch(albumsBelongToArtist ID: String, territory: KKTerritoryCode = .taiwan, offset: Int = 0, limit: Int = 200, callback: @escaping (_ result: KKResult<KKAlbumList>) -> ()) throws -> URLSessionTask {
+		let urlString = "\(KKBOXAPIPath)artists/\(escape(ID))/albums?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
+		return try self.call(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+	}
+
+	/// Fetch top tracks of an artist.
+	///
+	/// See `https://docs-en.kkbox.codes/v1.1/reference#artists-artist_id-toptracks`
+	///
+	/// - Parameters:
+	///   - ID: ID of the artist
+	///   - territory: The Territory
+	///   - offset: The offset. 0 by default.
+	///   - limit: The limit. 200 by default.
+	///   - callback: The callback closure.
+	///	  - result: The result that contains top tracks of the artist.
+	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
+	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
+	public func fetch(topTracksOfArtist ID: String, territory: KKTerritoryCode = .taiwan, offset: Int = 0, limit: Int = 200, callback: @escaping (_ result: KKResult<KKTrackList>) -> ()) throws -> URLSessionTask {
+		let urlString = "\(KKBOXAPIPath)artists/\(escape(ID))/top-tracks?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
+		return try self.call(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+	}
+
+
 }
 
 extension KKBOXOpenAPI {

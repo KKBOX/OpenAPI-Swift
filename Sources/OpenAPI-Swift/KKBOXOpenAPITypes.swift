@@ -11,16 +11,22 @@ public struct KKSummary: Codable {
 	public var total: Int
 }
 
+/// A struct that represents an image.
 public struct KKImageInfo: Codable {
 	public var width: Float
 	public var height: Float
 	public var url: URL?
 }
 
+/// A struct that represents an artist.
 public struct KKArtistInfo: Codable {
+	/// ID of the artist.
 	public var ID: String
+	/// Name of the artist.
 	public var name: String
+	/// URL of the webpage of KKBOX for the artist.
 	public var url: URL?
+	/// Images of the artist.
 	public var images: [KKImageInfo]
 
 	private enum CodingKeys: String, CodingKey {
@@ -31,13 +37,21 @@ public struct KKArtistInfo: Codable {
 	}
 }
 
+/// A struct that represents an album.
 public struct KKAlbumInfo: Codable {
+	/// ID of the album.
 	public var ID: String
+	/// Name of the album.
 	public var name: String
+	/// URL of the webpage of KKBOX for the album.
 	public var url: URL?
+	/// Artist of the album.
 	public var artist: KKArtistInfo?
+	/// Cover images for the album.
 	public var images: [KKImageInfo]
+	/// When was the album released.
 	public var releaseDate: String
+	/// explicitness
 	public var explicitness: Bool?
 
 	private enum CodingKeys: String, CodingKey {
@@ -48,6 +62,19 @@ public struct KKAlbumInfo: Codable {
 		case images = "images"
 		case releaseDate = "release_date"
 		case explicitness = "explicitness"
+	}
+}
+
+/// A list of albums.
+public struct KKAlbumList: Codable {
+	public var albums: [KKAlbumInfo]
+	public var paging: KKPagingInfo
+	public var summary: KKSummary
+
+	private enum CodingKeys: String, CodingKey {
+		case albums = "data"
+		case paging = "paging"
+		case summary = "summary"
 	}
 }
 
@@ -70,3 +97,17 @@ public struct KKTrackInfo: Codable {
 		case explicitness = "explicitness"
 	}
 }
+
+/// A list of tracks.
+public struct KKTrackList: Codable {
+	public var tracks: [KKTrackInfo]
+	public var paging: KKPagingInfo
+	public var summary: KKSummary
+
+	private enum CodingKeys: String, CodingKey {
+		case tracks = "data"
+		case paging = "paging"
+		case summary = "summary"
+	}
+}
+
