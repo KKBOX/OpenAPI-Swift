@@ -12,7 +12,7 @@ class OpenAPI_SwiftTests: XCTestCase {
 	func testFetchWithInvalidCredential() {
 		self.API = KKBOXOpenAPI(clientID: "121321223123123", secret: "1231231321213")
 		let exp = self.expectation(description: "testFetchWithInvalidCredential")
-		self.API.fetchAccessTokenByClientCredential {result in
+		_ = try? self.API.fetchAccessTokenByClientCredential {result in
 			exp.fulfill()
 			switch  result {
 			case .error(let error):
@@ -27,7 +27,7 @@ class OpenAPI_SwiftTests: XCTestCase {
 
     func testFetchCredential() {
 		let exp = self.expectation(description: "testFetchCredential")
-		self.API.fetchAccessTokenByClientCredential {result in
+		_ = try? self.API.fetchAccessTokenByClientCredential {result in
 			exp.fulfill()
 			switch  result {
 			case .error(let error):
@@ -42,6 +42,21 @@ class OpenAPI_SwiftTests: XCTestCase {
 		self.wait(for: [exp], timeout: 3)
     }
 
+    func testFetchTrack() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchCredential")
+		_ = try? self.API.fetch(track: "4kxvr3wPWkaL9_y3o_") { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let track):
+				
+				break
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
 
     static var allTests = [
         ("testFetchCredential", testFetchCredential),

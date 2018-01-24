@@ -4,6 +4,15 @@ private let KKUserAgent = "KKBOX Open API Swift SDK"
 private let KKOauthTokenURL = "https://account.kkbox.com/oauth2/token"
 private let KKErrorDomain = "KKErrorDomain"
 
+private func escape(_ string: String) -> String {
+	return string.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+}
+
+private func escape_arg(_ string: String) -> String {
+	return string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+}
+
+
 /// An access token.
 public struct KKAccessToken: Codable {
 	/// The access token string.
@@ -31,13 +40,17 @@ public struct KKAccessToken: Codable {
 /// - maylaysia: Maylaysia
 /// - japan: Japan
 /// - thailand: Thailand
-public enum KKTerritoryCode {
-	case taiwan
-	case hongkong
-	case singapore
-	case maylaysia
-	case japan
-	case thailand
+public enum KKTerritoryCode: String {
+	case taiwan = "TW"
+	case hongkong = "HK"
+	case singapore = "SG"
+	case maylaysia = "MY"
+	case japan = "JP"
+	case thailand = "TH"
+
+	fileprivate func toString() -> String {
+		return self.rawValue
+	}
 }
 
 public struct KKSearchType: OptionSet {
@@ -65,7 +78,7 @@ public struct KKScope: OptionSet {
 	public static let userAccountStatus = KKScope(rawValue: 1 << 2)
 	public static let all: KKScope = [.userProfile, .userTerritory, .userAccountStatus]
 
-	func toString() -> String {
+	fileprivate func toString() -> String {
 		if self == KKScope.all {
 			return "all"
 		}
@@ -94,15 +107,23 @@ public enum KKResult<T> {
 }
 
 public enum KKBOXOpenAPIError: Error, LocalizedError {
+	case failedToCreateClientCredential
 	case invalidResponse
+	case requireAccessToken
 
 	public var errorDescription: String? {
 		switch self {
+		case .failedToCreateClientCredential:
+			return NSLocalizedString("Failed to create a client credential.", comment: "")
 		case .invalidResponse:
 			return NSLocalizedString("Invalid response", comment: "")
+		case .requireAccessToken:
+			return NSLocalizedString("The operation required an access token.", comment: "")
 		}
 	}
 }
+
+//MARK: -
 
 /// The class helps you to access KKBOX's Open API in Swift
 /// programming language.
@@ -110,7 +131,7 @@ public enum KKBOXOpenAPIError: Error, LocalizedError {
 /// Please create an instance of the class by calling `init(clientID:
 /// String, secret: String)` and then fetch an access token by passing
 /// a client credential. Then you can do the other API calls.
-open class KKBOXOpenAPI {
+public class KKBOXOpenAPI {
 
 	private var clientID: String
 	private var clientSecret: String
@@ -156,7 +177,7 @@ open class KKBOXOpenAPI {
 					callback(.success(accessToken))
 				} catch {
 					let decoder = JSONDecoder()
-					let kkError = try? decoder.decode(KKError.self, from: data)
+					let kkError = try? decoder.decode(KKLoginError.self, from: data)
 					if let kkError = kkError {
 						let customError = NSError(domain: KKErrorDomain, code: 0, userInfo: [NSLocalizedDescriptionKey: kkError.error])
 						callback(.error(customError as Error))
@@ -169,7 +190,14 @@ open class KKBOXOpenAPI {
 		}
 	}
 
-	public func fetchAccessTokenByClientCredential(callback: @escaping (KKResult<KKAccessToken>) -> ()) {
+	/// Fetch an access token by passing client credential.
+	///
+	/// - Parameters:
+	///   - callback: The callback closure.
+	///	  - result: The access token.
+	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
+	/// - Throws: KKBOXOpenAPIError.failedToCreateClientCredential
+	public func fetchAccessTokenByClientCredential(callback: @escaping (_ result: KKResult<KKAccessToken>) -> ()) throws -> URLSessionTask {
 		func makeClientCredential() -> String? {
 			let base = "\(self.clientID):\(self.clientSecret)"
 			let credential = base.data(using: .utf8)?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
@@ -177,26 +205,60 @@ open class KKBOXOpenAPI {
 		}
 
 		guard let credential = makeClientCredential() else {
-			return
+			throw KKBOXOpenAPIError.failedToCreateClientCredential
 		}
 		let headers = ["Authorization": "Basic \(credential)"]
 		let parameters = ["grant_type": "client_credentials", "scope": self.requestScope.toString()]
-		self.post(url: URL(string: KKOauthTokenURL)!, postParameters: parameters, headers: headers, callback: self.loginAPICallback(callback: callback))
+		return self.post(url: URL(string: KKOauthTokenURL)!, postParameters: parameters, headers: headers, callback: self.loginAPICallback(callback: callback))
 	}
 
 }
 
 extension KKBOXOpenAPI {
-	private func post(url: URL, postParameters: [AnyHashable: Any], headers: [String: String], callback: @escaping (KKResult<Data>) -> ()) {
+	//MARK: Tracks
+
+	/// Fetch a song track by giving a song track ID.
+	///
+	/// - Parameters:
+	///   - ID: ID of the track.
+	///   - territory: The Territory
+	///   - callback: The callback closure.
+	///	  - result: The result that contains the song track info.
+	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
+	/// - Throws: KKBOXOpenAPIError.requireAccessToken
+	public func fetch(track ID: String, territory: KKTerritoryCode = .taiwan, callback: @escaping (_ result: KKResult<KKTrackInfo>) -> ()) throws -> URLSessionTask {
+		let urlString = "https://api.kkbox.com/v1.1/tracks/\(escape(ID))?territory=\(territory.toString())"
+		let url = URL(string: urlString)!
+		let task = try self.call(url: url) { result in
+			switch result {
+			case .error(let error):
+				callback(.error(error))
+			case .success(let data):
+				do {
+					let decoder = JSONDecoder()
+					let track = try decoder.decode(KKTrackInfo.self, from: data)
+					callback(.success(track))
+				} catch {
+					print("error: \(error)")
+					callback(.error(error))
+				}
+			}
+		}
+		return task
+	}
+}
+
+extension KKBOXOpenAPI {
+	private func post(url: URL, postParameters: [AnyHashable: Any], headers: [String: String], callback: @escaping (KKResult<Data>) -> ()) -> URLSessionTask {
 		var headers = headers
 		headers["Content-type"] = "application/x-www-form-urlencoded"
 		let parameterString = postParameters.map {
 			"\($0)=\($1)"
 		}.joined(separator: "&")
-		post(url: url, data: parameterString.data(using: .utf8), headers: headers, callback: callback)
+		return post(url: url, data: parameterString.data(using: .utf8), headers: headers, callback: callback)
 	}
 
-	private func post(url: URL, data: Data?, headers: [String: String], callback: @escaping (KKResult<Data>) -> ()) {
+	private func post(url: URL, data: Data?, headers: [String: String], callback: @escaping (KKResult<Data>) -> ()) -> URLSessionTask {
 		var request = URLRequest(url: url)
 		request.httpMethod = "POST"
 		for (k, v) in headers {
@@ -207,19 +269,63 @@ extension KKBOXOpenAPI {
 		let task = URLSession.shared.dataTask(with: request) { data, response, error in
 			if let error = error {
 				DispatchQueue.main.async {
-					callback(KKResult.error(error))
+					callback(.error(error))
 				}
 				return
 			}
 			guard let data = data else {
-				return callback(KKResult.error(KKBOXOpenAPIError.invalidResponse))
+				DispatchQueue.main.async {
+					callback(.error(KKBOXOpenAPIError.invalidResponse))
+				}
+				return
 			}
 			DispatchQueue.main.async {
-				let s = String(data: data, encoding: .utf8)
-				print("s: \(String(describing: s))")
-				callback(KKResult.success(data))
+				callback(.success(data))
 			}
 		}
 		task.resume()
+		return task
 	}
+
+	func call(url: URL, callback: @escaping (KKResult<Data>) -> ()) throws -> URLSessionTask {
+		guard let accessToken = self.accessToken else {
+			throw KKBOXOpenAPIError.requireAccessToken
+		}
+		var request = URLRequest(url: url)
+		request.httpMethod = "GET"
+		request.setValue(KKUserAgent, forHTTPHeaderField: "User-Agent")
+		request.setValue("Bearer \(accessToken.accessToken)", forHTTPHeaderField: "Authorization")
+		let task = URLSession.shared.dataTask(with: request) { data, response, error in
+			if let error = error {
+				DispatchQueue.main.async {
+					callback(.error(error))
+				}
+				return
+			}
+			guard let data = data else {
+				DispatchQueue.main.async {
+					callback(.error(KKBOXOpenAPIError.invalidResponse))
+				}
+				return
+			}
+			let decoder = JSONDecoder()
+			let kkError = try? decoder.decode(KKAPIErrorResponse.self, from: data)
+			if let kkError = kkError {
+				let customError = NSError(domain: KKErrorDomain, code: kkError.error.code, userInfo: [NSLocalizedDescriptionKey: kkError.error.message ?? ""])
+				DispatchQueue.main.async {
+					callback(.error(customError))
+				}
+				return
+			}
+			DispatchQueue.main.async {
+//				let s = String(data:data, encoding:.utf8)
+//				print(s)
+				callback(.success(data))
+			}
+		}
+		task.resume()
+		return task
+	}
+
+
 }

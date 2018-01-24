@@ -22,6 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		D4E69D892018F139001881DA /* KKBOXOpenAPIPrivateTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E69D872018F051001881DA /* KKBOXOpenAPIPrivateTypes.swift */; };
+		D4E69D8C2018FAC1001881DA /* KKBOXOpenAPITypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E69D8A2018F85C001881DA /* KKBOXOpenAPITypes.swift */; };
 		OBJ_21 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_27 /* OpenAPI_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* OpenAPI_SwiftTests.swift */; };
 		OBJ_29 /* OpenAPI_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "OpenAPI-Swift::OpenAPI-Swift::Product" /* OpenAPI_Swift.framework */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		D4E69D872018F051001881DA /* KKBOXOpenAPIPrivateTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKBOXOpenAPIPrivateTypes.swift; sourceTree = "<group>"; };
+		D4E69D8A2018F85C001881DA /* KKBOXOpenAPITypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKBOXOpenAPITypes.swift; sourceTree = "<group>"; };
 		OBJ_12 /* OpenAPI_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAPI_SwiftTests.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* KKBOXOpenAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKBOXOpenAPI.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_9 /* KKBOXOpenAPI.swift */,
+				D4E69D8A2018F85C001881DA /* KKBOXOpenAPITypes.swift */,
 				D4E69D872018F051001881DA /* KKBOXOpenAPIPrivateTypes.swift */,
 			);
 			name = "OpenAPI-Swift";
@@ -227,6 +230,7 @@
 			buildActionMask = 0;
 			files = (
 				D4E69D892018F139001881DA /* KKBOXOpenAPIPrivateTypes.swift in Sources */,
+				D4E69D8C2018FAC1001881DA /* KKBOXOpenAPITypes.swift in Sources */,
 				OBJ_36 /* KKBOXOpenAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
