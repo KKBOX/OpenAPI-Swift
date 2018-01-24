@@ -165,32 +165,6 @@ public class KKBOXOpenAPI {
 		self.clientSecret = secret
 	}
 
-	private func loginAPICallback(callback: @escaping (KKResult<KKAccessToken>) -> ()) -> (KKResult<Data>) -> () {
-		return { result in
-			switch result {
-			case .error(let error):
-				callback(.error(error))
-			case .success(let data):
-				do {
-					let decoder = JSONDecoder()
-					let accessToken = try decoder.decode(KKAccessToken.self, from: data)
-					self.accessToken = accessToken
-					callback(.success(accessToken))
-				} catch {
-					let decoder = JSONDecoder()
-					let kkError = try? decoder.decode(KKLoginError.self, from: data)
-					if let kkError = kkError {
-						let customError = NSError(domain: KKErrorDomain, code: 0, userInfo: [NSLocalizedDescriptionKey: kkError.error])
-						callback(.error(customError as Error))
-					} else {
-						callback(.error(error))
-					}
-				}
-				break
-			}
-		}
-	}
-
 	/// Fetch an access token by passing client credential.
 	///
 	/// - Parameters:
@@ -215,24 +189,8 @@ public class KKBOXOpenAPI {
 
 }
 
-extension KKBOXOpenAPI {
 
-	private func apiDataCallback<T: Codable>(callback: @escaping (KKResult<T>) -> ()) -> (KKResult<Data>) -> () {
-		return { result in
-			switch result {
-			case .error(let error):
-				callback(.error(error))
-			case .success(let data):
-				do {
-					let decoder = JSONDecoder()
-					let track = try decoder.decode(T.self, from: data)
-					callback(.success(track))
-				} catch {
-					callback(.error(error))
-				}
-			}
-		}
-	}
+extension KKBOXOpenAPI {
 
 	//MARK: Tracks
 
@@ -249,8 +207,11 @@ extension KKBOXOpenAPI {
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
 	public func fetch(track ID: String, territory: KKTerritoryCode = .taiwan, callback: @escaping (_ result: KKResult<KKTrackInfo>) -> ()) throws -> URLSessionTask {
 		let urlString = "\(KKBOXAPIPath)tracks/\(escape(ID))?territory=\(territory.toString())"
-		return try self.call(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
 	}
+}
+
+extension KKBOXOpenAPI {
 
 	//MARK: Albums
 
@@ -267,7 +228,7 @@ extension KKBOXOpenAPI {
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
 	public func fetch(album ID: String, territory: KKTerritoryCode = .taiwan, callback: @escaping (_ result: KKResult<KKAlbumInfo>) -> ()) throws -> URLSessionTask {
 		let urlString = "\(KKBOXAPIPath)albums/\(escape(ID))?territory=\(territory.toString())"
-		return try self.call(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
 	}
 
 	/// Fetch tracks contained in an album.
@@ -283,8 +244,11 @@ extension KKBOXOpenAPI {
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
 	public func fetch(tracksInAlbum ID: String, territory: KKTerritoryCode = .taiwan, callback: @escaping (_ result: KKResult<KKTrackList>) -> ()) throws -> URLSessionTask {
 		let urlString = "\(KKBOXAPIPath)albums/\(escape(ID))/tracks?territory=\(territory.toString())"
-		return try self.call(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
 	}
+}
+
+extension KKBOXOpenAPI {
 
 	//MARK: Artist
 
@@ -301,7 +265,7 @@ extension KKBOXOpenAPI {
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
 	public func fetch(artist ID: String, territory: KKTerritoryCode = .taiwan, callback: @escaping (_ result: KKResult<KKArtistInfo>) -> ()) throws -> URLSessionTask {
 		let urlString = "\(KKBOXAPIPath)artists/\(escape(ID))?territory=\(territory.toString())"
-		return try self.call(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
 	}
 
 	/// Fetch albums of an artist.
@@ -319,7 +283,7 @@ extension KKBOXOpenAPI {
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
 	public func fetch(albumsBelongToArtist ID: String, territory: KKTerritoryCode = .taiwan, offset: Int = 0, limit: Int = 200, callback: @escaping (_ result: KKResult<KKAlbumList>) -> ()) throws -> URLSessionTask {
 		let urlString = "\(KKBOXAPIPath)artists/\(escape(ID))/albums?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
-		return try self.call(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
 	}
 
 	/// Fetch top tracks of an artist.
@@ -337,9 +301,8 @@ extension KKBOXOpenAPI {
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
 	public func fetch(topTracksOfArtist ID: String, territory: KKTerritoryCode = .taiwan, offset: Int = 0, limit: Int = 200, callback: @escaping (_ result: KKResult<KKTrackList>) -> ()) throws -> URLSessionTask {
 		let urlString = "\(KKBOXAPIPath)artists/\(escape(ID))/top-tracks?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
-		return try self.call(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
 	}
-
 
 	/// Fetch related artists of an artist.
 	///
@@ -356,11 +319,86 @@ extension KKBOXOpenAPI {
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
 	public func fetch(relatedArtistsOfArtist ID: String, territory: KKTerritoryCode = .taiwan, offset: Int = 0, limit: Int = 20, callback: @escaping (_ result: KKResult<KKArtistList>) -> ()) throws -> URLSessionTask {
 		let urlString = "\(KKBOXAPIPath)artists/\(escape(ID))/related-artists?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
-		return try self.call(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+	}
+}
+
+//Mark: -
+
+extension KKBOXOpenAPI {
+
+	private func loginAPICallback(callback: @escaping (KKResult<KKAccessToken>) -> ()) -> (KKResult<Data>) -> () {
+		return { result in
+			switch result {
+			case .error(let error):
+				callback(.error(error))
+			case .success(let data):
+				do {
+					let decoder = JSONDecoder()
+					let accessToken = try decoder.decode(KKAccessToken.self, from: data)
+					self.accessToken = accessToken
+					callback(.success(accessToken))
+				} catch {
+					let decoder = JSONDecoder()
+					let decodedError = try? decoder.decode(KKLoginError.self, from: data)
+					if let decodedError = decodedError {
+						let customError = NSError(domain: KKErrorDomain, code: 0, userInfo: [NSLocalizedDescriptionKey: decodedError.error])
+						callback(.error(customError as Error))
+					} else {
+						callback(.error(error))
+					}
+				}
+			}
+		}
+	}
+
+	private func apiDataCallback<T: Codable>(callback: @escaping (KKResult<T>) -> ()) -> (KKResult<Data>) -> () {
+		return { result in
+			switch result {
+			case .error(let error):
+				callback(.error(error))
+			case .success(let data):
+				do {
+					let decoder = JSONDecoder()
+					let track = try decoder.decode(T.self, from: data)
+					callback(.success(track))
+				} catch {
+					callback(.error(error))
+				}
+			}
+		}
 	}
 }
 
 extension KKBOXOpenAPI {
+	private func connectionHandler(callback: @escaping (KKResult<Data>) -> ()) -> (Data?, URLResponse?, Error?) -> () {
+		return { data, response, error in
+			if let error = error {
+				DispatchQueue.main.async {
+					callback(.error(error))
+				}
+				return
+			}
+			guard let data = data else {
+				DispatchQueue.main.async {
+					callback(.error(KKBOXOpenAPIError.invalidResponse))
+				}
+				return
+			}
+			let decodedError = try? JSONDecoder().decode(KKAPIErrorResponse.self, from: data)
+			if let decodedError = decodedError {
+				let customError = NSError(domain: KKErrorDomain, code: decodedError.error.code, userInfo: [NSLocalizedDescriptionKey: decodedError.error.message ?? ""])
+				DispatchQueue.main.async {
+					callback(.error(customError))
+				}
+				return
+			}
+			DispatchQueue.main.async {
+				callback(.success(data))
+			}
+		}
+	}
+
 	private func post(url: URL, postParameters: [AnyHashable: Any], headers: [String: String], callback: @escaping (KKResult<Data>) -> ()) -> URLSessionTask {
 		var headers = headers
 		headers["Content-type"] = "application/x-www-form-urlencoded"
@@ -378,28 +416,12 @@ extension KKBOXOpenAPI {
 		}
 		request.setValue(KKUserAgent, forHTTPHeaderField: "User-Agent")
 		request.httpBody = data
-		let task = URLSession.shared.dataTask(with: request) { data, response, error in
-			if let error = error {
-				DispatchQueue.main.async {
-					callback(.error(error))
-				}
-				return
-			}
-			guard let data = data else {
-				DispatchQueue.main.async {
-					callback(.error(KKBOXOpenAPIError.invalidResponse))
-				}
-				return
-			}
-			DispatchQueue.main.async {
-				callback(.success(data))
-			}
-		}
+		let task = URLSession.shared.dataTask(with: request, completionHandler: self.connectionHandler(callback: callback))
 		task.resume()
 		return task
 	}
 
-	func call(url: URL, callback: @escaping (KKResult<Data>) -> ()) throws -> URLSessionTask {
+	private func get(url: URL, callback: @escaping (KKResult<Data>) -> ()) throws -> URLSessionTask {
 		guard let accessToken = self.accessToken else {
 			throw KKBOXOpenAPIError.requireAccessToken
 		}
@@ -407,34 +429,7 @@ extension KKBOXOpenAPI {
 		request.httpMethod = "GET"
 		request.setValue(KKUserAgent, forHTTPHeaderField: "User-Agent")
 		request.setValue("Bearer \(accessToken.accessToken)", forHTTPHeaderField: "Authorization")
-		let task = URLSession.shared.dataTask(with: request) { data, response, error in
-			if let error = error {
-				DispatchQueue.main.async {
-					callback(.error(error))
-				}
-				return
-			}
-			guard let data = data else {
-				DispatchQueue.main.async {
-					callback(.error(KKBOXOpenAPIError.invalidResponse))
-				}
-				return
-			}
-			let decoder = JSONDecoder()
-			let kkError = try? decoder.decode(KKAPIErrorResponse.self, from: data)
-			if let kkError = kkError {
-				let customError = NSError(domain: KKErrorDomain, code: kkError.error.code, userInfo: [NSLocalizedDescriptionKey: kkError.error.message ?? ""])
-				DispatchQueue.main.async {
-					callback(.error(customError))
-				}
-				return
-			}
-			DispatchQueue.main.async {
-//				let s = String(data:data, encoding:.utf8)
-//				print(s)
-				callback(.success(data))
-			}
-		}
+		let task = URLSession.shared.dataTask(with: request, completionHandler: self.connectionHandler(callback: callback))
 		task.resume()
 		return task
 	}

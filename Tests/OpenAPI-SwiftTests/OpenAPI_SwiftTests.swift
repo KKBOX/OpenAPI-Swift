@@ -12,9 +12,9 @@ class OpenAPI_SwiftTests: XCTestCase {
 	func testFetchWithInvalidCredential() {
 		self.API = KKBOXOpenAPI(clientID: "121321223123123", secret: "1231231321213")
 		let exp = self.expectation(description: "testFetchWithInvalidCredential")
-		_ = try? self.API.fetchAccessTokenByClientCredential {result in
+		_ = try? self.API.fetchAccessTokenByClientCredential { result in
 			exp.fulfill()
-			switch  result {
+			switch result {
 			case .error(let error):
 				XCTAssertTrue(error.localizedDescription == "invalid_client", "\(error.localizedDescription)")
 			case .success(_):
@@ -25,11 +25,11 @@ class OpenAPI_SwiftTests: XCTestCase {
 		self.wait(for: [exp], timeout: 3)
 	}
 
-    func testFetchCredential() {
+	func testFetchCredential() {
 		let exp = self.expectation(description: "testFetchCredential")
-		_ = try? self.API.fetchAccessTokenByClientCredential {result in
+		_ = try? self.API.fetchAccessTokenByClientCredential { result in
 			exp.fulfill()
-			switch  result {
+			switch result {
 			case .error(let error):
 				XCTFail(error.localizedDescription)
 			case .success(let response):
@@ -40,7 +40,7 @@ class OpenAPI_SwiftTests: XCTestCase {
 			}
 		}
 		self.wait(for: [exp], timeout: 3)
-    }
+	}
 
 	func validate(track: KKTrackInfo) {
 		XCTAssertNotNil(track)
@@ -76,7 +76,7 @@ class OpenAPI_SwiftTests: XCTestCase {
 		XCTAssertTrue(artist.images.count == 2)
 	}
 
-    func testFetchTrack() {
+	func testFetchTrack() {
 		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchTrack")
 		_ = try? self.API.fetch(track: "4kxvr3wPWkaL9_y3o_") { result in
@@ -205,7 +205,7 @@ class OpenAPI_SwiftTests: XCTestCase {
 		self.wait(for: [exp], timeout: 3)
 	}
 
-    static var allTests = [
-        ("testFetchCredential", testFetchCredential),
-    ]
+	static var allTests = [
+		("testFetchCredential", testFetchCredential),
+	]
 }
