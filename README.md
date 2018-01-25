@@ -2,8 +2,6 @@
 
 Copyright © 2018 KKBOX All Rights Reserved.
 
---
-
 [![Support](https://img.shields.io/badge/macOS-10.10-blue.svg)](https://www.apple.com/tw/macos)&nbsp;
 [![Support](https://img.shields.io/badge/iOS-9-blue.svg)](https://www.apple.com/tw/ios)&nbsp;
 [![Support](https://img.shields.io/badge/watchOS-2-blue.svg)](https://www.apple.com/tw/watchos)&nbsp;
@@ -30,6 +28,7 @@ For further information, please visit [KKBOX Developer Site](https://docs-en.kkb
 
 The SDK supports
 
+- Swift 4
 - 📱 iOS 9.x or above
 - 💻 Mac OS X 10.10 or above
 - ⌚️ watchOS 2.x or above
@@ -46,6 +45,29 @@ Sierra are recommended.
 
 The SDK supports CocoaPods. Please add `pod 'KKBOXOpenAPISwift'`
 to your Podfile, and then call `pod install`.
+
+### Swift Package Manager
+
+Add the project as a dependency to your Package.swift:
+
+```swift
+// swift-tools-version:4.0
+
+import PackageDescription
+
+let package = Package(
+    name: "socket.io-test",
+    products: [
+        .executable(name: "KKBOXOpenAPI-test", targets: ["YourTargetName"])
+    ],
+    dependencies: [
+        .package(url: "https://github.com/zonble/OpenAPI-Swift", .upToNextMinor(from: "1.1.0"))
+    ],
+    targets: [
+        .target(name: "YourTargetName", dependencies: ["OpenAPI-Swift"], path: "./Path/To/Your/Sources")
+    ]
+)
+```
 
 ## Usage
 
@@ -93,7 +115,7 @@ language, although we have only Swift sample code here.
 
 ## License
 
-Copyright 2017 KKBOX Technologies Limited
+Copyright 2018 KKBOX Technologies Limited
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
