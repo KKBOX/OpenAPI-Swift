@@ -60,6 +60,7 @@ public enum KKTerritory: String, Codable {
 	}
 }
 
+/// The desired search type.
 public struct KKSearchType: OptionSet {
 	public init(rawValue: Int) {
 		self.rawValue = rawValue
@@ -67,9 +68,13 @@ public struct KKSearchType: OptionSet {
 
 	public let rawValue: Int
 	public static let none = KKSearchType(rawValue: 0)
+	/// Specify that we are searching for artists.
 	public static let artist = KKSearchType(rawValue: 1 << 0)
+	/// Specify that we are searching for albums.
 	public static let album = KKSearchType(rawValue: 1 << 1)
+	/// Specify that we are searching for tracks.
 	public static let track = KKSearchType(rawValue: 1 << 2)
+	/// Specify that we are searching for playlists.
 	public static let playlist = KKSearchType(rawValue: 1 << 3)
 
 	fileprivate func toString() -> String {
@@ -606,6 +611,18 @@ extension KKBOXOpenAPI {
 extension KKBOXOpenAPI {
 	//MARK: Search
 
+	/// Search in KKBOX's music library.
+	///
+	/// - Parameters:
+	///   - keyword: The search keyword.
+	///   - types: Artists, albums, tracks or playlists.
+	///   - territory: The territory.
+	///   - offset: The offset. 0 by default.
+	///   - limit: The limit. 50 by default.
+	///   - callback: The callback closure.
+	///	  - result: The result that contains search results.
+	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
+	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
 	public func search(with keyword:String, types: KKSearchType, territory: KKTerritory = .taiwan, offset: Int = 0, limit: Int = 50, callback: @escaping (_ result: KKAPIResult<KKSearchResults>) -> ())  throws -> URLSessionTask {
 		let urlString = "\(KKBOXAPIPath)search?q=\(escape_arg(keyword))&type=\(types.toString())&territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
 		print(urlString)
