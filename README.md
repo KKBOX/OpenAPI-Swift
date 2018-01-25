@@ -2,6 +2,13 @@
 
 Copyright © 2018 KKBOX All Rights Reserved.
 
+--
+
+[![Support](https://img.shields.io/badge/macOS-10.10-blue.svg)](https://www.apple.com/tw/macos)&nbsp;
+[![Support](https://img.shields.io/badge/iOS-9-blue.svg)](https://www.apple.com/tw/ios)&nbsp;
+[![Support](https://img.shields.io/badge/watchOS-2-blue.svg)](https://www.apple.com/tw/watchos)&nbsp;
+[![Support](https://img.shields.io/badge/tvOS-9-blue.svg)](https://www.apple.com/tw/tvos)&nbsp;
+
 The is a pure Swift implementation of a client to access KKBOX's Open
 API.  You can easily integrate the SDK into your
 iOS/macOS/watchOS/tvOS project using Swift Package Manager or
