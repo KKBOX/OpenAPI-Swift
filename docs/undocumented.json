@@ -1,0 +1,1223 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 51,
+      "symbol": "KKTerritory.taiwan",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 51,
+      "symbol": "KKTerritory.taiwan",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 51,
+      "symbol": "KKTerritory.taiwan",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 52,
+      "symbol": "KKTerritory.hongkong",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 52,
+      "symbol": "KKTerritory.hongkong",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 52,
+      "symbol": "KKTerritory.hongkong",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 53,
+      "symbol": "KKTerritory.singapore",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 53,
+      "symbol": "KKTerritory.singapore",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 53,
+      "symbol": "KKTerritory.singapore",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 54,
+      "symbol": "KKTerritory.maylaysia",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 54,
+      "symbol": "KKTerritory.maylaysia",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 54,
+      "symbol": "KKTerritory.maylaysia",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 55,
+      "symbol": "KKTerritory.japan",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 55,
+      "symbol": "KKTerritory.japan",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 55,
+      "symbol": "KKTerritory.japan",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 56,
+      "symbol": "KKTerritory.thailand",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 56,
+      "symbol": "KKTerritory.thailand",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 56,
+      "symbol": "KKTerritory.thailand",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 70,
+      "symbol": "KKSearchType.none",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 70,
+      "symbol": "KKSearchType.none",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 70,
+      "symbol": "KKSearchType.none",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 98,
+      "symbol": "KKScope",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 98,
+      "symbol": "KKScope",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 98,
+      "symbol": "KKScope",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 104,
+      "symbol": "KKScope.none",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 104,
+      "symbol": "KKScope.none",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 104,
+      "symbol": "KKScope.none",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 105,
+      "symbol": "KKScope.userProfile",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 105,
+      "symbol": "KKScope.userProfile",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 105,
+      "symbol": "KKScope.userProfile",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 106,
+      "symbol": "KKScope.userTerritory",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 106,
+      "symbol": "KKScope.userTerritory",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 106,
+      "symbol": "KKScope.userTerritory",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 107,
+      "symbol": "KKScope.userAccountStatus",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 107,
+      "symbol": "KKScope.userAccountStatus",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 107,
+      "symbol": "KKScope.userAccountStatus",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 108,
+      "symbol": "KKScope.all",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 108,
+      "symbol": "KKScope.all",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 108,
+      "symbol": "KKScope.all",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 134,
+      "symbol": "KKAPIResult.success",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 134,
+      "symbol": "KKAPIResult.success",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 134,
+      "symbol": "KKAPIResult.success",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 135,
+      "symbol": "KKAPIResult.error",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 135,
+      "symbol": "KKAPIResult.error",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 135,
+      "symbol": "KKAPIResult.error",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 138,
+      "symbol": "KKBOXOpenAPIError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 138,
+      "symbol": "KKBOXOpenAPIError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 138,
+      "symbol": "KKBOXOpenAPIError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 139,
+      "symbol": "KKBOXOpenAPIError.failedToCreateClientCredential",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 139,
+      "symbol": "KKBOXOpenAPIError.failedToCreateClientCredential",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 139,
+      "symbol": "KKBOXOpenAPIError.failedToCreateClientCredential",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 140,
+      "symbol": "KKBOXOpenAPIError.invalidResponse",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 140,
+      "symbol": "KKBOXOpenAPIError.invalidResponse",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 140,
+      "symbol": "KKBOXOpenAPIError.invalidResponse",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 141,
+      "symbol": "KKBOXOpenAPIError.requireAccessToken",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 141,
+      "symbol": "KKBOXOpenAPIError.requireAccessToken",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPI.swift",
+      "line": 141,
+      "symbol": "KKBOXOpenAPIError.requireAccessToken",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 9,
+      "symbol": "KKPagingInfo",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 9,
+      "symbol": "KKPagingInfo",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 9,
+      "symbol": "KKPagingInfo",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 10,
+      "symbol": "KKPagingInfo.limit",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 10,
+      "symbol": "KKPagingInfo.limit",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 10,
+      "symbol": "KKPagingInfo.limit",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 11,
+      "symbol": "KKPagingInfo.offset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 11,
+      "symbol": "KKPagingInfo.offset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 11,
+      "symbol": "KKPagingInfo.offset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 12,
+      "symbol": "KKPagingInfo.previous",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 12,
+      "symbol": "KKPagingInfo.previous",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 12,
+      "symbol": "KKPagingInfo.previous",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 13,
+      "symbol": "KKPagingInfo.next",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 13,
+      "symbol": "KKPagingInfo.next",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 13,
+      "symbol": "KKPagingInfo.next",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 16,
+      "symbol": "KKSummary",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 16,
+      "symbol": "KKSummary",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 16,
+      "symbol": "KKSummary",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 17,
+      "symbol": "KKSummary.total",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 17,
+      "symbol": "KKSummary.total",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 17,
+      "symbol": "KKSummary.total",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 22,
+      "symbol": "KKImageInfo.width",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 22,
+      "symbol": "KKImageInfo.width",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 22,
+      "symbol": "KKImageInfo.width",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 23,
+      "symbol": "KKImageInfo.height",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 23,
+      "symbol": "KKImageInfo.height",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 23,
+      "symbol": "KKImageInfo.height",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 24,
+      "symbol": "KKImageInfo.url",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 24,
+      "symbol": "KKImageInfo.url",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 24,
+      "symbol": "KKImageInfo.url",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 50,
+      "symbol": "KKArtistList.artists",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 50,
+      "symbol": "KKArtistList.artists",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 50,
+      "symbol": "KKArtistList.artists",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 51,
+      "symbol": "KKArtistList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 51,
+      "symbol": "KKArtistList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 51,
+      "symbol": "KKArtistList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 52,
+      "symbol": "KKArtistList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 52,
+      "symbol": "KKArtistList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 52,
+      "symbol": "KKArtistList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 96,
+      "symbol": "KKAlbumList.albums",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 96,
+      "symbol": "KKAlbumList.albums",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 96,
+      "symbol": "KKAlbumList.albums",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 97,
+      "symbol": "KKAlbumList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 97,
+      "symbol": "KKAlbumList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 97,
+      "symbol": "KKAlbumList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 98,
+      "symbol": "KKAlbumList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 98,
+      "symbol": "KKAlbumList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 98,
+      "symbol": "KKAlbumList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 109,
+      "symbol": "KKTrackInfo",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 109,
+      "symbol": "KKTrackInfo",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 109,
+      "symbol": "KKTrackInfo",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 141,
+      "symbol": "KKTrackList.tracks",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 141,
+      "symbol": "KKTrackList.tracks",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 141,
+      "symbol": "KKTrackList.tracks",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 142,
+      "symbol": "KKTrackList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 142,
+      "symbol": "KKTrackList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 142,
+      "symbol": "KKTrackList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 143,
+      "symbol": "KKTrackList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 143,
+      "symbol": "KKTrackList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 143,
+      "symbol": "KKTrackList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 211,
+      "symbol": "KKPlaylistList.playlists",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 211,
+      "symbol": "KKPlaylistList.playlists",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 211,
+      "symbol": "KKPlaylistList.playlists",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 212,
+      "symbol": "KKPlaylistList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 212,
+      "symbol": "KKPlaylistList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 212,
+      "symbol": "KKPlaylistList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 213,
+      "symbol": "KKPlaylistList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 213,
+      "symbol": "KKPlaylistList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 213,
+      "symbol": "KKPlaylistList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 245,
+      "symbol": "KKFeaturedPlaylistCategoryList.categories",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 245,
+      "symbol": "KKFeaturedPlaylistCategoryList.categories",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 245,
+      "symbol": "KKFeaturedPlaylistCategoryList.categories",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 246,
+      "symbol": "KKFeaturedPlaylistCategoryList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 246,
+      "symbol": "KKFeaturedPlaylistCategoryList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 246,
+      "symbol": "KKFeaturedPlaylistCategoryList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 247,
+      "symbol": "KKFeaturedPlaylistCategoryList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 247,
+      "symbol": "KKFeaturedPlaylistCategoryList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 247,
+      "symbol": "KKFeaturedPlaylistCategoryList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 276,
+      "symbol": "KKNewReleasedAlbumsCategoryList.categories",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 276,
+      "symbol": "KKNewReleasedAlbumsCategoryList.categories",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 276,
+      "symbol": "KKNewReleasedAlbumsCategoryList.categories",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 277,
+      "symbol": "KKNewReleasedAlbumsCategoryList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 277,
+      "symbol": "KKNewReleasedAlbumsCategoryList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 277,
+      "symbol": "KKNewReleasedAlbumsCategoryList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 278,
+      "symbol": "KKNewReleasedAlbumsCategoryList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 278,
+      "symbol": "KKNewReleasedAlbumsCategoryList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 278,
+      "symbol": "KKNewReleasedAlbumsCategoryList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 313,
+      "symbol": "KKRadioStationList.stations",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 313,
+      "symbol": "KKRadioStationList.stations",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 313,
+      "symbol": "KKRadioStationList.stations",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 314,
+      "symbol": "KKRadioStationList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 314,
+      "symbol": "KKRadioStationList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 314,
+      "symbol": "KKRadioStationList.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 315,
+      "symbol": "KKRadioStationList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 315,
+      "symbol": "KKRadioStationList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 315,
+      "symbol": "KKRadioStationList.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 326,
+      "symbol": "KKSearchResults",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 326,
+      "symbol": "KKSearchResults",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 326,
+      "symbol": "KKSearchResults",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 327,
+      "symbol": "KKSearchResults.trackResults",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 327,
+      "symbol": "KKSearchResults.trackResults",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 327,
+      "symbol": "KKSearchResults.trackResults",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 328,
+      "symbol": "KKSearchResults.albumResults",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 328,
+      "symbol": "KKSearchResults.albumResults",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 328,
+      "symbol": "KKSearchResults.albumResults",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 329,
+      "symbol": "KKSearchResults.artistResults",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 329,
+      "symbol": "KKSearchResults.artistResults",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 329,
+      "symbol": "KKSearchResults.artistResults",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 330,
+      "symbol": "KKSearchResults.playlistsResults",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 330,
+      "symbol": "KKSearchResults.playlistsResults",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 330,
+      "symbol": "KKSearchResults.playlistsResults",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 332,
+      "symbol": "KKSearchResults.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 332,
+      "symbol": "KKSearchResults.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 332,
+      "symbol": "KKSearchResults.paging",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 333,
+      "symbol": "KKSearchResults.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 333,
+      "symbol": "KKSearchResults.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/OpenAPI-Swift/KKBOXOpenAPITypes.swift",
+      "line": 333,
+      "symbol": "KKSearchResults.summary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/zonble/Work/OpenAPI-Swift"
+}

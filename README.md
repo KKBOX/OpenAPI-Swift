@@ -1,5 +1,7 @@
 # KKBOX Open API Swift Developer SDK for iOS/macOS/watchOS/tvOS
 
+Copyright © 2018 KKBOX All Rights Reserved.
+
 The is a pure Swift implementation of a client to access KKBOX's Open
 API.  You can easily integrate the SDK into your
 iOS/macOS/watchOS/tvOS project using Swift Package Manager or

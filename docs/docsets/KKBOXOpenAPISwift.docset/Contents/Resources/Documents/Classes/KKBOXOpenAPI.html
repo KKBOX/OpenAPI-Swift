@@ -1,0 +1,2792 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>KKBOXOpenAPI Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/KKBOXOpenAPI" class="dashAnchor"></a>
+    <a title="KKBOXOpenAPI Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">KKBOXOpenAPISwift Docs</a> (66% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">KKBOXOpenAPISwift Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        KKBOXOpenAPI Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/KKBOXOpenAPI.html">KKBOXOpenAPI</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/KKAPIResult.html">KKAPIResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/KKBOXOpenAPIError.html">KKBOXOpenAPIError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/KKTerritory.html">KKTerritory</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/KKAccessToken.html">KKAccessToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKAlbumInfo.html">KKAlbumInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKAlbumList.html">KKAlbumList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKArtistInfo.html">KKArtistInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKArtistList.html">KKArtistList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKFeaturedPlaylistCategory.html">KKFeaturedPlaylistCategory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKFeaturedPlaylistCategoryList.html">KKFeaturedPlaylistCategoryList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKImageInfo.html">KKImageInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKNewReleasedAlbumsCategory.html">KKNewReleasedAlbumsCategory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKNewReleasedAlbumsCategoryList.html">KKNewReleasedAlbumsCategoryList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKPagingInfo.html">KKPagingInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKPlaylistInfo.html">KKPlaylistInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKPlaylistList.html">KKPlaylistList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKRadioStation.html">KKRadioStation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKRadioStationList.html">KKRadioStationList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKScope.html">KKScope</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKSearchResults.html">KKSearchResults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKSearchType.html">KKSearchType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKSummary.html">KKSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKTrackInfo.html">KKTrackInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKTrackList.html">KKTrackList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KKUserInfo.html">KKUserInfo</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>KKBOXOpenAPI</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">KKBOXOpenAPI</span></code></pre>
+
+                </div>
+              </div>
+            <p>The class helps you to access KKBOX&rsquo;s Open API in Swift
+programming language.</p>
+
+<p>Please create an instance of the class by calling <code>init(clientID:
+String, secret: String)</code> and then fetch an access token by passing
+a client credential. Then you can do the other API calls.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC12requestScopeAA7KKScopeVv"></a>
+                    <a name="//apple_ref/swift/Property/requestScope" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC12requestScopeAA7KKScopeVv">requestScope</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Scope of the client. It is KKScope.userProfile by default.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">requestScope</span><span class="p">:</span> <span class="kt"><a href="../Structs/KKScope.html">KKScope</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">all</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC11accessTokenAA08KKAccessE0VSgv"></a>
+                    <a name="//apple_ref/swift/Property/accessToken" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC11accessTokenAA08KKAccessE0VSgv">accessToken</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The current access token.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">accessToken</span><span class="p">:</span> <span class="kt"><a href="../Structs/KKAccessToken.html">KKAccessToken</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC10isLoggedInSbv"></a>
+                    <a name="//apple_ref/swift/Property/isLoggedIn" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC10isLoggedInSbv">isLoggedIn</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If the user has logged-in into KKBOX or not.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isLoggedIn</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC6logoutyyF"></a>
+                    <a name="//apple_ref/swift/Method/logout()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC6logoutyyF">logout()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove current access token.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">logout</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APICACSS8clientID_SS6secrettcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(clientID:secret:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APICACSS8clientID_SS6secrettcfc">init(clientID:secret:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create an instance of KKBOXOpenAPI by giving a client ID and
+secret.</p>
+
+<p>To obtain a client ID and secret, visit <a href="https://developer.kkbox.com">KKBOX&rsquo;s Developer
+Site</a> .</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">clientID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">secret</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>clientID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A valid client ID</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>secret</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A valid client Secret</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC34fetchAccessTokenByClientCredentialSo14URLSessionTaskCyAA11KKAPIResultOyAA08KKAccessF0VGc8callback_tKF"></a>
+                    <a name="//apple_ref/swift/Method/fetchAccessTokenByClientCredential(callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC34fetchAccessTokenByClientCredentialSo14URLSessionTaskCyAA11KKAPIResultOyAA08KKAccessF0VGc8callback_tKF">fetchAccessTokenByClientCredential(callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch an access token by passing client credential.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.failedToCreateClientCredential
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchAccessTokenByClientCredential</span><span class="p">(</span><span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKAccessToken.html">KKAccessToken</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The access token.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Tracks"></a>
+                <a name="//apple_ref/swift/Section/Tracks" class="dashAnchor"></a>
+                <a href="#/Tracks">
+                  <h3 class="section-name">Tracks</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS5track_AA11KKTerritoryO9territoryyAA11KKAPIResultOyAA11KKTrackInfoVGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/fetch(track:territory:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS5track_AA11KKTerritoryO9territoryyAA11KKAPIResultOyAA11KKTrackInfoVGc8callbacktKF">fetch(track:territory:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch a song track by giving a song track ID.</p>
+
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#tracks-track_id">API reference</a>.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">track</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKTrackInfo.html">KKTrackInfo</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ID of the track.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Territory</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains the song track info.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Albums"></a>
+                <a name="//apple_ref/swift/Section/Albums" class="dashAnchor"></a>
+                <a href="#/Albums">
+                  <h3 class="section-name">Albums</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS5album_AA11KKTerritoryO9territoryyAA11KKAPIResultOyAA11KKAlbumInfoVGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/fetch(album:territory:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS5album_AA11KKTerritoryO9territoryyAA11KKAPIResultOyAA11KKAlbumInfoVGc8callbacktKF">fetch(album:territory:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch an album by giving an album ID.</p>
+
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#albums-album_id">API reference</a>.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">album</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKAlbumInfo.html">KKAlbumInfo</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ID of the album.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Territory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains the album info.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS13tracksInAlbum_AA11KKTerritoryO9territoryyAA11KKAPIResultOyAA11KKTrackListVGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/fetch(tracksInAlbum:territory:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS13tracksInAlbum_AA11KKTerritoryO9territoryyAA11KKAPIResultOyAA11KKTrackListVGc8callbacktKF">fetch(tracksInAlbum:territory:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch tracks contained in an album.</p>
+
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#albums-album_id-tracks">API reference</a>.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">tracksInAlbum</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKTrackList.html">KKTrackList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ID of the album.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Territory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains tracks of the album.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Artist"></a>
+                <a name="//apple_ref/swift/Section/Artist" class="dashAnchor"></a>
+                <a href="#/Artist">
+                  <h3 class="section-name">Artist</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS6artist_AA11KKTerritoryO9territoryyAA11KKAPIResultOyAA12KKArtistInfoVGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/fetch(artist:territory:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS6artist_AA11KKTerritoryO9territoryyAA11KKAPIResultOyAA12KKArtistInfoVGc8callbacktKF">fetch(artist:territory:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch the profile by giving an artist ID.</p>
+
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#artists-artist_id">API reference</a>.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">artist</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKArtistInfo.html">KKArtistInfo</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ID of the artist.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Territory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains profile of the artist.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS20albumsBelongToArtist_AA11KKTerritoryO9territorySi6offsetSi5limityAA11KKAPIResultOyAA11KKAlbumListVGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/fetch(albumsBelongToArtist:territory:offset:limit:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS20albumsBelongToArtist_AA11KKTerritoryO9territorySi6offsetSi5limityAA11KKAPIResultOyAA11KKAlbumListVGc8callbacktKF">fetch(albumsBelongToArtist:territory:offset:limit:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch albums of an artist.</p>
+
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#artists-artist_id-albums">API reference</a>.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">albumsBelongToArtist</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKAlbumList.html">KKAlbumList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ID of the artist.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Territory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The offset. 0 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The limit. 200 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains albums of the artist.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS17topTracksOfArtist_AA11KKTerritoryO9territorySi6offsetSi5limityAA11KKAPIResultOyAA11KKTrackListVGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/fetch(topTracksOfArtist:territory:offset:limit:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS17topTracksOfArtist_AA11KKTerritoryO9territorySi6offsetSi5limityAA11KKAPIResultOyAA11KKTrackListVGc8callbacktKF">fetch(topTracksOfArtist:territory:offset:limit:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch top tracks of an artist.</p>
+
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#artists-artist_id-toptracks">API reference</a>.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">topTracksOfArtist</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKTrackList.html">KKTrackList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ID of the artist.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Territory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The offset. 0 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The limit. 200 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains top tracks of the artist.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS22relatedArtistsOfArtist_AA11KKTerritoryO9territorySi6offsetSi5limityAA11KKAPIResultOyAA12KKArtistListVGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/fetch(relatedArtistsOfArtist:territory:offset:limit:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS22relatedArtistsOfArtist_AA11KKTerritoryO9territorySi6offsetSi5limityAA11KKAPIResultOyAA12KKArtistListVGc8callbacktKF">fetch(relatedArtistsOfArtist:territory:offset:limit:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch related artists of an artist.</p>
+
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#artists-artist_id-relatedartists">API reference</a>.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">relatedArtistsOfArtist</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKArtistList.html">KKArtistList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ID of the artist.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Territory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The offset. 0 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The limit. 20 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains related artists of the artist.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Shared%20Playlists"></a>
+                <a name="//apple_ref/swift/Section/Shared Playlists" class="dashAnchor"></a>
+                <a href="#/Shared%20Playlists">
+                  <h3 class="section-name">Shared Playlists</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS8playlist_AA11KKTerritoryO9territoryyAA11KKAPIResultOyAA14KKPlaylistInfoVGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/fetch(playlist:territory:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS8playlist_AA11KKTerritoryO9territoryyAA11KKAPIResultOyAA14KKPlaylistInfoVGc8callbacktKF">fetch(playlist:territory:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch a playlist&rsquo;s metadat and tracks by giving the playlist ID</p>
+
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#sharedplaylists-playlist_id">API reference</a>.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">playlist</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKPlaylistInfo.html">KKPlaylistInfo</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The playlist ID.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Territory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains the metadata and tracks of the playlist.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS16tracksInPlaylist_AA11KKTerritoryO9territorySi6offsetSi5limityAA11KKAPIResultOyAA11KKTrackListVGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/fetch(tracksInPlaylist:territory:offset:limit:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS16tracksInPlaylist_AA11KKTerritoryO9territorySi6offsetSi5limityAA11KKAPIResultOyAA11KKTrackListVGc8callbacktKF">fetch(tracksInPlaylist:territory:offset:limit:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch tracks contained in a playlist.</p>
+
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#sharedplaylists-playlist_id-tracks">API reference</a>.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">tracksInPlaylist</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKTrackList.html">KKTrackList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The playlist ID.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Territory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The offset. 0 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The limit. 20 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains the metadata of the playlist.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Featured%20Playlists"></a>
+                <a name="//apple_ref/swift/Section/Featured Playlists" class="dashAnchor"></a>
+                <a href="#/Featured%20Playlists">
+                  <h3 class="section-name">Featured Playlists</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC22fetchFeaturedPlaylistsSo14URLSessionTaskCAA11KKTerritoryO9territory_Si6offsetSi5limityAA11KKAPIResultOyAA14KKPlaylistListVGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/fetchFeaturedPlaylists(territory:offset:limit:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC22fetchFeaturedPlaylistsSo14URLSessionTaskCAA11KKTerritoryO9territory_Si6offsetSi5limityAA11KKAPIResultOyAA14KKPlaylistListVGc8callbacktKF">fetchFeaturedPlaylists(territory:offset:limit:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch the featued playlists.</p>
+
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#featuredplaylists">API reference</a>.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchFeaturedPlaylists</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKPlaylistList.html">KKPlaylistList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Territory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The offset. 0 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The limit. 100 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains the featured playlists.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/New-Hits%20Playlists"></a>
+                <a name="//apple_ref/swift/Section/New-Hits Playlists" class="dashAnchor"></a>
+                <a href="#/New-Hits%20Playlists">
+                  <h3 class="section-name">New-Hits Playlists</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC21fetchNewHitsPlaylistsSo14URLSessionTaskCAA11KKTerritoryO9territory_Si6offsetSi5limityAA11KKAPIResultOyAA14KKPlaylistListVGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/fetchNewHitsPlaylists(territory:offset:limit:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC21fetchNewHitsPlaylistsSo14URLSessionTaskCAA11KKTerritoryO9territory_Si6offsetSi5limityAA11KKAPIResultOyAA14KKPlaylistListVGc8callbacktKF">fetchNewHitsPlaylists(territory:offset:limit:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch the New-Hits playlists.</p>
+
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#newhitsplaylists">API reference</a>.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchNewHitsPlaylists</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKPlaylistList.html">KKPlaylistList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Territory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The offset. 0 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The limit. 10 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains the New-Hits playlists.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Featured%20Playlists%20Categories"></a>
+                <a name="//apple_ref/swift/Section/Featured Playlists Categories" class="dashAnchor"></a>
+                <a href="#/Featured%20Playlists%20Categories">
+                  <h3 class="section-name">Featured Playlists Categories</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC31fetchFeaturedPlaylistCategoriesSo14URLSessionTaskCAA11KKTerritoryO9territory_Si6offsetSi5limityAA11KKAPIResultOyAA010KKFeaturedF12CategoryListVGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/fetchFeaturedPlaylistCategories(territory:offset:limit:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC31fetchFeaturedPlaylistCategoriesSo14URLSessionTaskCAA11KKTerritoryO9territory_Si6offsetSi5limityAA11KKAPIResultOyAA010KKFeaturedF12CategoryListVGc8callbacktKF">fetchFeaturedPlaylistCategories(territory:offset:limit:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch featured playlist categories.</p>
+
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#featuredplaylistcategories-category_id">API reference</a>.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchFeaturedPlaylistCategories</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKFeaturedPlaylistCategoryList.html">KKFeaturedPlaylistCategoryList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Territory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The offset. 0 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The limit. 100 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains featured playlist categories.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC21fetchFeaturedPlaylistSo14URLSessionTaskCSS10inCategory_AA11KKTerritoryO9territorySi6offsetSi5limityAA11KKAPIResultOyAA010KKFeaturedfJ0VGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/fetchFeaturedPlaylist(inCategory:territory:offset:limit:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC21fetchFeaturedPlaylistSo14URLSessionTaskCSS10inCategory_AA11KKTerritoryO9territorySi6offsetSi5limityAA11KKAPIResultOyAA010KKFeaturedfJ0VGc8callbacktKF">fetchFeaturedPlaylist(inCategory:territory:offset:limit:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch featuerd playlists in a category.</p>
+
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#featuredplaylistcategories-category_id-playlists">API reference</a>.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchFeaturedPlaylist</span><span class="p">(</span><span class="n">inCategory</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKFeaturedPlaylistCategory.html">KKFeaturedPlaylistCategory</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The category ID.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Territory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The offset. 0 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The limit. 100 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains featured playlists.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Mood%20Radio%20Stations"></a>
+                <a name="//apple_ref/swift/Section/Mood Radio Stations" class="dashAnchor"></a>
+                <a href="#/Mood%20Radio%20Stations">
+                  <h3 class="section-name">Mood Radio Stations</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC17fetchMoodStationsSo14URLSessionTaskCAA11KKTerritoryO9territory_Si6offsetSi5limityAA11KKAPIResultOyAA18KKRadioStationListVGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/fetchMoodStations(territory:offset:limit:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC17fetchMoodStationsSo14URLSessionTaskCAA11KKTerritoryO9territory_Si6offsetSi5limityAA11KKAPIResultOyAA18KKRadioStationListVGc8callbacktKF">fetchMoodStations(territory:offset:limit:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch mood station categories.</p>
+
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#moodstations">API reference</a>.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchMoodStations</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKRadioStationList.html">KKRadioStationList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Territory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The offset. 0 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The limit. 100 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains the mood station categories.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS19tracksInMoodStation_AA11KKTerritoryO9territorySi6offsetSi5limityAA11KKAPIResultOyAA07KKRadioJ0VGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/fetch(tracksInMoodStation:territory:offset:limit:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS19tracksInMoodStation_AA11KKTerritoryO9territorySi6offsetSi5limityAA11KKAPIResultOyAA07KKRadioJ0VGc8callbacktKF">fetch(tracksInMoodStation:territory:offset:limit:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch tracks in a mood radio station.</p>
+
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#moodstations-station_id">API reference</a>.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">tracksInMoodStation</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKRadioStation.html">KKRadioStation</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Mood station ID</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Territory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The offset. 0 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The limit. 100 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains the tracks.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Genre%20Radio%20Stations"></a>
+                <a name="//apple_ref/swift/Section/Genre Radio Stations" class="dashAnchor"></a>
+                <a href="#/Genre%20Radio%20Stations">
+                  <h3 class="section-name">Genre Radio Stations</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC18fetchGenreStationsSo14URLSessionTaskCAA11KKTerritoryO9territory_Si6offsetSi5limityAA11KKAPIResultOyAA18KKRadioStationListVGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/fetchGenreStations(territory:offset:limit:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC18fetchGenreStationsSo14URLSessionTaskCAA11KKTerritoryO9territory_Si6offsetSi5limityAA11KKAPIResultOyAA18KKRadioStationListVGc8callbacktKF">fetchGenreStations(territory:offset:limit:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch genre station categories.</p>
+
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#genrestations">API reference</a>.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchGenreStations</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKRadioStationList.html">KKRadioStationList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Territory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The offset. 0 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The limit. 100 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains the mood genre categories.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS20tracksInGenreStation_AA11KKTerritoryO9territorySi6offsetSi5limityAA11KKAPIResultOyAA07KKRadioJ0VGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/fetch(tracksInGenreStation:territory:offset:limit:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS20tracksInGenreStation_AA11KKTerritoryO9territorySi6offsetSi5limityAA11KKAPIResultOyAA07KKRadioJ0VGc8callbacktKF">fetch(tracksInGenreStation:territory:offset:limit:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch tracks in a genre radio station.</p>
+
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#genrestations-station_id">API reference</a>.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">tracksInGenreStation</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKRadioStation.html">KKRadioStation</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Genre station ID</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Territory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The offset. 0 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The limit. 100 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains the tracks.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/New%20Released%20Albums"></a>
+                <a name="//apple_ref/swift/Section/New Released Albums" class="dashAnchor"></a>
+                <a href="#/New%20Released%20Albums">
+                  <h3 class="section-name">New Released Albums</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC31fetchNewReleaseAlbumsCategoriesSo14URLSessionTaskCAA11KKTerritoryO9territory_Si6offsetSi5limityAA11KKAPIResultOyAA013KKNewReleasedG12CategoryListVGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/fetchNewReleaseAlbumsCategories(territory:offset:limit:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC31fetchNewReleaseAlbumsCategoriesSo14URLSessionTaskCAA11KKTerritoryO9territory_Si6offsetSi5limityAA11KKAPIResultOyAA013KKNewReleasedG12CategoryListVGc8callbacktKF">fetchNewReleaseAlbumsCategories(territory:offset:limit:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch the categories of the new released albums.</p>
+
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#newreleasecategories">API reference</a>.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchNewReleaseAlbumsCategories</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKNewReleasedAlbumsCategoryList.html">KKNewReleasedAlbumsCategoryList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Territory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The offset. 0 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The limit. 100 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains the categories.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS30newReleasedAlbumsUnderCategory_AA11KKTerritoryO9territorySi6offsetSi5limityAA11KKAPIResultOyAA05KKNewhiK0VGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/fetch(newReleasedAlbumsUnderCategory:territory:offset:limit:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC5fetchSo14URLSessionTaskCSS30newReleasedAlbumsUnderCategory_AA11KKTerritoryO9territorySi6offsetSi5limityAA11KKAPIResultOyAA05KKNewhiK0VGc8callbacktKF">fetch(newReleasedAlbumsUnderCategory:territory:offset:limit:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch albums in a given new released albums category.</p>
+
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#newreleasecategories-category_id">API reference</a>.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">newReleasedAlbumsUnderCategory</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKNewReleasedAlbumsCategory.html">KKNewReleasedAlbumsCategory</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The categiry ID.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Territory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The offset. 0 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The limit. 100 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains the albums.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Charts"></a>
+                <a name="//apple_ref/swift/Section/Charts" class="dashAnchor"></a>
+                <a href="#/Charts">
+                  <h3 class="section-name">Charts</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC11fetchChartsSo14URLSessionTaskCAA11KKTerritoryO9territory_Si6offsetSi5limityAA11KKAPIResultOyAA14KKPlaylistListVGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/fetchCharts(territory:offset:limit:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC11fetchChartsSo14URLSessionTaskCAA11KKTerritoryO9territory_Si6offsetSi5limityAA11KKAPIResultOyAA14KKPlaylistListVGc8callbacktKF">fetchCharts(territory:offset:limit:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch charts.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchCharts</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKPlaylistList.html">KKPlaylistList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Territory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The offset. 0 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The limit. 50 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains the charts.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Search"></a>
+                <a name="//apple_ref/swift/Section/Search" class="dashAnchor"></a>
+                <a href="#/Search">
+                  <h3 class="section-name">Search</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:17KKBOXOpenAPISwift0A3APIC6searchSo14URLSessionTaskCSS4with_AA12KKSearchTypeV5typesAA11KKTerritoryO9territorySi6offsetSi5limityAA11KKAPIResultOyAA0H7ResultsVGc8callbacktKF"></a>
+                    <a name="//apple_ref/swift/Method/search(with:types:territory:offset:limit:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:17KKBOXOpenAPISwift0A3APIC6searchSo14URLSessionTaskCSS4with_AA12KKSearchTypeV5typesAA11KKTerritoryO9territorySi6offsetSi5limityAA11KKAPIResultOyAA0H7ResultsVGc8callbacktKF">search(with:types:territory:offset:limit:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Search in KKBOX&rsquo;s music library.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    KKBOXOpenAPIError.requireAccessToken.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">search</span><span class="p">(</span><span class="n">with</span> <span class="nv">keyword</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">types</span><span class="p">:</span> <span class="kt"><a href="../Structs/KKSearchType.html">KKSearchType</a></span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKSearchResults.html">KKSearchResults</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span>  <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>keyword</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The search keyword.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>types</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Artists, albums, tracks or playlists.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>territory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The territory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>offset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The offset. 0 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The limit. 50 by default.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The callback closure.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The result that contains search results.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A URLSessionTask that you can use it to cancel current fetch.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/zonble/OpenAPI-Swift/" target="_blank" rel="external">zonble</a>. All rights reserved. (Last updated: 2018-01-25)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

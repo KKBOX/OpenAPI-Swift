@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>KKBOXOpenAPISwift  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="KKBOXOpenAPISwift  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">KKBOXOpenAPISwift Docs</a> (66% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">KKBOXOpenAPISwift Reference</a>
+        <img id="carat" src="img/carat.png" />
+        KKBOXOpenAPISwift  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/KKBOXOpenAPI.html">KKBOXOpenAPI</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/KKAPIResult.html">KKAPIResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/KKBOXOpenAPIError.html">KKBOXOpenAPIError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/KKTerritory.html">KKTerritory</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/KKAccessToken.html">KKAccessToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKAlbumInfo.html">KKAlbumInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKAlbumList.html">KKAlbumList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKArtistInfo.html">KKArtistInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKArtistList.html">KKArtistList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKFeaturedPlaylistCategory.html">KKFeaturedPlaylistCategory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKFeaturedPlaylistCategoryList.html">KKFeaturedPlaylistCategoryList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKImageInfo.html">KKImageInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKNewReleasedAlbumsCategory.html">KKNewReleasedAlbumsCategory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKNewReleasedAlbumsCategoryList.html">KKNewReleasedAlbumsCategoryList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKPagingInfo.html">KKPagingInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKPlaylistInfo.html">KKPlaylistInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKPlaylistList.html">KKPlaylistList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKRadioStation.html">KKRadioStation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKRadioStationList.html">KKRadioStationList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKScope.html">KKScope</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKSearchResults.html">KKSearchResults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKSearchType.html">KKSearchType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKSummary.html">KKSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKTrackInfo.html">KKTrackInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKTrackList.html">KKTrackList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KKUserInfo.html">KKUserInfo</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='kkbox-open-api-swift-developer-sdk-for-ios-macos-watchos-tvos' class='heading'>KKBOX Open API Swift Developer SDK for iOS/macOS/watchOS/tvOS</h1>
+
+<p>The is a pure Swift implementation of a client to access KKBOX&rsquo;s Open
+API.  You can easily integrate the SDK into your
+iOS/macOS/watchOS/tvOS project using Swift Package Manager or
+CocoaPods.</p>
+
+<p>The SDK leverages lots of power features of Swift programming
+language, such as wrapping API responses into enums, and the JSON
+encoder/decoder since Swift 4.</p>
+
+<p>On the other hand, the SDK could not be called in your Objective-C
+code direclty. If you need to work with KKBOX&rsquo;s Open API in your
+Objective-C code, you may need to wrap the SDK in your own bridging
+code, or, you may want to take a look of KKBOX&rsquo;s
+<a href="https://github.com/KKBOX/OpenAPI-ObjectiveC">Objective-C SDK</a></p>
+
+<p>For further information, please visit <a href="https://docs-en.kkbox.codes">KKBOX Developer Site</a>.</p>
+<h2 id='requirement' class='heading'>Requirement</h2>
+
+<p>The SDK supports</p>
+
+<ul>
+<li>📱 iOS 9.x or above</li>
+<li>💻 Mac OS X 10.10 or above</li>
+<li>⌚️ watchOS 2.x or above</li>
+<li>📺 tvOS 9.x or above</li>
+</ul>
+<h2 id='build' class='heading'>Build ⚒</h2>
+
+<p>You need the latest Xcode and macOS. Xcode 9 and macOS 10.13 High
+Sierra are recommended.</p>
+<h2 id='installation' class='heading'>Installation</h2>
+<h3 id='cocoapods' class='heading'>CocoaPods</h3>
+
+<p>The SDK supports CocoaPods. Please add <code>pod &#39;KKBOXOpenAPISwift&#39;</code>
+to your Podfile, and then call <code>pod install</code>.</p>
+<h2 id='usage' class='heading'>Usage</h2>
+
+<p>To start using the SDK, you need to create an instance of KKBOXOpenAPI.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">API</span> <span class="o">=</span> <span class="kt">KKBOXOpenAPI</span><span class="p">(</span><span class="nv">clientID</span><span class="p">:</span> <span class="s">"YOUR_CLIENT_ID"</span><span class="p">,</span> <span class="nv">secret</span><span class="p">:</span> <span class="s">"YOUR_CLIENT_SECRET"</span><span class="p">)</span>
+</code></pre>
+
+<p>Then, ask the instance to fetch an access token by passing a client credential.</p>
+<pre class="highlight swift"><code><span class="n">_</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="k">self</span><span class="o">.</span><span class="kt">API</span><span class="o">.</span><span class="n">fetchAccessTokenByClientCredential</span> <span class="p">{</span> <span class="n">result</span> <span class="k">in</span>
+    <span class="k">switch</span> <span class="n">result</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="o">.</span><span class="nf">error</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+        <span class="c1">// Handle error...</span>
+    <span class="k">case</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="n">_</span><span class="p">):</span>
+        <span class="c1">// Successfully logged-in</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Finally, you can start to do the API calls. For example, you can fetch the details
+of a song track by calling &lsquo;fetchTrack&rsquo;.</p>
+<pre class="highlight swift"><code><span class="n">_</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="k">self</span><span class="o">.</span><span class="kt">API</span><span class="o">.</span><span class="nf">fetch</span><span class="p">(</span><span class="nv">track</span><span class="p">:</span> <span class="s">"4kxvr3wPWkaL9_y3o_"</span><span class="p">)</span> <span class="p">{</span> <span class="n">result</span> <span class="k">in</span>
+    <span class="k">switch</span> <span class="n">result</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="o">.</span><span class="nf">error</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+        <span class="c1">// Handle error...</span>
+    <span class="k">case</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">track</span><span class="p">):</span>
+        <span class="c1">// Handle the song track.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">self</span><span class="o">.</span><span class="kt">API</span><span class="o">.</span><span class="nf">fetchTrack</span><span class="p">(</span><span class="nv">withTrackID</span><span class="p">:</span> <span class="n">trackID</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">)</span> <span class="p">{</span> <span class="n">track</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span> <span class="o">...</span> <span class="p">}</span>
+</code></pre>
+
+<p>You can develop your app using the SDK with Swift or Objective-C programming
+language, although we have only Swift sample code here.</p>
+<h2 id='api-documentation' class='heading'>API Documentation 📖</h2>
+
+<ul>
+<li>Documentation for the SDK is available at <a href="https://zonble.github.io/OpenAPI-Swift/">https://zonble.github.io/OpenAPI-Swift/</a> .</li>
+<li>KKBOX&rsquo;s Open API documentation is available at <a href="https://developer.kkbox.com/">https://developer.kkbox.com/</a> .</li>
+</ul>
+<h2 id='license' class='heading'>License</h2>
+
+<p>Copyright 2017 KKBOX Technologies Limited</p>
+
+<p>Licensed under the Apache License, Version 2.0 (the <q>License</q>);
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at</p>
+<pre class="highlight plaintext"><code>http://www.apache.org/licenses/LICENSE-2.0
+</code></pre>
+
+<p>Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an <q>AS IS</q> BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/zonble/OpenAPI-Swift/" target="_blank" rel="external">zonble</a>. All rights reserved. (Last updated: 2018-01-25)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
