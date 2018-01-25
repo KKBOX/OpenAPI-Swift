@@ -194,18 +194,35 @@ public struct KKPlaylistList: Codable {
 	}
 }
 
+/// A struct that represents a featured playlist category.
 public struct KKFeaturedPlaylistCategory: Codable {
-	/// ID of the playlist.
+	/// ID of the category.
 	public internal(set) var ID: String
-	/// Title of the playlist.
+	/// Title of the category.
 	public internal(set) var title: String
 	/// Images for the category.
 	public internal(set) var images: [KKImageInfo]
+	/// Playlists
+	public internal(set) var playlists: KKPlaylistList?
 
 	private enum CodingKeys: String, CodingKey {
 		case ID = "id"
 		case title = "title"
 		case images = "images"
+		case playlists = "playlists"
+	}
+}
+
+/// A list of featured play list categories.
+public struct KKFeaturedPlaylistCategoryList: Codable {
+	public internal(set) var categories: [KKFeaturedPlaylistCategory]
+	public internal(set) var paging: KKPagingInfo
+	public internal(set) var summary: KKSummary
+
+	private enum CodingKeys: String, CodingKey {
+		case categories = "data"
+		case paging = "paging"
+		case summary = "summary"
 	}
 }
 
@@ -256,7 +273,6 @@ public struct KKSearchResults: Codable {
 		case paging = "paging"
 		case summary = "summary"
 	}
-
 }
 
 

@@ -42,6 +42,8 @@ class OpenAPI_SwiftTests: XCTestCase {
 		self.wait(for: [exp], timeout: 3)
 	}
 
+	//MARK: -
+
 	func validate(track: KKTrackInfo) {
 		XCTAssertNotNil(track)
 		XCTAssertTrue(track.ID.count > 0)
@@ -95,6 +97,8 @@ class OpenAPI_SwiftTests: XCTestCase {
 		XCTAssertNotNil(user.userDescription)
 		XCTAssertTrue(user.images.count > 0)
 	}
+
+	//MARK: -
 
 	func testFetchTrack() {
 		self.testFetchCredential()
@@ -303,6 +307,51 @@ class OpenAPI_SwiftTests: XCTestCase {
 				}
 				XCTAssertNotNil(playlists.paging)
 				XCTAssertNotNil(playlists.summary)
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testFetchFeaturedPlaylistCategories() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchFeaturedPlaylistCategories")
+		_ = try? self.API.fetchFeaturedPlaylistCategories() { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let categories):
+				XCTAssertNotNil(categories.categories)
+				XCTAssertTrue(categories.categories.count > 0)
+				for category in categories.categories {
+					XCTAssertTrue(category.ID.count > 0)
+					XCTAssertTrue(category.title.count > 0)
+					XCTAssertTrue(category.images.count > 0)
+				}
+				XCTAssertNotNil(categories.paging)
+				XCTAssertNotNil(categories.summary)
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testFetchFeaturedPlaylistInCategory() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchFeaturedPlaylistInCategory")
+		_ = try? self.API.fetchFeaturedPlaylist(inCategory: "CrBHGk1J1KEsQlPLoz") { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let category):
+				XCTAssertNotNil(category.playlists?.playlists)
+				if let playlists = category.playlists?.playlists {
+					for playlist in playlists {
+						self.validate(playlist: playlist)
+					}
+				}
+				XCTAssertNotNil(category.playlists?.paging)
+				XCTAssertNotNil(category.playlists?.summary)
 			}
 		}
 		self.wait(for: [exp], timeout: 3)
