@@ -1,3 +1,9 @@
+//
+// KKBOXOpenAPIPrivateTypes.swift
+//
+// Copyright (c) 2018 KKBOX Taiwan Co., Ltd. All Rights Reserved.
+//
+
 import Foundation
 
 struct KKLoginError: Codable {

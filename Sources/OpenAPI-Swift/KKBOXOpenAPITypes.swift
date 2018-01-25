@@ -1,3 +1,9 @@
+//
+// KKBOXOpenAPITypes.swift
+//
+// Copyright (c) 2018 KKBOX Taiwan Co., Ltd. All Rights Reserved.
+//
+
 import Foundation
 
 public struct KKPagingInfo: Codable {
@@ -66,7 +72,7 @@ public struct KKAlbumInfo: Codable {
 	public internal(set) var releaseDate: String
 	/// explicitness
 	public internal(set) var explicitness: Bool
-	public internal(set) var territoriesThatAvailanbleAt: [KKTerritory]
+	public internal(set) var territoriesThatAvailableAt: [KKTerritory]
 
 	private enum CodingKeys: String, CodingKey {
 		case ID = "id"
@@ -76,7 +82,7 @@ public struct KKAlbumInfo: Codable {
 		case images = "images"
 		case releaseDate = "release_date"
 		case explicitness = "explicitness"
-		case territoriesThatAvailanbleAt = "available_territories"
+		case territoriesThatAvailableAt = "available_territories"
 	}
 }
 
@@ -101,7 +107,7 @@ public struct KKTrackInfo: Codable {
 	public internal(set) var duration: TimeInterval
 	public internal(set) var trackOrderInAlbum: Int
 	public internal(set) var explicitness: Bool
-	public internal(set) var territoriesThatAvailanbleAt: [KKTerritory]
+	public internal(set) var territoriesThatAvailableAt: [KKTerritory]
 
 	private enum CodingKeys: String, CodingKey {
 		case ID = "id"
@@ -111,7 +117,7 @@ public struct KKTrackInfo: Codable {
 		case duration = "duration"
 		case trackOrderInAlbum = "track_number"
 		case explicitness = "explicitness"
-		case territoriesThatAvailanbleAt = "available_territories"
+		case territoriesThatAvailableAt = "available_territories"
 	}
 }
 

@@ -1,3 +1,9 @@
+//
+// KKBOXOpenAPI.swift
+//
+// Copyright (c) 2018 KKBOX Taiwan Co., Ltd. All Rights Reserved.
+//
+
 import Foundation
 
 private let KKUserAgent = "KKBOX Open API Swift SDK"

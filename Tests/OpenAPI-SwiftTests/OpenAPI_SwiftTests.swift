@@ -51,8 +51,8 @@ class OpenAPI_SwiftTests: XCTestCase {
 		XCTAssertTrue(track.duration > 0)
 		XCTAssertNotNil(track.url)
 		XCTAssertTrue(track.trackOrderInAlbum > 0)
-		XCTAssertTrue(track.territoriesThatAvailanbleAt.count > 0)
-		XCTAssertTrue(track.territoriesThatAvailanbleAt.contains(.taiwan))
+		XCTAssertTrue(track.territoriesThatAvailableAt.count > 0)
+		XCTAssertTrue(track.territoriesThatAvailableAt.contains(.taiwan))
 		if let album = track.album {
 			self.validate(album: album)
 		}
@@ -332,7 +332,7 @@ class OpenAPI_SwiftTests: XCTestCase {
 				XCTAssertNotNil(categories.summary)
 			}
 		}
-		self.wait(for: [exp], timeout: 3)
+		self.wait(for: [exp], timeout: 10)
 	}
 
 	func testFetchFeaturedPlaylistInCategory() {
