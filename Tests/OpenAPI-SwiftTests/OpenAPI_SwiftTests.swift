@@ -515,10 +515,16 @@ class OpenAPI_SwiftTests: XCTestCase {
 		self.wait(for: [exp], timeout: 3)
 	}
 
-	func testSearch() {
+	func testSearchAll() {
 		self.testFetchCredential()
-		let exp = self.expectation(description: "testSearch")
-		_ = try? self.API.search(with: "Love", types: [KKSearchType.track, KKSearchType.album, KKSearchType.artist, KKSearchType.playlist]) { result in
+		let exp = self.expectation(description: "testSearchAll")
+		let types: KKSearchType =  [
+			KKSearchType.track,
+		  	KKSearchType.album,
+			KKSearchType.artist,
+		  	KKSearchType.playlist
+		]
+		_ = try? self.API.search(with: "Love", types: types) { result in
 			exp.fulfill()
 			switch result {
 			case .error(let error):
@@ -528,6 +534,106 @@ class OpenAPI_SwiftTests: XCTestCase {
 				XCTAssertNotNil(searchResults.trackResults)
 				XCTAssertNotNil(searchResults.albumResults)
 				XCTAssertNotNil(searchResults.artistResults)
+				XCTAssertNotNil(searchResults.playlistsResults)
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testSearch1() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testSearchAll")
+		let types: KKSearchType =  [
+			KKSearchType.track,
+//			KKSearchType.album,
+//			KKSearchType.artist,
+//			KKSearchType.playlist
+		]
+		_ = try? self.API.search(with: "Love", types: types) { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let searchResults):
+				XCTAssertNotNil(searchResults)
+				XCTAssertNotNil(searchResults.trackResults)
+				XCTAssertNil(searchResults.albumResults)
+				XCTAssertNil(searchResults.artistResults)
+				XCTAssertNil(searchResults.playlistsResults)
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testSearch2() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testSearchAll")
+		let types: KKSearchType =  [
+//			KKSearchType.track,
+			KKSearchType.album,
+//			KKSearchType.artist,
+//			KKSearchType.playlist
+		]
+		_ = try? self.API.search(with: "Love", types: types) { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let searchResults):
+				XCTAssertNotNil(searchResults)
+				XCTAssertNil(searchResults.trackResults)
+				XCTAssertNotNil(searchResults.albumResults)
+				XCTAssertNil(searchResults.artistResults)
+				XCTAssertNil(searchResults.playlistsResults)
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testSearch3() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testSearchAll")
+		let types: KKSearchType =  [
+//			KKSearchType.track,
+//			KKSearchType.album,
+			KKSearchType.artist,
+//			KKSearchType.playlist
+		]
+		_ = try? self.API.search(with: "Love", types: types) { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let searchResults):
+				XCTAssertNotNil(searchResults)
+				XCTAssertNil(searchResults.trackResults)
+				XCTAssertNil(searchResults.albumResults)
+				XCTAssertNotNil(searchResults.artistResults)
+				XCTAssertNil(searchResults.playlistsResults)
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testSearch4() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testSearchAll")
+		let types: KKSearchType =  [
+//			KKSearchType.track,
+//			KKSearchType.album,
+//			KKSearchType.artist,
+			KKSearchType.playlist
+		]
+		_ = try? self.API.search(with: "Love", types: types) { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let searchResults):
+				XCTAssertNotNil(searchResults)
+				XCTAssertNil(searchResults.trackResults)
+				XCTAssertNil(searchResults.albumResults)
+				XCTAssertNil(searchResults.artistResults)
 				XCTAssertNotNil(searchResults.playlistsResults)
 			}
 		}

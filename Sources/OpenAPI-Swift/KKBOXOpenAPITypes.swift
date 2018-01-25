@@ -327,7 +327,7 @@ public struct KKSearchResults: Codable {
 	public internal(set) var trackResults: KKTrackList?
 	public internal(set) var albumResults: KKAlbumList?
 	public internal(set) var artistResults: KKArtistList?
-	public internal(set) var playlistsResults: KKPlaylistInfo?
+	public internal(set) var playlistsResults: KKPlaylistList?
 
 	public internal(set) var paging: KKPagingInfo
 	public internal(set) var summary: KKSummary
