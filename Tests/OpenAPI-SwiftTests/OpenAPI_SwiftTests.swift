@@ -64,7 +64,7 @@ class OpenAPI_SwiftTests: XCTestCase {
 		XCTAssertTrue(album.name.count > 0)
 		XCTAssertNotNil(album.url)
 		XCTAssertTrue(album.images.count == 3)
-		XCTAssertTrue(album.releaseDate.count > 0)
+//		XCTAssertTrue(album.releaseDate?.count ?? 0 > 0)
 //		XCTAssertTrue(album.territoriesThatAvailanbleAt.count > 0, "\(album.name)")
 //		XCTAssertTrue(album.territoriesThatAvailanbleAt.contains(.taiwan))
 		self.validate(artist: album.artist!)
@@ -356,6 +356,98 @@ class OpenAPI_SwiftTests: XCTestCase {
 		}
 		self.wait(for: [exp], timeout: 3)
 	}
+
+	func testFetchMoodStations() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchMoodStations")
+		_ = try? self.API.fetchMoodStations() { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let stations):
+				XCTAssertNotNil(stations)
+				for station in stations.stations {
+					XCTAssertNotNil(station)
+					XCTAssertTrue(station.ID.count > 0)
+					XCTAssertTrue(station.name.count > 0)
+					XCTAssertTrue(station.images?.count ?? 0 > 0)
+				}
+			}
+
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testFetchTracksInMoodStation() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchTracksInMoodStation")
+		_ = try? self.API.fetch(tracksInMoodStation: "4tmrBI125HMtMlO9OF") { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let station):
+				XCTAssertNotNil(station)
+				XCTAssertTrue(station.ID.count > 0)
+				XCTAssertTrue(station.name.count > 0)
+				XCTAssertTrue(station.tracks?.tracks.count ?? 0 > 0)
+				if let tracks = station.tracks?.tracks {
+					for track in tracks {
+						self.validate(track: track)
+					}
+				}
+			}
+
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testFetchGenreStations() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchGenreStations")
+		_ = try? self.API.fetchGenreStations() { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let stations):
+				XCTAssertNotNil(stations)
+				for station in stations.stations {
+					XCTAssertNotNil(station)
+					XCTAssertTrue(station.ID.count > 0)
+					XCTAssertTrue(station.name.count > 0)
+				}
+			}
+
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testFetchTracksInGenreStation() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchTracksInGenreStation")
+		_ = try? self.API.fetch(tracksInGenreStation: "9ZAb9rkyd3JFDBC0wF") { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let station):
+				XCTAssertNotNil(station)
+				XCTAssertTrue(station.ID.count > 0)
+				XCTAssertTrue(station.name.count > 0)
+				XCTAssertTrue(station.tracks?.tracks.count ?? 0 > 0)
+				if let tracks = station.tracks?.tracks {
+					for track in tracks {
+						self.validate(track: track)
+					}
+				}
+			}
+
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
 
 	static var allTests = [
 		("testFetchCredential", testFetchCredential),

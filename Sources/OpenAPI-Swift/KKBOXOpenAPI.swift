@@ -359,6 +359,7 @@ extension KKBOXOpenAPI {
 	///   - territory: The Territory.
 	///   - offset: The offset. 0 by default.
 	///   - limit: The limit. 20 by default.
+	///   - callback: The callback closure.
 	///	  - result: The result that contains the metadata of the playlist.
 	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
@@ -379,6 +380,7 @@ extension KKBOXOpenAPI {
 	///   - territory: The Territory.
 	///   - offset: The offset. 0 by default.
 	///   - limit: The limit. 100 by default.
+	///   - callback: The callback closure.
 	///	  - result: The result that contains the featured playlists.
 	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
@@ -399,6 +401,7 @@ extension KKBOXOpenAPI {
 	///   - territory: The Territory.
 	///   - offset: The offset. 0 by default.
 	///   - limit: The limit. 10 by default.
+	///   - callback: The callback closure.
 	///	  - result: The result that contains the New-Hits playlists.
 	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
@@ -419,6 +422,7 @@ extension KKBOXOpenAPI {
 	///   - territory: The Territory.
 	///   - offset: The offset. 0 by default.
 	///   - limit: The limit. 100 by default.
+	///   - callback: The callback closure.
 	///	  - result: The result that contains featured playlist categories.
 	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
@@ -436,11 +440,88 @@ extension KKBOXOpenAPI {
 	///   - territory: The Territory.
 	///   - offset: The offset. 0 by default.
 	///   - limit: The limit. 100 by default.
+	///   - callback: The callback closure.
 	///	  - result: The result that contains featured playlists.
 	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
 	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
 	public func fetchFeaturedPlaylist(inCategory ID: String, territory: KKTerritory = .taiwan, offset: Int = 0, limit: Int = 100, callback: @escaping (_ result: KKAPIResult<KKFeaturedPlaylistCategory>) -> ()) throws -> URLSessionTask {
 		let urlString = "\(KKBOXAPIPath)featured-playlist-categories/\(escape(ID))?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
+		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+	}
+}
+
+extension KKBOXOpenAPI {
+	//MARK: Mood Radio
+
+	/// Fetch mood station categories.
+	///
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#moodstations).
+	///
+	/// - Parameters:
+	///   - territory: The Territory.
+	///   - offset: The offset. 0 by default.
+	///   - limit: The limit. 100 by default.
+	///   - callback: The callback closure.
+	///	  - result: The result that contains the mood station categories.
+	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
+	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
+	public func fetchMoodStations(territory: KKTerritory = .taiwan, offset: Int = 0, limit: Int = 100, callback: @escaping (_ result: KKAPIResult<KKRadioStationList>) -> ()) throws -> URLSessionTask {
+		let urlString = "\(KKBOXAPIPath)mood-stations?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
+		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+	}
+
+	/// Fetch tracks in a mood radio station.
+	///
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#moodstations-station_id).
+	///
+	/// - Parameters:
+	///   - ID: Mood station ID
+	///   - territory: The Territory.
+	///   - offset: The offset. 0 by default.
+	///   - limit: The limit. 100 by default.
+	///   - callback: The callback closure.
+	///	  - result: The result that contains the tracks.
+	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
+	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
+	public func fetch(tracksInMoodStation ID: String, territory: KKTerritory = .taiwan, offset: Int = 0, limit: Int = 100, callback: @escaping (_ result: KKAPIResult<KKRadioStation>) -> ()) throws -> URLSessionTask {
+		let urlString = "\(KKBOXAPIPath)mood-stations/\(escape(ID))?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
+		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+	}
+
+	//MARK: Genre Radio
+
+	/// Fetch genre station categories.
+	///
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#genrestations).
+	///
+	/// - Parameters:
+	///   - territory: The Territory.
+	///   - offset: The offset. 0 by default.
+	///   - limit: The limit. 100 by default.
+	///   - callback: The callback closure.
+	///	  - result: The result that contains the mood genre categories.
+	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
+	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
+	public func fetchGenreStations(territory: KKTerritory = .taiwan, offset: Int = 0, limit: Int = 100, callback: @escaping (_ result: KKAPIResult<KKRadioStationList>) -> ()) throws -> URLSessionTask {
+		let urlString = "\(KKBOXAPIPath)genre-stations?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
+		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+	}
+
+	/// Fetch tracks in a genre radio station.
+	///
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#genrestations-station_id).
+	///
+	/// - Parameters:
+	///   - ID: Genre station ID
+	///   - territory: The Territory.
+	///   - offset: The offset. 0 by default.
+	///   - limit: The limit. 100 by default.
+	///   - callback: The callback closure.
+	///	  - result: The result that contains the tracks.
+	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
+	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
+	public func fetch(tracksInGenreStation ID: String, territory: KKTerritory = .taiwan, offset: Int = 0, limit: Int = 100, callback: @escaping (_ result: KKAPIResult<KKRadioStation>) -> ()) throws -> URLSessionTask {
+		let urlString = "\(KKBOXAPIPath)genre-stations/\(escape(ID))?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
 		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
 	}
 }
@@ -519,7 +600,7 @@ extension KKBOXOpenAPI {
 			}
 			DispatchQueue.main.async {
 //				let s = String(data: data, encoding: .utf8)
-//				print("\(s)")
+//				print("\(s!)")
 				callback(.success(data))
 			}
 		}
