@@ -497,6 +497,24 @@ class OpenAPI_SwiftTests: XCTestCase {
 		self.wait(for: [exp], timeout: 3)
 	}
 
+	func testFetchCharts() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchCharts")
+		_ = try? self.API.fetchCharts() { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let playlists):
+				XCTAssertTrue(playlists.playlists.count > 0)
+				for playlist in playlists.playlists {
+					self.validate(playlist: playlist)
+				}
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
 
 	static var allTests = [
 		("testFetchCredential", testFetchCredential),
