@@ -10,17 +10,17 @@ Copyright © 2018 KKBOX All Rights Reserved.
 [![Support](https://img.shields.io/badge/watchOS-2-blue.svg)](https://www.apple.com/tw/watchos)&nbsp;
 [![Support](https://img.shields.io/badge/tvOS-9-blue.svg)](https://www.apple.com/tw/tvos)&nbsp;
 
-The is a pure Swift implementation of a client to access KKBOX's Open
-API.  You can easily integrate the SDK into your
+This is a pure Swift implementation of a client to access KKBOX's Open
+API. You can easily integrate the SDK into your
 iOS/macOS/watchOS/tvOS project using Swift Package Manager or
 CocoaPods.
 
 The SDK leverages lots of power features of Swift programming
 language, such as wrapping API responses into enums, and the JSON
-encoder/decoder since Swift 4.
+encoder / decoder since Swift 4.
 
 On the other hand, the SDK could not be called in your Objective-C
-code direclty. If you need to work with KKBOX's Open API in your
+code directly. If you need to work with KKBOX's Open API in your
 Objective-C code, you may need to wrap the SDK in your own bridging
 code, or, you may want to take a look of KKBOX's
 [Objective-C SDK](https://github.com/KKBOX/OpenAPI-ObjectiveC)
@@ -115,7 +115,7 @@ language, although we have only Swift sample code here.
 
 ## API Documentation 📖
 
-- Documentation for the SDK is available at https://zonble.github.io/OpenAPI-Swift/ .
+- Documentation for the SDK is available at https://kkbox.github.io/OpenAPI-Swift/ .
 - KKBOX's Open API documentation is available at https://developer.kkbox.com/ .
 
 ## License
