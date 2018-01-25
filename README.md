@@ -56,7 +56,7 @@ Add the project as a dependency to your Package.swift:
 import PackageDescription
 
 let package = Package(
-    name: "socket.io-test",
+    name: "KKBOXOpenAPI-test",
     products: [
         .executable(name: "KKBOXOpenAPI-test", targets: ["YourTargetName"])
     ],
@@ -102,7 +102,6 @@ _ = try? self.API.fetch(track: "4kxvr3wPWkaL9_y3o_") { result in
         // Handle the song track.
     }
 }
-self.API.fetchTrack(withTrackID: trackID, territory: .taiwan) { track, error in ... }
 ```
 
 You can develop your app using the SDK with Swift or Objective-C programming
