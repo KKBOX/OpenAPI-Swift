@@ -2,6 +2,9 @@
 
 Copyright © 2018 KKBOX All Rights Reserved.
 
+[![build](https://travis-ci.org/KKBOX/OpenAPI-Swift.svg?branch=master)](https://travis-ci.org/KKBOX/OpenAPI-Swift)&nbsp;
+[![License Apache](https://img.shields.io/badge/license-Apache-green.svg?style=flat)](https://raw.githubusercontent.com/KKBOX/OpenAPI-Swift/master/LICENSE)&nbsp;
+[![CocoaPods](http://img.shields.io/cocoapods/v/KKBOXOpenAPISwift.svg?style=flat)](http://cocoapods.org/pods/KKBOXOpenAPISwift)&nbsp;
 [![Support](https://img.shields.io/badge/macOS-10.10-blue.svg)](https://www.apple.com/tw/macos)&nbsp;
 [![Support](https://img.shields.io/badge/iOS-9-blue.svg)](https://www.apple.com/tw/ios)&nbsp;
 [![Support](https://img.shields.io/badge/watchOS-2-blue.svg)](https://www.apple.com/tw/watchos)&nbsp;
