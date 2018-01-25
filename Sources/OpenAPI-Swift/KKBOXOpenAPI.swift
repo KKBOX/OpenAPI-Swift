@@ -198,6 +198,8 @@ extension KKBOXOpenAPI {
 
 }
 
+//MARK: -
+
 extension KKBOXOpenAPI {
 
 	//MARK: Tracks
@@ -451,7 +453,7 @@ extension KKBOXOpenAPI {
 }
 
 extension KKBOXOpenAPI {
-	//MARK: Mood Radio
+	//MARK: Mood Radio Stations
 
 	/// Fetch mood station categories.
 	///
@@ -488,7 +490,7 @@ extension KKBOXOpenAPI {
 		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
 	}
 
-	//MARK: Genre Radio
+	//MARK: Genre Radio Stations
 
 	/// Fetch genre station categories.
 	///
@@ -524,6 +526,44 @@ extension KKBOXOpenAPI {
 		let urlString = "\(KKBOXAPIPath)genre-stations/\(escape(ID))?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
 		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
 	}
+}
+
+extension KKBOXOpenAPI {
+	//MARK: New Released Albums
+
+	/// Fetch the categories of the new released albums.
+	///
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#newreleasecategories).
+	///
+	/// - Parameters:
+	///   - territory: The Territory.
+	///   - offset: The offset. 0 by default.
+	///   - limit: The limit. 100 by default.
+	///   - callback: The callback closure.
+	///	  - result: The result that contains the categories.
+	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
+	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
+	public func fetchNewReleaseAlbumsCategories(territory: KKTerritory = .taiwan, offset: Int = 0, limit: Int = 100, callback: @escaping (_ result: KKAPIResult<KKNewReleasedAlbumsCategoryList>) -> ()) throws -> URLSessionTask {
+		let urlString = "\(KKBOXAPIPath)new-release-categories?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
+		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+	}
+
+	/// Fetch albums in a given new released albums category.
+	///
+	/// - Parameters:
+	///   - ID: The categiry ID.
+	///   - territory: The Territory.
+	///   - offset: The offset. 0 by default.
+	///   - limit: The limit. 100 by default.
+	///   - callback: The callback closure.
+	///	  - result: The result that contains the albums.
+	/// - Returns: A URLSessionTask that you can use it to cancel current fetch.
+	/// - Throws: KKBOXOpenAPIError.requireAccessToken.
+	public func fetch(newReleasedAlbumsUnderCategory ID: String, territory: KKTerritory = .taiwan, offset: Int = 0, limit: Int = 100, callback: @escaping (_ result: KKAPIResult<KKNewReleasedAlbumsCategory>) -> ()) throws -> URLSessionTask {
+		let urlString = "\(KKBOXAPIPath)new-release-categories/\(escape(ID))?territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
+		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+	}
+
 }
 
 //MARK: -

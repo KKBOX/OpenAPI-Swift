@@ -24,6 +24,8 @@ public struct KKImageInfo: Codable {
 	public internal(set) var url: URL?
 }
 
+//MARK: -
+
 /// A struct that represents an artist.
 public struct KKArtistInfo: Codable {
 	/// ID of the artist.
@@ -56,6 +58,8 @@ public struct KKArtistList: Codable {
 	}
 }
 
+//MARK: -
+
 /// A struct that represents an album.
 public struct KKAlbumInfo: Codable {
 	/// ID of the album.
@@ -70,8 +74,9 @@ public struct KKAlbumInfo: Codable {
 	public internal(set) var images: [KKImageInfo]
 	/// When was the album released.
 	public internal(set) var releaseDate: String?
-	/// explicitness
+	/// Explicitness.
 	public internal(set) var explicitness: Bool
+	/// The territories where the album is available at.
 	public internal(set) var territoriesThatAvailableAt: [KKTerritory]
 
 	private enum CodingKeys: String, CodingKey {
@@ -99,14 +104,24 @@ public struct KKAlbumList: Codable {
 	}
 }
 
+//MARK: -
+
 public struct KKTrackInfo: Codable {
+	/// ID of the track.
 	public internal(set) var ID: String
+	/// Name of the track.
 	public internal(set) var name: String
+	/// URL of the webpage of KKBOX for the track.
 	public internal(set) var url: URL?
+	/// The album that contains the track.
 	public internal(set) var album: KKAlbumInfo?
+	/// The length of the track.
 	public internal(set) var duration: TimeInterval
+	/// The order index of the track in the album.
 	public internal(set) var trackOrderInAlbum: Int
+	/// Explicitness.
 	public internal(set) var explicitness: Bool
+	/// The territories where the track is available at.
 	public internal(set) var territoriesThatAvailableAt: [KKTerritory]
 
 	private enum CodingKeys: String, CodingKey {
@@ -134,6 +149,8 @@ public struct KKTrackList: Codable {
 	}
 }
 
+//MARK: -
+
 /// A struct that represents a user.
 public struct KKUserInfo: Codable {
 	/// ID of the user.
@@ -155,6 +172,8 @@ public struct KKUserInfo: Codable {
 		case userDescription = "description"
 	}
 }
+
+//MARK: -
 
 /// A struct that represents a playlist.
 public struct KKPlaylistInfo: Codable {
@@ -200,6 +219,8 @@ public struct KKPlaylistList: Codable {
 	}
 }
 
+//MARK: -
+
 /// A struct that represents a featured playlist category.
 public struct KKFeaturedPlaylistCategory: Codable {
 	/// ID of the category.
@@ -232,18 +253,38 @@ public struct KKFeaturedPlaylistCategoryList: Codable {
 	}
 }
 
+//MARK: -
+
 /// A struct that represents a new release albums category.
 public struct KKNewReleasedAlbumsCategory: Codable {
 	/// ID of the playlist.
 	public internal(set) var ID: String
 	/// Title of the playlist.
 	public internal(set) var title: String
+	/// Albums under the category.
+	public internal(set) var albums: KKAlbumList?
 
 	private enum CodingKeys: String, CodingKey {
 		case ID = "id"
 		case title = "title"
+		case albums = "albums"
 	}
 }
+
+/// A list of featured play list categories.
+public struct KKNewReleasedAlbumsCategoryList: Codable {
+	public internal(set) var categories: [KKNewReleasedAlbumsCategory]
+	public internal(set) var paging: KKPagingInfo
+	public internal(set) var summary: KKSummary
+
+	private enum CodingKeys: String, CodingKey {
+		case categories = "data"
+		case paging = "paging"
+		case summary = "summary"
+	}
+}
+
+//MARK: -
 
 /// A struct that represents a radio station.
 public struct KKRadioStation: Codable {
@@ -279,6 +320,8 @@ public struct KKRadioStationList: Codable {
 		case summary = "summary"
 	}
 }
+
+//MARK: -
 
 public struct KKSearchResults: Codable {
 	public internal(set) var trackResults: [KKTrackList]?

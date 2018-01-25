@@ -1,3 +1,9 @@
+//
+// OpenAPI_SwiftTests.swift
+//
+// Copyright (c) 2018 KKBOX Taiwan Co., Ltd. All Rights Reserved.
+//
+
 import XCTest
 @testable import OpenAPI_Swift
 
@@ -83,11 +89,6 @@ class OpenAPI_SwiftTests: XCTestCase {
 		XCTAssertTrue(playlist.ID.count > 0);
 		XCTAssertTrue(playlist.title.count > 0);
 		XCTAssertNotNil(playlist.url);
-//		if (playlist.tracks.count > 0) {
-//			for track in playlist.tracks {
-//				self.validate(track: track)
-//			}
-//		}
 	}
 
 	func validate(user: KKUserInfo) {
@@ -443,7 +444,55 @@ class OpenAPI_SwiftTests: XCTestCase {
 					}
 				}
 			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
 
+	func testFetchNewReleaseAlbumsCategories() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchNewReleaseAlbumsCategories")
+		_ = try? self.API.fetchNewReleaseAlbumsCategories() { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let categories):
+				XCTAssertNotNil(categories)
+				XCTAssertTrue(categories.categories.count > 0)
+				for category in categories.categories {
+					XCTAssertTrue(category.ID.count > 0)
+					XCTAssertTrue(category.title.count > 0)
+				}
+				XCTAssertNotNil(categories.summary)
+				XCTAssertNotNil(categories.paging)
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testFetchNewReleaseAlbumsUnderCategory() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchNewReleaseAlbumsUnderCategory")
+		_ = try? self.API.fetch(newReleasedAlbumsUnderCategory: "0pGAIGDf5SqYh_SyHr") { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let category):
+				XCTAssertTrue(category.ID.count > 0)
+				XCTAssertTrue(category.title.count > 0)
+				guard let albums = category.albums else {
+					XCTFail()
+					return
+				}
+				XCTAssertNotNil(albums)
+				XCTAssertTrue(albums.albums.count > 0)
+				for album in albums.albums {
+					self.validate(album: album)
+				}
+				XCTAssertNotNil(albums.summary)
+				XCTAssertNotNil(albums.paging)
+			}
 		}
 		self.wait(for: [exp], timeout: 3)
 	}
