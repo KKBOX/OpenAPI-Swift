@@ -47,6 +47,7 @@ public struct KKArtistInfo: Codable {
 
 /// A list of artists.
 public struct KKArtistList: Codable {
+	/// The artists.
 	public internal(set) var artists: [KKArtistInfo]
 	public internal(set) var paging: KKPagingInfo
 	public internal(set) var summary: KKSummary
@@ -93,6 +94,7 @@ public struct KKAlbumInfo: Codable {
 
 /// A list of albums.
 public struct KKAlbumList: Codable {
+	/// The albums.
 	public internal(set) var albums: [KKAlbumInfo]
 	public internal(set) var paging: KKPagingInfo
 	public internal(set) var summary: KKSummary
@@ -138,6 +140,7 @@ public struct KKTrackInfo: Codable {
 
 /// A list of tracks.
 public struct KKTrackList: Codable {
+	/// The tracks.
 	public internal(set) var tracks: [KKTrackInfo]
 	public internal(set) var paging: KKPagingInfo
 	public internal(set) var summary: KKSummary
@@ -190,7 +193,7 @@ public struct KKPlaylistInfo: Codable {
 	/// Owner of the playlist.
 	public internal(set) var owner: KKUserInfo
 	/// When is the playlist updated
-	public internal(set) var lastUpdateDate: String
+	public internal(set) var lastUpdateDate: Date
 	/// Tracks contained in the playlist.
 	public internal(set) var tracks: KKTrackList?
 
@@ -208,6 +211,7 @@ public struct KKPlaylistInfo: Codable {
 
 /// A list of tracks.
 public struct KKPlaylistList: Codable {
+	/// The playlists.
 	public internal(set) var playlists: [KKPlaylistInfo]
 	public internal(set) var paging: KKPagingInfo
 	public internal(set) var summary: KKSummary
@@ -242,6 +246,7 @@ public struct KKFeaturedPlaylistCategory: Codable {
 
 /// A list of featured play list categories.
 public struct KKFeaturedPlaylistCategoryList: Codable {
+	/// The categories.
 	public internal(set) var categories: [KKFeaturedPlaylistCategory]
 	public internal(set) var paging: KKPagingInfo
 	public internal(set) var summary: KKSummary
@@ -273,6 +278,7 @@ public struct KKNewReleasedAlbumsCategory: Codable {
 
 /// A list of featured play list categories.
 public struct KKNewReleasedAlbumsCategoryList: Codable {
+	/// The categories.
 	public internal(set) var categories: [KKNewReleasedAlbumsCategory]
 	public internal(set) var paging: KKPagingInfo
 	public internal(set) var summary: KKSummary
@@ -310,6 +316,7 @@ public struct KKRadioStation: Codable {
 
 /// A list of stations.
 public struct KKRadioStationList: Codable {
+	/// The stations.
 	public internal(set) var stations: [KKRadioStation]
 	public internal(set) var paging: KKPagingInfo
 	public internal(set) var summary: KKSummary
@@ -324,9 +331,13 @@ public struct KKRadioStationList: Codable {
 //MARK: -
 
 public struct KKSearchResults: Codable {
+	/// Track search results.
 	public internal(set) var trackResults: KKTrackList?
+	/// ALbum search results.
 	public internal(set) var albumResults: KKAlbumList?
+	/// Artist search results.
 	public internal(set) var artistResults: KKArtistList?
+	/// Playlist search results.
 	public internal(set) var playlistsResults: KKPlaylistList?
 
 	public internal(set) var paging: KKPagingInfo

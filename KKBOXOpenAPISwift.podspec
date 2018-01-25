@@ -1,15 +1,15 @@
 Pod::Spec.new do |s|
   s.name             = "KKBOXOpenAPISwift"
-  s.version          = "1.1.0"
+  s.version          = "1.1.1"
   s.license          = {:type => 'Apache 2.0', :file => "LICENSE"}
   s.summary          = "KKBOX's Open API SDK for iOS, macOS, watchOS and tvOS in Swift."
   s.description   = <<-DESC
   KKBOX's Open API SDK for developers working on Apple platforms such as iOS, macOS, watchOS and tvOS.
                        DESC
-  s.homepage         = "https://github.com/zonble/OpenAPI-Swift/"
-  # s.documentation_url = 'https://zonble.github.io/OpenAPI-Swift/'
+  s.homepage         = "https://github.com/KKBOX/OpenAPI-Swift/"
+  s.documentation_url = 'https://kkbox.github.io/OpenAPI-Swift/'
   s.author           = { "zonble" => "zonble@gmail.com" }
-  s.source           = { :git => "https://github.com/zonble/OpenAPI-Swift.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/KKBOX/OpenAPI-Swift.git", :tag => s.version.to_s }
 
   s.platform         = :ios, :tvos, :osx
   s.ios.deployment_target = '9.0'

@@ -640,5 +640,30 @@ class OpenAPI_SwiftTests: XCTestCase {
 
 	static var allTests = [
 		("testFetchCredential", testFetchCredential),
-	]
+		("testFetchWithInvalidCredential", testFetchWithInvalidCredential),
+		("testFetchTrack", testFetchTrack),
+		("testFetchAlbum", testFetchAlbum),
+		("testFetchArtist", testFetchArtist),
+		("testFetchAlbumsOfArtist", testFetchAlbumsOfArtist),
+		("testFetchTopTracksOfArtist", testFetchTopTracksOfArtist),
+		("testFetchRelatedArtists", testFetchRelatedArtists),
+		("testFetchPlaylist", testFetchPlaylist),
+		("testFetchTracksInPlaylist", testFetchTracksInPlaylist),
+		("testFetchFeaturedPlaylists", testFetchFeaturedPlaylists),
+		("testFetchNewHitsPlaylists", testFetchNewHitsPlaylists),
+		("testFetchFeaturedPlaylistCategories", testFetchFeaturedPlaylistCategories),
+		("testFetchFeaturedPlaylistInCategory", testFetchFeaturedPlaylistInCategory),
+		("testFetchMoodStations", testFetchMoodStations),
+		("testFetchTracksInMoodStation", testFetchTracksInMoodStation),
+		("testFetchGenreStations", testFetchGenreStations),
+		("testFetchTracksInGenreStation", testFetchTracksInGenreStation),
+		("testFetchNewReleaseAlbumsCategories", testFetchNewReleaseAlbumsCategories),
+		("testFetchNewReleaseAlbumsUnderCategory", testFetchNewReleaseAlbumsUnderCategory),
+		("testFetchCharts", testFetchCharts),
+		("testSearchAll", testSearchAll),
+		("testSearch1", testSearch1),
+		("testSearch2", testSearch2),
+		("testSearch3", testSearch3),
+		("testSearch4", testSearch4),
+		]
 }

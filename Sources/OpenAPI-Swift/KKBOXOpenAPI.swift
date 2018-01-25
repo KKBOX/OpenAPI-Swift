@@ -136,8 +136,11 @@ public enum KKAPIResult<T> {
 }
 
 public enum KKBOXOpenAPIError: Error, LocalizedError {
+	/// Failed to create a client credential
 	case failedToCreateClientCredential
+	/// Invalid response
 	case invalidResponse
+	/// The operation required an access token
 	case requireAccessToken
 
 	public var errorDescription: String? {
@@ -152,32 +155,22 @@ public enum KKBOXOpenAPIError: Error, LocalizedError {
 	}
 }
 
+extension Notification.Name {
+	/// Notification for obtaining an access token.
+	static let KKBOXOpenAPIDidLogin = Notification.Name("KKBOXOpenAPIDidLogin")
+	/// Notification for removing current access token.
+	static let KKBOXOpenAPIDidLogout = Notification.Name("KKBOXOpenAPIDidLogout")
+}
+
 //MARK: -
 
 /// The class helps you to access KKBOX's Open API in Swift
 /// programming language.
 ///
-/// Please create an instance of the class by calling `init(clientID:
-/// String, secret: String)` and then fetch an access token by passing
+/// Please create an instance of the class by calling `init(clientID:,
+/// secret:, scope:)` and then fetch an access token by passing
 /// a client credential. Then you can do the other API calls.
 public class KKBOXOpenAPI {
-
-	private var clientID: String
-	private var clientSecret: String
-
-	/// Scope of the client. It is KKScope.userProfile by default.
-	public var requestScope: KKScope = .all
-	/// The current access token.
-	public private(set) var accessToken: KKAccessToken?
-	/// If the user has logged-in into KKBOX or not.
-	public var isLoggedIn: Bool {
-		return accessToken != nil
-	}
-
-	/// Remove current access token.
-	public func logout() {
-		self.accessToken = nil
-	}
 
 	/// Create an instance of KKBOXOpenAPI by giving a client ID and
 	/// secret.
@@ -188,10 +181,38 @@ public class KKBOXOpenAPI {
 	/// - Parameters:
 	///   - clientID: A valid client ID
 	///   - secret: A valid client Secret
-	public init(clientID: String, secret: String) {
+	///   - scope: Scope of the client.
+	public init(clientID: String, secret: String, scope: KKScope = .all) {
 		self.clientID = clientID
 		self.clientSecret = secret
+		self.requestScope = scope
 	}
+
+	private var clientID: String
+	private var clientSecret: String
+
+	/// Scope of the client. It is KKScope.userProfile by default.
+	public var requestScope: KKScope = .all
+	/// The current access token.
+	public private(set) var accessToken: KKAccessToken? {
+		didSet {
+			if self.accessToken == nil {
+				NotificationCenter.default.post(name: .KKBOXOpenAPIDidLogout, object: self)
+			} else {
+				NotificationCenter.default.post(name: .KKBOXOpenAPIDidLogin, object: self)
+			}
+		}
+	}
+	/// If the user has logged-in into KKBOX or not.
+	public var isLoggedIn: Bool {
+		return accessToken != nil
+	}
+
+	/// Remove current access token.
+	public func logout() {
+		self.accessToken = nil
+	}
+
 }
 
 extension KKBOXOpenAPI {
@@ -677,6 +698,9 @@ extension KKBOXOpenAPI {
 				}
 				do {
 					let decoder = JSONDecoder()
+					let formatter = DateFormatter()
+					formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+					decoder.dateDecodingStrategy = .formatted(formatter)
 					let track = try decoder.decode(T.self, from: data)
 					callback(.success(track))
 				} catch {
@@ -703,8 +727,6 @@ extension KKBOXOpenAPI {
 				return
 			}
 			DispatchQueue.main.async {
-//				let s = String(data: data, encoding: .utf8)
-//				print("\(s!)")
 				callback(.success(data))
 			}
 		}

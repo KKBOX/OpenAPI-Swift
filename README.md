@@ -34,6 +34,9 @@ The SDK supports
 - ⌚️ watchOS 2.x or above
 - 📺 tvOS 9.x or above
 
+Ths SDK uses NSURLSession to do HTTP connections, so, you cannot
+run the Swift SDK on Linux yet.
+
 ## Build ⚒
 
 You need the latest Xcode and macOS. Xcode 9 and macOS 10.13 High
