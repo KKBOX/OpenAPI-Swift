@@ -25,7 +25,6 @@ class OpenAPI_SwiftTests: XCTestCase {
 				XCTAssertTrue(error.localizedDescription == "invalid_client", "\(error.localizedDescription)")
 			case .success(_):
 				XCTFail("It is not possible.")
-				break
 			}
 		}
 		self.wait(for: [exp], timeout: 3)
@@ -42,7 +41,6 @@ class OpenAPI_SwiftTests: XCTestCase {
 				XCTAssertTrue(response.accessToken.count > 0)
 				XCTAssertTrue(response.expiresIn > 0)
 				XCTAssertTrue(response.tokenType?.count ?? 0 > 0)
-				break
 			}
 		}
 		self.wait(for: [exp], timeout: 3)

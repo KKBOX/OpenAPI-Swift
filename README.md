@@ -49,13 +49,28 @@ let API = KKBOXOpenAPI(clientID: "YOUR_CLIENT_ID", secret: "YOUR_CLIENT_SECRET")
 Then, ask the instance to fetch an access token by passing a client credential.
 
 ``` swift
-API.fetchAccessTokenByClientCredential { token, error in ... }
+_ = try? self.API.fetchAccessTokenByClientCredential { result in
+    switch result {
+    case .error(let error):
+        // Handle error...
+    case .success(_):
+        // Successfully logged-in
+    }
+}
 ```
 
 Finally, you can start to do the API calls. For example, you can fetch the details
 of a song track by calling 'fetchTrack'.
 
 ``` swift
+_ = try? self.API.fetch(track: "4kxvr3wPWkaL9_y3o_") { result in
+    switch result {
+    case .error(let error):
+        // Handle error...
+    case .success(let track):
+        // Handle the song track.
+    }
+}
 self.API.fetchTrack(withTrackID: trackID, territory: .taiwan) { track, error in ... }
 ```
 
