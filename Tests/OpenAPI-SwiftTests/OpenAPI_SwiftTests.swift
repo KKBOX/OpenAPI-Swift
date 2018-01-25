@@ -515,6 +515,24 @@ class OpenAPI_SwiftTests: XCTestCase {
 		self.wait(for: [exp], timeout: 3)
 	}
 
+	func testSearch() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testSearch")
+		_ = try? self.API.search(with: "Love", types: [KKSearchType.track, KKSearchType.album, KKSearchType.artist, KKSearchType.playlist]) { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTFail(error.localizedDescription)
+			case .success(let searchResults):
+				XCTAssertNotNil(searchResults)
+				XCTAssertNotNil(searchResults.trackResults)
+				XCTAssertNotNil(searchResults.albumResults)
+				XCTAssertNotNil(searchResults.artistResults)
+				XCTAssertNotNil(searchResults.playlistsResults)
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
 
 	static var allTests = [
 		("testFetchCredential", testFetchCredential),

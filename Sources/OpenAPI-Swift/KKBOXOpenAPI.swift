@@ -71,6 +71,23 @@ public struct KKSearchType: OptionSet {
 	public static let album = KKSearchType(rawValue: 1 << 1)
 	public static let track = KKSearchType(rawValue: 1 << 2)
 	public static let playlist = KKSearchType(rawValue: 1 << 2)
+
+	fileprivate func toString() -> String {
+		var scapeStrings = [String]()
+		if self.rawValue & KKSearchType.artist.rawValue != 0 {
+			scapeStrings.append("artist")
+		}
+		if self.rawValue & KKSearchType.album.rawValue != 0 {
+			scapeStrings.append("album")
+		}
+		if self.rawValue & KKSearchType.track.rawValue != 0 {
+			scapeStrings.append("track")
+		}
+		if self.rawValue & KKSearchType.playlist.rawValue != 0 {
+			scapeStrings.append("playlist")
+		}
+		return scapeStrings.joined(separator: ",")
+	}
 }
 
 public struct KKScope: OptionSet {
@@ -586,6 +603,15 @@ extension KKBOXOpenAPI {
 	}
 }
 
+extension KKBOXOpenAPI {
+	//MARK: Search
+
+	public func search(with keyword:String, types: KKSearchType, territory: KKTerritory = .taiwan, offset: Int = 0, limit: Int = 50, callback: @escaping (_ result: KKAPIResult<KKSearchResults>) -> ())  throws -> URLSessionTask {
+		let urlString = "\(KKBOXAPIPath)search?q=\(escape_arg(keyword))&type=\(types.toString())&territory=\(territory.toString())&offset=\(offset)&limit=\(limit)"
+		return try self.get(url: URL(string: urlString)!, callback: self.apiDataCallback(callback: callback))
+	}
+}
+
 //MARK: -
 
 extension KKBOXOpenAPI {
@@ -659,8 +685,8 @@ extension KKBOXOpenAPI {
 				return
 			}
 			DispatchQueue.main.async {
-//				let s = String(data: data, encoding: .utf8)
-//				print("\(s!)")
+				let s = String(data: data, encoding: .utf8)
+				print("\(s!)")
 				callback(.success(data))
 			}
 		}
