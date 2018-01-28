@@ -54,9 +54,9 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 		XCTAssertTrue(track.name.count > 0)
 		XCTAssertTrue(track.duration > 0)
 		XCTAssertNotNil(track.url)
-		XCTAssertTrue(track.trackOrderInAlbum > 0)
-		XCTAssertTrue(track.territoriesThatAvailableAt.count > 0)
-		XCTAssertTrue(track.territoriesThatAvailableAt.contains(.taiwan))
+//		XCTAssertTrue(track.trackOrderInAlbum > 0)
+//		XCTAssertTrue(track.territoriesThatAvailableAt.count > 0)
+//		XCTAssertTrue(track.territoriesThatAvailableAt.contains(.taiwan))
 		if let album = track.album {
 			self.validate(album: album)
 		}
@@ -114,6 +114,22 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 		self.wait(for: [exp], timeout: 3)
 	}
 
+	func testFetchInvalidTrack() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchInvalidTrack")
+		_ = try? self.API.fetch(track: "11111") { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTAssertNotNil(error)
+				XCTAssertTrue(error.localizedDescription == "Resource does not exist")
+			case .success(_):
+				XCTFail()
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
 	func testFetchAlbum() {
 		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchAlbum")
@@ -124,6 +140,22 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 				XCTFail(error.localizedDescription)
 			case .success(let album):
 				self.validate(album: album)
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testFetchInvalidAlbum() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchInvalidAlbum")
+		_ = try? self.API.fetch(album: "11111") { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTAssertNotNil(error)
+				XCTAssertTrue(error.localizedDescription == "Resource does not exist")
+			case .success(_):
+				XCTFail()
 			}
 		}
 		self.wait(for: [exp], timeout: 3)
@@ -145,6 +177,22 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 				}
 				XCTAssertNotNil(tracks.paging)
 				XCTAssertNotNil(tracks.summary)
+			}
+		}
+		self.wait(for: [exp], timeout: 3)
+	}
+
+	func testFetchTracksInInvalidAlbum() {
+		self.testFetchCredential()
+		let exp = self.expectation(description: "testFetchTracksInInvalidAlbum")
+		_ = try? self.API.fetch(tracksInAlbum: "1111111") { result in
+			exp.fulfill()
+			switch result {
+			case .error(let error):
+				XCTAssertNotNil(error)
+				XCTAssertTrue(error.localizedDescription == "Resource does not exist")
+			case .success(_):
+				XCTFail()
 			}
 		}
 		self.wait(for: [exp], timeout: 3)
@@ -247,7 +295,7 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 				}
 			}
 		}
-		self.wait(for: [exp], timeout: 3)
+		self.wait(for: [exp], timeout: 10)
 	}
 
 	func testFetchTracksInPlaylist() {
@@ -268,7 +316,7 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 				XCTAssertNotNil(tracks.summary)
 			}
 		}
-		self.wait(for: [exp], timeout: 3)
+		self.wait(for: [exp], timeout: 10)
 	}
 
 	func testFetchFeaturedPlaylists() {
@@ -399,7 +447,7 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 			}
 
 		}
-		self.wait(for: [exp], timeout: 3)
+		self.wait(for: [exp], timeout: 10)
 	}
 
 	func testFetchGenreStations() {
@@ -535,7 +583,7 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 				XCTAssertNotNil(searchResults.playlistsResults)
 			}
 		}
-		self.wait(for: [exp], timeout: 3)
+		self.wait(for: [exp], timeout: 10)
 	}
 
 	func testSearch1() {
