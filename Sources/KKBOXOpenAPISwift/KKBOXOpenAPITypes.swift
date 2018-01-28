@@ -6,21 +6,31 @@
 
 import Foundation
 
+/// A struct represents pagination info of a list.
 public struct KKPagingInfo: Codable {
+	/// The maximum amount of the items in the list.
 	public internal(set) var limit: Int
+	/// Where the list begins.
 	public internal(set) var offset: Int
-	public internal(set) var previous: String?
-	public internal(set) var next: String?
+	/// The URL for the API call for the previous page.
+	public internal(set) var previous: URL?
+	/// The URL for the API call for the next page.
+	public internal(set) var next: URL?
 }
 
+/// An overall summary for a list.
 public struct KKSummary: Codable {
+	/// The total amount of the items matching to your criteria.
 	public internal(set) var total: Int
 }
 
 /// A struct that represents an image.
 public struct KKImageInfo: Codable {
+	/// The width of the image.
 	public internal(set) var width: Float
+	/// The height of the image.
 	public internal(set) var height: Float
+	/// The URL of the image.
 	public internal(set) var url: URL?
 }
 
@@ -49,7 +59,9 @@ public struct KKArtistInfo: Codable {
 public struct KKArtistList: Codable {
 	/// The artists.
 	public internal(set) var artists: [KKArtistInfo]
+	/// The pagination info.
 	public internal(set) var paging: KKPagingInfo
+	/// The overall summary.
 	public internal(set) var summary: KKSummary
 
 	private enum CodingKeys: String, CodingKey {
@@ -63,19 +75,19 @@ public struct KKArtistList: Codable {
 
 /// A struct that represents an album.
 public struct KKAlbumInfo: Codable {
-	/// ID of the album.
+	/// The ID of the album.
 	public internal(set) var ID: String
-	/// Name of the album.
+	/// The name of the album.
 	public internal(set) var name: String
-	/// URL of the webpage of KKBOX for the album.
+	/// The URL of the webpage of KKBOX for the album.
 	public internal(set) var url: URL?
-	/// Artist of the album.
+	/// The artist of the album.
 	public internal(set) var artist: KKArtistInfo?
-	/// Cover images for the album.
+	/// The cover images for the album.
 	public internal(set) var images: [KKImageInfo]
 	/// When was the album released.
 	public internal(set) var releaseDate: String?
-	/// Explicitness.
+	/// If the album explicit or not.
 	public internal(set) var explicitness: Bool
 	/// The territories where the album is available at.
 	public internal(set) var territoriesThatAvailableAt: [KKTerritory]
@@ -96,7 +108,9 @@ public struct KKAlbumInfo: Codable {
 public struct KKAlbumList: Codable {
 	/// The albums.
 	public internal(set) var albums: [KKAlbumInfo]
+	/// The pagination info.
 	public internal(set) var paging: KKPagingInfo
+	/// The overall summary.
 	public internal(set) var summary: KKSummary
 
 	private enum CodingKeys: String, CodingKey {
@@ -111,9 +125,9 @@ public struct KKAlbumList: Codable {
 public struct KKTrackInfo: Codable {
 	/// ID of the track.
 	public internal(set) var ID: String
-	/// Name of the track.
+	/// The name of the track.
 	public internal(set) var name: String
-	/// URL of the webpage of KKBOX for the track.
+	/// The URL of the webpage of KKBOX for the track.
 	public internal(set) var url: URL?
 	/// The album that contains the track.
 	public internal(set) var album: KKAlbumInfo?
@@ -142,7 +156,9 @@ public struct KKTrackInfo: Codable {
 public struct KKTrackList: Codable {
 	/// The tracks.
 	public internal(set) var tracks: [KKTrackInfo]
+	/// The pagination info.
 	public internal(set) var paging: KKPagingInfo
+	/// The overall summary.
 	public internal(set) var summary: KKSummary
 
 	private enum CodingKeys: String, CodingKey {
@@ -156,15 +172,15 @@ public struct KKTrackList: Codable {
 
 /// A struct that represents a user.
 public struct KKUserInfo: Codable {
-	/// ID of the user.
+	/// The ID of the user.
 	public internal(set) var ID: String
-	/// Name of the user.
+	/// The name of the user.
 	public internal(set) var name: String
-	/// URL of the webpage of KKBOX for the user.
+	/// The URL of the webpage of KKBOX for the user.
 	public internal(set) var url: URL?
-	/// Cover images for the user.
+	/// The images for the user.
 	public internal(set) var images: [KKImageInfo]
-	/// Description of the user.
+	/// The description of the user.
 	public internal(set) var userDescription: String
 
 	private enum CodingKeys: String, CodingKey {
@@ -213,7 +229,9 @@ public struct KKPlaylistInfo: Codable {
 public struct KKPlaylistList: Codable {
 	/// The playlists.
 	public internal(set) var playlists: [KKPlaylistInfo]
+	/// The pagination info.
 	public internal(set) var paging: KKPagingInfo
+	/// The overall summary.
 	public internal(set) var summary: KKSummary
 
 	private enum CodingKeys: String, CodingKey {
@@ -227,13 +245,13 @@ public struct KKPlaylistList: Codable {
 
 /// A struct that represents a featured playlist category.
 public struct KKFeaturedPlaylistCategory: Codable {
-	/// ID of the category.
+	/// The ID of the category.
 	public internal(set) var ID: String
-	/// Title of the category.
+	/// The title of the category.
 	public internal(set) var title: String
-	/// Images for the category.
+	/// The images for the category.
 	public internal(set) var images: [KKImageInfo]
-	/// Playlists
+	/// The playlists
 	public internal(set) var playlists: KKPlaylistList?
 
 	private enum CodingKeys: String, CodingKey {
@@ -248,7 +266,9 @@ public struct KKFeaturedPlaylistCategory: Codable {
 public struct KKFeaturedPlaylistCategoryList: Codable {
 	/// The categories.
 	public internal(set) var categories: [KKFeaturedPlaylistCategory]
+	/// The pagination info.
 	public internal(set) var paging: KKPagingInfo
+	/// The overall summary.
 	public internal(set) var summary: KKSummary
 
 	private enum CodingKeys: String, CodingKey {
@@ -262,11 +282,11 @@ public struct KKFeaturedPlaylistCategoryList: Codable {
 
 /// A struct that represents a new release albums category.
 public struct KKNewReleasedAlbumsCategory: Codable {
-	/// ID of the playlist.
+	/// The ID of the playlist.
 	public internal(set) var ID: String
-	/// Title of the playlist.
+	/// The title of the playlist.
 	public internal(set) var title: String
-	/// Albums under the category.
+	/// The albums under the category.
 	public internal(set) var albums: KKAlbumList?
 
 	private enum CodingKeys: String, CodingKey {
@@ -280,7 +300,9 @@ public struct KKNewReleasedAlbumsCategory: Codable {
 public struct KKNewReleasedAlbumsCategoryList: Codable {
 	/// The categories.
 	public internal(set) var categories: [KKNewReleasedAlbumsCategory]
+	/// The pagination info.
 	public internal(set) var paging: KKPagingInfo
+	/// The overall summary.
 	public internal(set) var summary: KKSummary
 
 	private enum CodingKeys: String, CodingKey {
@@ -294,15 +316,15 @@ public struct KKNewReleasedAlbumsCategoryList: Codable {
 
 /// A struct that represents a radio station.
 public struct KKRadioStation: Codable {
-	/// ID of the station.
+	/// The ID of the station.
 	public internal(set) var ID: String
-	/// Name of the station.
+	/// The name of the station.
 	public internal(set) var name: String
-	/// Category of the station.
+	/// The category of the station.
 	public internal(set) var category: String?
-	/// Images for the name.
+	/// The images for the name.
 	public internal(set) var images: [KKImageInfo]?
-	/// Tracks in the station.
+	/// The tracks in the station.
 	public internal(set) var tracks: KKTrackList?
 
 	private enum CodingKeys: String, CodingKey {
@@ -318,7 +340,9 @@ public struct KKRadioStation: Codable {
 public struct KKRadioStationList: Codable {
 	/// The stations.
 	public internal(set) var stations: [KKRadioStation]
+	/// The pagination info.
 	public internal(set) var paging: KKPagingInfo
+	/// The overall summary.
 	public internal(set) var summary: KKSummary
 
 	private enum CodingKeys: String, CodingKey {
@@ -339,8 +363,9 @@ public struct KKSearchResults: Codable {
 	public internal(set) var artistResults: KKArtistList?
 	/// Playlist search results.
 	public internal(set) var playlistsResults: KKPlaylistList?
-
+	/// The pagination info.
 	public internal(set) var paging: KKPagingInfo
+	/// The overall summary.
 	public internal(set) var summary: KKSummary
 
 	private enum CodingKeys: String, CodingKey {

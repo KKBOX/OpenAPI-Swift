@@ -10,6 +10,7 @@ private let KKUserAgent = "KKBOX Open API Swift SDK"
 private let KKOauthTokenURL = "https://account.kkbox.com/oauth2/token"
 private let KKErrorDomain = "KKErrorDomain"
 private let KKBOXAPIPath = "https://api.kkbox.com/v1.1/"
+private let KKBOXAccessTokenSettingKey = "KKBOX OPEN API Access Token"
 
 private func escape(_ string: String) -> String {
 	return string.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -20,11 +21,11 @@ private func escape_arg(_ string: String) -> String {
 }
 
 
-/// An access token.
+/// An access token. It is required for making API calls.
 public struct KKAccessToken: Codable {
 	/// The access token string.
 	public private(set) var accessToken: String
-	/// When will the access token expires.
+	/// When will the access token expires since now.
 	public private(set) var expiresIn: TimeInterval
 	/// Type of the access token.
 	public private(set) var tokenType: String?
@@ -186,6 +187,7 @@ public class KKBOXOpenAPI {
 		self.clientID = clientID
 		self.clientSecret = secret
 		self.requestScope = scope
+		self.restoreAccessToken()
 	}
 
 	private var clientID: String
@@ -211,6 +213,31 @@ public class KKBOXOpenAPI {
 	/// Remove current access token.
 	public func logout() {
 		self.accessToken = nil
+		let key = "\(KKBOXAccessTokenSettingKey)_\(self.clientID)"
+		UserDefaults.standard.removeObject(forKey: key)
+	}
+
+	private func saveAccessToken() {
+		let key = "\(KKBOXAccessTokenSettingKey)_\(self.clientID)"
+		let encoder = JSONEncoder()
+		do {
+			let data = try encoder.encode(self.accessToken)
+			UserDefaults.standard.set(data, forKey: key)
+			UserDefaults.standard.synchronize()
+		} catch {
+		}
+	}
+
+	private func restoreAccessToken() {
+		let key = "\(KKBOXAccessTokenSettingKey)_\(self.clientID)"
+		guard let data = UserDefaults.standard.object(forKey: key) as? Data else {
+			return
+		}
+		let decoder = JSONDecoder()
+		do {
+			self.accessToken = try decoder.decode(KKAccessToken.self, from: data)
+		} catch {
+		}
 	}
 
 }
@@ -665,6 +692,7 @@ extension KKBOXOpenAPI {
 					let decoder = JSONDecoder()
 					let accessToken = try decoder.decode(KKAccessToken.self, from: data)
 					self.accessToken = accessToken
+					self.saveAccessToken()
 					callback(.success(accessToken))
 				} catch {
 					let decoder = JSONDecoder()
