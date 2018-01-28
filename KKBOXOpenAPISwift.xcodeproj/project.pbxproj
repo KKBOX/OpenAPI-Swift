@@ -7,65 +7,65 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		"OpenAPI-Swift::OpenAPI-SwiftPackageTests::ProductTarget" /* OpenAPI-SwiftPackageTests */ = {
+		"KKBOXOpenAPISwift::KKBOXOpenAPISwiftPackageTests::ProductTarget" /* KKBOXOpenAPISwiftPackageTests */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_39 /* Build configuration list for PBXAggregateTarget "OpenAPI-SwiftPackageTests" */;
+			buildConfigurationList = OBJ_44 /* Build configuration list for PBXAggregateTarget "KKBOXOpenAPISwiftPackageTests" */;
 			buildPhases = (
 			);
 			dependencies = (
-				OBJ_42 /* PBXTargetDependency */,
+				OBJ_47 /* PBXTargetDependency */,
 			);
-			name = "OpenAPI-SwiftPackageTests";
-			productName = "OpenAPI-SwiftPackageTests";
+			name = KKBOXOpenAPISwiftPackageTests;
+			productName = KKBOXOpenAPISwiftPackageTests;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		D4E69D892018F139001881DA /* KKBOXOpenAPIPrivateTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E69D872018F051001881DA /* KKBOXOpenAPIPrivateTypes.swift */; };
-		D4E69D8C2018FAC1001881DA /* KKBOXOpenAPITypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E69D8A2018F85C001881DA /* KKBOXOpenAPITypes.swift */; };
-		OBJ_21 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_27 /* OpenAPI_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* OpenAPI_SwiftTests.swift */; };
-		OBJ_29 /* OpenAPI_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "OpenAPI-Swift::OpenAPI-Swift::Product" /* OpenAPI_Swift.framework */; };
-		OBJ_36 /* KKBOXOpenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* KKBOXOpenAPI.swift */; };
+		OBJ_24 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_30 /* OpenAPI_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* OpenAPI_SwiftTests.swift */; };
+		OBJ_32 /* KKBOXOpenAPISwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "KKBOXOpenAPISwift::KKBOXOpenAPISwift::Product" /* KKBOXOpenAPISwift.framework */; };
+		OBJ_39 /* KKBOXOpenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* KKBOXOpenAPI.swift */; };
+		OBJ_40 /* KKBOXOpenAPIPrivateTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* KKBOXOpenAPIPrivateTypes.swift */; };
+		OBJ_41 /* KKBOXOpenAPITypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* KKBOXOpenAPITypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D44D3C922018CD9200341BB4 /* PBXContainerItemProxy */ = {
+		D43FBE05201D92A40087C146 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = "OpenAPI-Swift::OpenAPI-Swift";
-			remoteInfo = "OpenAPI-Swift";
+			remoteGlobalIDString = "KKBOXOpenAPISwift::KKBOXOpenAPISwift";
+			remoteInfo = KKBOXOpenAPISwift;
 		};
-		D44D3C932018CD9200341BB4 /* PBXContainerItemProxy */ = {
+		D43FBE06201D92A50087C146 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = "OpenAPI-Swift::OpenAPI-SwiftTests";
-			remoteInfo = "OpenAPI-SwiftTests";
+			remoteGlobalIDString = "KKBOXOpenAPISwift::KKBOXOpenAPISwiftTests";
+			remoteInfo = KKBOXOpenAPISwiftTests;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D4E69D872018F051001881DA /* KKBOXOpenAPIPrivateTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKBOXOpenAPIPrivateTypes.swift; sourceTree = "<group>"; };
-		D4E69D8A2018F85C001881DA /* KKBOXOpenAPITypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKBOXOpenAPITypes.swift; sourceTree = "<group>"; };
-		OBJ_12 /* OpenAPI_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAPI_SwiftTests.swift; sourceTree = "<group>"; };
+		"KKBOXOpenAPISwift::KKBOXOpenAPISwift::Product" /* KKBOXOpenAPISwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KKBOXOpenAPISwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"KKBOXOpenAPISwift::KKBOXOpenAPISwiftTests::Product" /* KKBOXOpenAPISwiftTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = KKBOXOpenAPISwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_10 /* KKBOXOpenAPIPrivateTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKBOXOpenAPIPrivateTypes.swift; sourceTree = "<group>"; };
+		OBJ_11 /* KKBOXOpenAPITypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKBOXOpenAPITypes.swift; sourceTree = "<group>"; };
+		OBJ_14 /* OpenAPI_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAPI_SwiftTests.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* KKBOXOpenAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKBOXOpenAPI.swift; sourceTree = "<group>"; };
-		"OpenAPI-Swift::OpenAPI-Swift::Product" /* OpenAPI_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OpenAPI_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"OpenAPI-Swift::OpenAPI-SwiftTests::Product" /* OpenAPI_SwiftTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; name = OpenAPI_SwiftTests.xctest; path = "OpenAPI-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_28 /* Frameworks */ = {
+		OBJ_31 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_29 /* OpenAPI_Swift.framework in Frameworks */,
+				OBJ_32 /* KKBOXOpenAPISwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_37 /* Frameworks */ = {
+		OBJ_42 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
@@ -75,109 +75,110 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		OBJ_10 /* Tests */ = {
+		OBJ_12 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_11 /* OpenAPI-SwiftTests */,
+				OBJ_13 /* KKBOXOpenAPISwiftTests */,
 			);
 			name = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_11 /* OpenAPI-SwiftTests */ = {
+		OBJ_13 /* KKBOXOpenAPISwiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_12 /* OpenAPI_SwiftTests.swift */,
+				OBJ_14 /* OpenAPI_SwiftTests.swift */,
 			);
-			name = "OpenAPI-SwiftTests";
-			path = "Tests/OpenAPI-SwiftTests";
+			name = KKBOXOpenAPISwiftTests;
+			path = Tests/KKBOXOpenAPISwiftTests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_13 /* Products */ = {
+		OBJ_16 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				"OpenAPI-Swift::OpenAPI-SwiftTests::Product" /* OpenAPI_SwiftTests.xctest */,
-				"OpenAPI-Swift::OpenAPI-Swift::Product" /* OpenAPI_Swift.framework */,
+				"KKBOXOpenAPISwift::KKBOXOpenAPISwiftTests::Product" /* KKBOXOpenAPISwiftTests.xctest */,
+				"KKBOXOpenAPISwift::KKBOXOpenAPISwift::Product" /* KKBOXOpenAPISwift.framework */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 = {
+		OBJ_5 /*  */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
-				OBJ_10 /* Tests */,
-				OBJ_13 /* Products */,
+				OBJ_12 /* Tests */,
+				OBJ_16 /* Products */,
 			);
+			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_8 /* OpenAPI-Swift */,
+				OBJ_8 /* KKBOXOpenAPISwift */,
 			);
 			name = Sources;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_8 /* OpenAPI-Swift */ = {
+		OBJ_8 /* KKBOXOpenAPISwift */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_9 /* KKBOXOpenAPI.swift */,
-				D4E69D8A2018F85C001881DA /* KKBOXOpenAPITypes.swift */,
-				D4E69D872018F051001881DA /* KKBOXOpenAPIPrivateTypes.swift */,
+				OBJ_10 /* KKBOXOpenAPIPrivateTypes.swift */,
+				OBJ_11 /* KKBOXOpenAPITypes.swift */,
 			);
-			name = "OpenAPI-Swift";
-			path = "Sources/OpenAPI-Swift";
+			name = KKBOXOpenAPISwift;
+			path = Sources/KKBOXOpenAPISwift;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		"OpenAPI-Swift::OpenAPI-Swift" /* OpenAPI-Swift */ = {
+		"KKBOXOpenAPISwift::KKBOXOpenAPISwift" /* KKBOXOpenAPISwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_32 /* Build configuration list for PBXNativeTarget "OpenAPI-Swift" */;
+			buildConfigurationList = OBJ_35 /* Build configuration list for PBXNativeTarget "KKBOXOpenAPISwift" */;
 			buildPhases = (
-				OBJ_35 /* Sources */,
-				OBJ_37 /* Frameworks */,
+				OBJ_38 /* Sources */,
+				OBJ_42 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "OpenAPI-Swift";
-			productName = OpenAPI_Swift;
-			productReference = "OpenAPI-Swift::OpenAPI-Swift::Product" /* OpenAPI_Swift.framework */;
+			name = KKBOXOpenAPISwift;
+			productName = KKBOXOpenAPISwift;
+			productReference = "KKBOXOpenAPISwift::KKBOXOpenAPISwift::Product" /* KKBOXOpenAPISwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		"OpenAPI-Swift::OpenAPI-SwiftTests" /* OpenAPI-SwiftTests */ = {
+		"KKBOXOpenAPISwift::KKBOXOpenAPISwiftTests" /* KKBOXOpenAPISwiftTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_23 /* Build configuration list for PBXNativeTarget "OpenAPI-SwiftTests" */;
+			buildConfigurationList = OBJ_26 /* Build configuration list for PBXNativeTarget "KKBOXOpenAPISwiftTests" */;
 			buildPhases = (
-				OBJ_26 /* Sources */,
-				OBJ_28 /* Frameworks */,
+				OBJ_29 /* Sources */,
+				OBJ_31 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_30 /* PBXTargetDependency */,
+				OBJ_33 /* PBXTargetDependency */,
 			);
-			name = "OpenAPI-SwiftTests";
-			productName = OpenAPI_SwiftTests;
-			productReference = "OpenAPI-Swift::OpenAPI-SwiftTests::Product" /* OpenAPI_SwiftTests.xctest */;
+			name = KKBOXOpenAPISwiftTests;
+			productName = KKBOXOpenAPISwiftTests;
+			productReference = "KKBOXOpenAPISwift::KKBOXOpenAPISwiftTests::Product" /* KKBOXOpenAPISwiftTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		"OpenAPI-Swift::SwiftPMPackageDescription" /* OpenAPI-SwiftPackageDescription */ = {
+		"KKBOXOpenAPISwift::SwiftPMPackageDescription" /* KKBOXOpenAPISwiftPackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_17 /* Build configuration list for PBXNativeTarget "OpenAPI-SwiftPackageDescription" */;
+			buildConfigurationList = OBJ_20 /* Build configuration list for PBXNativeTarget "KKBOXOpenAPISwiftPackageDescription" */;
 			buildPhases = (
-				OBJ_20 /* Sources */,
+				OBJ_23 /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "OpenAPI-SwiftPackageDescription";
-			productName = "OpenAPI-SwiftPackageDescription";
+			name = KKBOXOpenAPISwiftPackageDescription;
+			productName = KKBOXOpenAPISwiftPackageDescription;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -188,70 +189,70 @@
 			attributes = {
 				LastUpgradeCheck = 9999;
 			};
-			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "OpenAPI-Swift" */;
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "KKBOXOpenAPISwift" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5;
-			productRefGroup = OBJ_13 /* Products */;
+			mainGroup = OBJ_5 /*  */;
+			productRefGroup = OBJ_16 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				"OpenAPI-Swift::SwiftPMPackageDescription" /* OpenAPI-SwiftPackageDescription */,
-				"OpenAPI-Swift::OpenAPI-SwiftTests" /* OpenAPI-SwiftTests */,
-				"OpenAPI-Swift::OpenAPI-Swift" /* OpenAPI-Swift */,
-				"OpenAPI-Swift::OpenAPI-SwiftPackageTests::ProductTarget" /* OpenAPI-SwiftPackageTests */,
+				"KKBOXOpenAPISwift::SwiftPMPackageDescription" /* KKBOXOpenAPISwiftPackageDescription */,
+				"KKBOXOpenAPISwift::KKBOXOpenAPISwiftTests" /* KKBOXOpenAPISwiftTests */,
+				"KKBOXOpenAPISwift::KKBOXOpenAPISwift" /* KKBOXOpenAPISwift */,
+				"KKBOXOpenAPISwift::KKBOXOpenAPISwiftPackageTests::ProductTarget" /* KKBOXOpenAPISwiftPackageTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_20 /* Sources */ = {
+		OBJ_23 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_21 /* Package.swift in Sources */,
+				OBJ_24 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_26 /* Sources */ = {
+		OBJ_29 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_27 /* OpenAPI_SwiftTests.swift in Sources */,
+				OBJ_30 /* OpenAPI_SwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_35 /* Sources */ = {
+		OBJ_38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				D4E69D892018F139001881DA /* KKBOXOpenAPIPrivateTypes.swift in Sources */,
-				D4E69D8C2018FAC1001881DA /* KKBOXOpenAPITypes.swift in Sources */,
-				OBJ_36 /* KKBOXOpenAPI.swift in Sources */,
+				OBJ_39 /* KKBOXOpenAPI.swift in Sources */,
+				OBJ_40 /* KKBOXOpenAPIPrivateTypes.swift in Sources */,
+				OBJ_41 /* KKBOXOpenAPITypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_30 /* PBXTargetDependency */ = {
+		OBJ_33 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = "OpenAPI-Swift::OpenAPI-Swift" /* OpenAPI-Swift */;
-			targetProxy = D44D3C922018CD9200341BB4 /* PBXContainerItemProxy */;
+			target = "KKBOXOpenAPISwift::KKBOXOpenAPISwift" /* KKBOXOpenAPISwift */;
+			targetProxy = D43FBE05201D92A40087C146 /* PBXContainerItemProxy */;
 		};
-		OBJ_42 /* PBXTargetDependency */ = {
+		OBJ_47 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = "OpenAPI-Swift::OpenAPI-SwiftTests" /* OpenAPI-SwiftTests */;
-			targetProxy = D44D3C932018CD9200341BB4 /* PBXContainerItemProxy */;
+			target = "KKBOXOpenAPISwift::KKBOXOpenAPISwiftTests" /* KKBOXOpenAPISwiftTests */;
+			targetProxy = D43FBE06201D92A50087C146 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		OBJ_18 /* Debug */ = {
+		OBJ_21 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
@@ -260,7 +261,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_19 /* Release */ = {
+		OBJ_22 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
@@ -269,7 +270,7 @@
 			};
 			name = Release;
 		};
-		OBJ_24 /* Debug */ = {
+		OBJ_27 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -278,16 +279,16 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "OpenAPI-Swift.xcodeproj/OpenAPI_SwiftTests_Info.plist";
+				INFOPLIST_FILE = KKBOXOpenAPISwift.xcodeproj/KKBOXOpenAPISwiftTests_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				SWIFT_VERSION = 4.0;
-				TARGET_NAME = "OpenAPI-SwiftTests";
+				TARGET_NAME = KKBOXOpenAPISwiftTests;
 			};
 			name = Debug;
 		};
-		OBJ_25 /* Release */ = {
+		OBJ_28 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -296,12 +297,12 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "OpenAPI-Swift.xcodeproj/OpenAPI_SwiftTests_Info.plist";
+				INFOPLIST_FILE = KKBOXOpenAPISwift.xcodeproj/KKBOXOpenAPISwiftTests_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				SWIFT_VERSION = 4.0;
-				TARGET_NAME = "OpenAPI-SwiftTests";
+				TARGET_NAME = KKBOXOpenAPISwiftTests;
 			};
 			name = Release;
 		};
@@ -327,7 +328,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_33 /* Debug */ = {
+		OBJ_36 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -336,20 +337,20 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "OpenAPI-Swift.xcodeproj/OpenAPI_Swift_Info.plist";
+				INFOPLIST_FILE = KKBOXOpenAPISwift.xcodeproj/KKBOXOpenAPISwift_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "OpenAPI-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = KKBOXOpenAPISwift;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
-				TARGET_NAME = "OpenAPI-Swift";
+				TARGET_NAME = KKBOXOpenAPISwift;
 			};
 			name = Debug;
 		};
-		OBJ_34 /* Release */ = {
+		OBJ_37 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -358,16 +359,16 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "OpenAPI-Swift.xcodeproj/OpenAPI_Swift_Info.plist";
+				INFOPLIST_FILE = KKBOXOpenAPISwift.xcodeproj/KKBOXOpenAPISwift_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "OpenAPI-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = KKBOXOpenAPISwift;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
-				TARGET_NAME = "OpenAPI-Swift";
+				TARGET_NAME = KKBOXOpenAPISwift;
 			};
 			name = Release;
 		};
@@ -391,13 +392,13 @@
 			};
 			name = Release;
 		};
-		OBJ_40 /* Debug */ = {
+		OBJ_45 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 			};
 			name = Debug;
 		};
-		OBJ_41 /* Release */ = {
+		OBJ_46 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 			};
@@ -406,16 +407,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		OBJ_17 /* Build configuration list for PBXNativeTarget "OpenAPI-SwiftPackageDescription" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_18 /* Debug */,
-				OBJ_19 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		OBJ_2 /* Build configuration list for PBXProject "OpenAPI-Swift" */ = {
+		OBJ_2 /* Build configuration list for PBXProject "KKBOXOpenAPISwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_3 /* Debug */,
@@ -424,29 +416,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_23 /* Build configuration list for PBXNativeTarget "OpenAPI-SwiftTests" */ = {
+		OBJ_20 /* Build configuration list for PBXNativeTarget "KKBOXOpenAPISwiftPackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_24 /* Debug */,
-				OBJ_25 /* Release */,
+				OBJ_21 /* Debug */,
+				OBJ_22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_32 /* Build configuration list for PBXNativeTarget "OpenAPI-Swift" */ = {
+		OBJ_26 /* Build configuration list for PBXNativeTarget "KKBOXOpenAPISwiftTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_33 /* Debug */,
-				OBJ_34 /* Release */,
+				OBJ_27 /* Debug */,
+				OBJ_28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_39 /* Build configuration list for PBXAggregateTarget "OpenAPI-SwiftPackageTests" */ = {
+		OBJ_35 /* Build configuration list for PBXNativeTarget "KKBOXOpenAPISwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_40 /* Debug */,
-				OBJ_41 /* Release */,
+				OBJ_36 /* Debug */,
+				OBJ_37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_44 /* Build configuration list for PBXAggregateTarget "KKBOXOpenAPISwiftPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_45 /* Debug */,
+				OBJ_46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

@@ -1,6 +1,6 @@
 import XCTest
-@testable import OpenAPI_SwiftTests
+@testable import KKBOXOpenAPISwiftTests
 
 XCTMain([
-    testCase(OpenAPI_SwiftTests.allTests),
+    testCase(KKBOXOpenAPISwiftTests.allTests),
 ])

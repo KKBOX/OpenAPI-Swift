@@ -5,9 +5,9 @@
 //
 
 import XCTest
-@testable import OpenAPI_Swift
+@testable import KKBOXOpenAPISwift
 
-class OpenAPI_SwiftTests: XCTestCase {
+class KKBOXOpenAPISwiftTest: XCTestCase {
 	var API: KKBOXOpenAPI!
 
 	override func setUp() {

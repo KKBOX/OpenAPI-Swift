@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "9999"
+   LastUpgradeVersion = "0920"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OpenAPI-Swift::OpenAPI-Swift"
-               BuildableName = "OpenAPI_Swift.framework"
-               BlueprintName = "OpenAPI-Swift"
-               ReferencedContainer = "container:OpenAPI-Swift.xcodeproj">
+               BlueprintIdentifier = "KKBOXOpenAPISwift::KKBOXOpenAPISwift"
+               BuildableName = "KKBOXOpenAPISwift.framework"
+               BlueprintName = "KKBOXOpenAPISwift"
+               ReferencedContainer = "container:KKBOXOpenAPISwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,16 +29,6 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OpenAPI-Swift::OpenAPI-SwiftTests"
-               BuildableName = "OpenAPI-SwiftTests.xctest"
-               BlueprintName = "OpenAPI-SwiftTests"
-               ReferencedContainer = "container:OpenAPI-Swift.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <AdditionalOptions>
       </AdditionalOptions>
@@ -57,10 +47,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "OpenAPI-Swift::OpenAPI-Swift"
-            BuildableName = "OpenAPI_Swift.framework"
-            BlueprintName = "OpenAPI-Swift"
-            ReferencedContainer = "container:OpenAPI-Swift.xcodeproj">
+            BlueprintIdentifier = "KKBOXOpenAPISwift::KKBOXOpenAPISwift"
+            BuildableName = "KKBOXOpenAPISwift.framework"
+            BlueprintName = "KKBOXOpenAPISwift"
+            ReferencedContainer = "container:KKBOXOpenAPISwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -72,6 +62,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "KKBOXOpenAPISwift::KKBOXOpenAPISwift"
+            BuildableName = "KKBOXOpenAPISwift.framework"
+            BlueprintName = "KKBOXOpenAPISwift"
+            ReferencedContainer = "container:KKBOXOpenAPISwift.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

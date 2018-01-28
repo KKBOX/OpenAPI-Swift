@@ -67,7 +67,7 @@ let package = Package(
         .executable(name: "KKBOXOpenAPI-test", targets: ["YourTargetName"])
     ],
     dependencies: [
-        .package(url: "https://github.com/KKBOX/OpenAPI-Swift", .upToNextMinor(from: "1.1.1"))
+        .package(url: "https://github.com/KKBOX/OpenAPI-Swift", .upToNextMinor(from: "1.1.2"))
     ],
     targets: [
         .target(name: "YourTargetName", dependencies: ["OpenAPI-Swift"], path: "./Path/To/Your/Sources")

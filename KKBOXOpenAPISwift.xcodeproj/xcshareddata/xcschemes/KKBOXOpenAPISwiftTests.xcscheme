@@ -17,10 +17,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OpenAPI-Swift::OpenAPI-SwiftTests"
-               BuildableName = "OpenAPI-SwiftTests.xctest"
-               BlueprintName = "OpenAPI-SwiftTests"
-               ReferencedContainer = "container:OpenAPI-Swift.xcodeproj">
+               BlueprintIdentifier = "KKBOXOpenAPISwift::KKBOXOpenAPISwiftTests"
+               BuildableName = "KKBOXOpenAPISwiftTests.xctest"
+               BlueprintName = "KKBOXOpenAPISwiftTests"
+               ReferencedContainer = "container:KKBOXOpenAPISwift.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
