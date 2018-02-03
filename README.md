@@ -1,7 +1,5 @@
 # KKBOX Open API Swift Developer SDK for iOS/macOS/watchOS/tvOS
 
-Copyright © 2018 KKBOX All Rights Reserved.
-
 [![build](https://travis-ci.org/KKBOX/OpenAPI-Swift.svg?branch=master)](https://travis-ci.org/KKBOX/OpenAPI-Swift)&nbsp;
 [![License Apache](https://img.shields.io/badge/license-Apache-green.svg?style=flat)](https://raw.githubusercontent.com/KKBOX/OpenAPI-Swift/master/LICENSE)&nbsp;
 [![CocoaPods](http://img.shields.io/cocoapods/v/KKBOXOpenAPISwift.svg?style=flat)](http://cocoapods.org/pods/KKBOXOpenAPISwift)&nbsp;
