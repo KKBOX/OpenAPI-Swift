@@ -642,6 +642,8 @@ extension KKBOXOpenAPI {
 
 	/// Fetch charts.
 	///
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#charts).
+	///
 	/// - Parameters:
 	///   - territory: The Territory.
 	///   - offset: The offset. 0 by default.
@@ -660,6 +662,8 @@ extension KKBOXOpenAPI {
 	//MARK: Search
 
 	/// Search in KKBOX's music library.
+	///
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#search).
 	///
 	/// - Parameters:
 	///   - keyword: The search keyword.
