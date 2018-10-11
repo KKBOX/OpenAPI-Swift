@@ -45,14 +45,14 @@ public struct KKAccessToken: Codable {
 /// - taiwan: Taiwan
 /// - hongkong: HongKong
 /// - singapore: Singapore
-/// - maylaysia: Maylaysia
+/// - malaysia: Maylaysia
 /// - japan: Japan
 /// - thailand: Thailand
 public enum KKTerritory: String, Codable {
 	case taiwan = "TW"
 	case hongkong = "HK"
 	case singapore = "SG"
-	case maylaysia = "MY"
+	case malaysia = "MY"
 	case japan = "JP"
 	case thailand = "TH"
 
