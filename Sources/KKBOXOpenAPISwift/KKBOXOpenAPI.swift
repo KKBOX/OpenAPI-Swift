@@ -752,6 +752,14 @@ extension KKBOXOpenAPI {
 				}
 				return
 			}
+			let code = (response as? HTTPURLResponse)?.statusCode ?? 200
+			if code != 200 {
+				let error = NSError(domain: KKErrorDomain, code: code, userInfo: [NSLocalizedDescriptionKey : "API call failed with status code \(code)"])
+				DispatchQueue.main.async {
+					callback(.error(error))
+				}
+			}
+
 			guard let data = data else {
 				DispatchQueue.main.async {
 					callback(.error(KKBOXOpenAPIError.invalidResponse))
