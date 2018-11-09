@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "KKBOXOpenAPISwift"
-  s.version          = "1.1.3"
+  s.version          = "1.1.4"
   s.license          = {:type => 'Apache 2.0', :file => "LICENSE.txt"}
   s.summary          = "KKBOX's Open API SDK for iOS, macOS, watchOS and tvOS in Swift."
   s.description   = <<-DESC
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
   s.osx.deployment_target = '10.9'
   s.tvos.deployment_target = '9.0'
-  s.watchos.deployment_target = '2.0' 
+  s.watchos.deployment_target = '2.0'
   s.requires_arc     = true
   s.source_files     = 'Sources/KKBOXOpenAPISwift/*.swift'
   s.ios.frameworks   = 'UIKit'
