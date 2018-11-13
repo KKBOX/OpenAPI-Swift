@@ -4,7 +4,7 @@ dist: trusty
 osx_image: xcode10.1
 before_install:
   - gem install xcov
-  - gem install fastlane
+  - gem update fastlane
 script:
   - swift package generate-xcodeproj
   - xcodebuild test -scheme KKBOXOpenAPISwift-Package -enableCodeCoverage YES
