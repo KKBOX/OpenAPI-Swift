@@ -758,6 +758,7 @@ extension KKBOXOpenAPI {
 				DispatchQueue.main.async {
 					callback(.error(error))
 				}
+				return
 			}
 
 			guard let data = data else {

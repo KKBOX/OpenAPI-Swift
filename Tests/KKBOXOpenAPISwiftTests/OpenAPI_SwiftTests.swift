@@ -12,7 +12,8 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 
 	override func setUp() {
 		super.setUp()
-		self.API = KKBOXOpenAPI(clientID: "5fd35360d795498b6ac424fc9cb38fe7", secret: "8bb68d0d1c2b483794ee1a978c9d0b5d")
+		self.API = KKBOXOpenAPI(clientID: "2074348baadf2d445980625652d9a54f", secret: "ac731b44fb2cf1ea766f43b5a65e82b8")
+		self.fetchCredential()
 	}
 
 	func testFetchWithInvalidCredential() {
@@ -22,7 +23,7 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 			exp.fulfill()
 			switch result {
 			case .error(let error):
-				XCTAssertTrue(error.localizedDescription == "invalid_client", "\(error.localizedDescription)")
+				XCTAssertTrue((error as NSError).code == 401)
 			case .success(_):
 				XCTFail("It is not possible.")
 			}
@@ -30,10 +31,12 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 		self.wait(for: [exp], timeout: 3)
 	}
 
-	func testFetchCredential() {
-		let exp = self.expectation(description: "testFetchCredential")
+	func fetchCredential() {
+//		if self.API.isLoggedIn {
+//			return
+//		}
+		let exp = self.expectation(description: "fetchCredential")
 		_ = try? self.API.fetchAccessTokenByClientCredential { result in
-			exp.fulfill()
 			switch result {
 			case .error(let error):
 				XCTFail(error.localizedDescription)
@@ -42,6 +45,7 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 				XCTAssertTrue(response.expiresIn > 0)
 				XCTAssertTrue(response.tokenType?.count ?? 0 > 0)
 			}
+			exp.fulfill()
 		}
 		self.wait(for: [exp], timeout: 3)
 	}
@@ -100,7 +104,7 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	//MARK: -
 
 	func testFetchTrack() {
-		self.testFetchCredential()
+
 		let exp = self.expectation(description: "testFetchTrack")
 		_ = try? self.API.fetch(track: "4kxvr3wPWkaL9_y3o_") { result in
 			exp.fulfill()
@@ -115,14 +119,14 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchInvalidTrack() {
-		self.testFetchCredential()
+
 		let exp = self.expectation(description: "testFetchInvalidTrack")
 		_ = try? self.API.fetch(track: "11111") { result in
 			exp.fulfill()
 			switch result {
 			case .error(let error):
 				XCTAssertNotNil(error)
-				XCTAssertTrue(error.localizedDescription == "Resource does not exist")
+				XCTAssertTrue((error as NSError).code == 404)
 			case .success(_):
 				XCTFail()
 			}
@@ -131,7 +135,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchAlbum() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchAlbum")
 		_ = try? self.API.fetch(album: "WpTPGzNLeutVFHcFq6") { result in
 			exp.fulfill()
@@ -146,14 +149,13 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchInvalidAlbum() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchInvalidAlbum")
 		_ = try? self.API.fetch(album: "11111") { result in
 			exp.fulfill()
 			switch result {
 			case .error(let error):
 				XCTAssertNotNil(error)
-				XCTAssertTrue(error.localizedDescription == "Resource does not exist")
+				XCTAssertTrue((error as NSError).code == 404)
 			case .success(_):
 				XCTFail()
 			}
@@ -162,7 +164,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchTracksInAlbum() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchTracksInAlbum")
 		_ = try? self.API.fetch(tracksInAlbum: "WpTPGzNLeutVFHcFq6") { result in
 			exp.fulfill()
@@ -183,14 +184,13 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchTracksInInvalidAlbum() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchTracksInInvalidAlbum")
 		_ = try? self.API.fetch(tracksInAlbum: "1111111") { result in
 			exp.fulfill()
 			switch result {
 			case .error(let error):
 				XCTAssertNotNil(error)
-				XCTAssertTrue(error.localizedDescription == "Resource does not exist")
+				XCTAssertTrue((error as NSError).code == 404)
 			case .success(_):
 				XCTFail()
 			}
@@ -199,7 +199,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchArtist() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchArtist")
 		_ = try? self.API.fetch(artist: "8q3_xzjl89Yakn_7GB") { result in
 			exp.fulfill()
@@ -214,7 +213,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchAlbumsOfArtist() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchAlbumsOfArtist")
 		_ = try? self.API.fetch(albumsBelongToArtist: "8q3_xzjl89Yakn_7GB") { result in
 			exp.fulfill()
@@ -235,7 +233,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchTopTracksOfArtist() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchTopTracksOfArtist")
 		_ = try? self.API.fetch(topTracksOfArtist: "8q3_xzjl89Yakn_7GB") { result in
 			exp.fulfill()
@@ -256,7 +253,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchRelatedArtists() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchRelatedArtists")
 		_ = try? self.API.fetch(relatedArtistsOfArtist: "8q3_xzjl89Yakn_7GB") { result in
 			exp.fulfill()
@@ -277,7 +273,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchPlaylist() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchPlaylist")
 		_ = try? self.API.fetch(playlist: "OsyceCHOw-NvK5j6Vo") {
 			result in
@@ -299,7 +294,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchTracksInPlaylist() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchTracksInPlaylist")
 		_ = try? self.API.fetch(tracksInPlaylist: "OsyceCHOw-NvK5j6Vo") { result in
 			exp.fulfill()
@@ -320,7 +314,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchFeaturedPlaylists() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchFeaturedPlaylists")
 		_ = try? self.API.fetchFeaturedPlaylists { result in
 			exp.fulfill()
@@ -340,7 +333,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchNewHitsPlaylists() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchNewHitsPlaylists")
 		_ = try? self.API.fetchNewHitsPlaylists { result in
 			exp.fulfill()
@@ -360,7 +352,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchFeaturedPlaylistCategories() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchFeaturedPlaylistCategories")
 		_ = try? self.API.fetchFeaturedPlaylistCategories() { result in
 			exp.fulfill()
@@ -383,7 +374,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchFeaturedPlaylistInCategory() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchFeaturedPlaylistInCategory")
 		_ = try? self.API.fetchFeaturedPlaylist(inCategory: "CrBHGk1J1KEsQlPLoz") { result in
 			exp.fulfill()
@@ -405,7 +395,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchMoodStations() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchMoodStations")
 		_ = try? self.API.fetchMoodStations() { result in
 			exp.fulfill()
@@ -427,7 +416,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchTracksInMoodStation() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchTracksInMoodStation")
 		_ = try? self.API.fetch(tracksInMoodStation: "4tmrBI125HMtMlO9OF") { result in
 			exp.fulfill()
@@ -451,7 +439,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchGenreStations() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchGenreStations")
 		_ = try? self.API.fetchGenreStations() { result in
 			exp.fulfill()
@@ -472,7 +459,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchTracksInGenreStation() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchTracksInGenreStation")
 		_ = try? self.API.fetch(tracksInGenreStation: "9ZAb9rkyd3JFDBC0wF") { result in
 			exp.fulfill()
@@ -495,7 +481,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchNewReleaseAlbumsCategories() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchNewReleaseAlbumsCategories")
 		_ = try? self.API.fetchNewReleaseAlbumsCategories() { result in
 			exp.fulfill()
@@ -517,7 +502,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchNewReleaseAlbumsUnderCategory() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchNewReleaseAlbumsUnderCategory")
 		_ = try? self.API.fetch(newReleasedAlbumsUnderCategory: "0pGAIGDf5SqYh_SyHr") { result in
 			exp.fulfill()
@@ -544,7 +528,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testFetchCharts() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testFetchCharts")
 		_ = try? self.API.fetchCharts() { result in
 			exp.fulfill()
@@ -562,7 +545,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testSearchAll() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testSearchAll")
 		let types: KKSearchType =  [
 			KKSearchType.track,
@@ -587,7 +569,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testSearch1() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testSearchAll")
 		let types: KKSearchType =  [
 			KKSearchType.track,
@@ -612,7 +593,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testSearch2() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testSearchAll")
 		let types: KKSearchType =  [
 //			KKSearchType.track,
@@ -637,7 +617,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testSearch3() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testSearchAll")
 		let types: KKSearchType =  [
 //			KKSearchType.track,
@@ -662,7 +641,6 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	func testSearch4() {
-		self.testFetchCredential()
 		let exp = self.expectation(description: "testSearchAll")
 		let types: KKSearchType =  [
 //			KKSearchType.track,
@@ -687,7 +665,7 @@ class KKBOXOpenAPISwiftTest: XCTestCase {
 	}
 
 	static var allTests = [
-		("testFetchCredential", testFetchCredential),
+		("fetchCredential", fetchCredential),
 		("testFetchWithInvalidCredential", testFetchWithInvalidCredential),
 		("testFetchTrack", testFetchTrack),
 		("testFetchAlbum", testFetchAlbum),

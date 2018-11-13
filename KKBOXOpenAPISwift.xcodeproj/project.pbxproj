@@ -48,7 +48,7 @@
 
 /* Begin PBXFileReference section */
 		"KKBOXOpenAPISwift::KKBOXOpenAPISwift::Product" /* KKBOXOpenAPISwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KKBOXOpenAPISwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"KKBOXOpenAPISwift::KKBOXOpenAPISwiftTests::Product" /* KKBOXOpenAPISwiftTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = KKBOXOpenAPISwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"KKBOXOpenAPISwift::KKBOXOpenAPISwiftTests::Product" /* KKBOXOpenAPISwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = KKBOXOpenAPISwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* KKBOXOpenAPIPrivateTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKBOXOpenAPIPrivateTypes.swift; sourceTree = "<group>"; };
 		OBJ_11 /* KKBOXOpenAPITypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKBOXOpenAPITypes.swift; sourceTree = "<group>"; };
 		OBJ_14 /* OpenAPI_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAPI_SwiftTests.swift; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -109,7 +109,6 @@
 				OBJ_12 /* Tests */,
 				OBJ_16 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -188,6 +187,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 9999;
+				TargetAttributes = {
+					"KKBOXOpenAPISwift::KKBOXOpenAPISwift" = {
+						LastSwiftMigration = 1010;
+					};
+					"KKBOXOpenAPISwift::KKBOXOpenAPISwiftTests" = {
+						LastSwiftMigration = 1010;
+					};
+				};
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "KKBOXOpenAPISwift" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -196,7 +203,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_16 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -283,7 +290,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = KKBOXOpenAPISwiftTests;
 			};
 			name = Debug;
@@ -301,7 +308,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = KKBOXOpenAPISwiftTests;
 			};
 			name = Release;
@@ -345,7 +352,7 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = KKBOXOpenAPISwift;
 			};
 			name = Debug;
@@ -367,7 +374,7 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = KKBOXOpenAPISwift;
 			};
 			name = Release;
