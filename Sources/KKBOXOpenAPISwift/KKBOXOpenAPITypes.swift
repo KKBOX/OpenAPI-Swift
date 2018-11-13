@@ -357,7 +357,7 @@ public struct KKRadioStationList: Codable {
 public struct KKSearchResults: Codable {
 	/// Track search results.
 	public internal(set) var trackResults: KKTrackList?
-	/// ALbum search results.
+	/// Album search results.
 	public internal(set) var albumResults: KKAlbumList?
 	/// Artist search results.
 	public internal(set) var artistResults: KKArtistList?
