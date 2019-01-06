@@ -30,7 +30,7 @@ public struct KKAccessToken: Codable {
 	/// Type of the access token.
 	public private(set) var tokenType: String?
 	/// Scope of the access token.
-	public private(set) var scope: String?
+	public private(set) var scope: KKScope?
 
 	private enum CodingKeys: String, CodingKey {
 		case accessToken = "access_token"
@@ -38,6 +38,16 @@ public struct KKAccessToken: Codable {
 		case tokenType = "token_type"
 		case scope = "scope"
 	}
+
+	public init(from decoder: Decoder) throws {
+		let values = try decoder.container(keyedBy: CodingKeys.self)
+		accessToken = try values.decode(String.self, forKey: .accessToken)
+		expiresIn = try values.decode(TimeInterval.self, forKey: .expiresIn)
+		tokenType = try values.decode(String.self, forKey: .tokenType)
+		let scopeString = try values.decode(String.self, forKey: .tokenType)
+		scope = KKScope(string: scopeString)
+	}
+
 }
 
 /// The territory that KKBOX provides services.
@@ -47,14 +57,17 @@ public struct KKAccessToken: Codable {
 /// - singapore: Singapore
 /// - malaysia: Malaysia
 /// - japan: Japan
-/// - thailand: Thailand
 public enum KKTerritory: String, Codable {
+	/// Taiwan
 	case taiwan = "TW"
+	/// Hong Kong
 	case hongkong = "HK"
+	/// Songapore
 	case singapore = "SG"
+	/// Malaysia
 	case malaysia = "MY"
+	/// Japan
 	case japan = "JP"
-	case thailand = "TH"
 
 	fileprivate func toString() -> String {
 		return self.rawValue
@@ -96,16 +109,45 @@ public struct KKSearchType: OptionSet {
 	}
 }
 
-public struct KKScope: OptionSet {
+/// The scope of your client ID.
+public struct KKScope: OptionSet, Codable {
 	public init(rawValue: Int) {
 		self.rawValue = rawValue
 	}
 
+	fileprivate init(string: String) {
+		if (string == "all") {
+			self = KKScope.all
+			return
+		}
+		var scope: Int = 0
+		let components = string.split(separator: ",")
+		for component in components {
+			switch component {
+			case "user_profile":
+				scope |= KKScope.userProfile.rawValue
+			case "user_territory":
+				scope |= KKScope.userTerritory.rawValue
+			case "user_account_status":
+				scope |= KKScope.userAccountStatus.rawValue
+			default:
+				break
+			}
+		}
+		self = KKScope(rawValue: scope)
+	}
+
+
 	public let rawValue: Int
+	/// Your client does not request any additional permission.
 	public static let none = KKScope(rawValue: 0)
+	/// Your client requests the permission to access user profiles.
 	public static let userProfile = KKScope(rawValue: 1 << 0)
+	/// Your client requests the permission to access the territory where users are at.
 	public static let userTerritory = KKScope(rawValue: 1 << 1)
+	/// Your client requests the permission to access the status of accounts.
 	public static let userAccountStatus = KKScope(rawValue: 1 << 2)
+	/// Your client requests all permissions.
 	public static let all: KKScope = [.userProfile, .userTerritory, .userAccountStatus]
 
 	fileprivate func toString() -> String {
@@ -132,10 +174,13 @@ public struct KKScope: OptionSet {
 /// - error: the API returns an error with an error object.
 /// - success: the API is successfully called and return an object.
 public enum KKAPIResult<T> {
+	/// The API is successfully called and return an object.
 	case success(T)
+	/// the API returns an error with an error object.
 	case error(Error)
 }
 
+/// Errors used in KKBOX Open API SDK.
 public enum KKBOXOpenAPIError: Error, LocalizedError {
 	/// Failed to create a client credential
 	case failedToCreateClientCredential
@@ -156,6 +201,7 @@ public enum KKBOXOpenAPIError: Error, LocalizedError {
 	}
 }
 
+/// Additioanl nitifications
 extension Notification.Name {
 	/// Notification for obtaining an access token.
 	static let KKBOXOpenAPIDidLogin = Notification.Name("KKBOXOpenAPIDidLogin")
@@ -183,7 +229,7 @@ public class KKBOXOpenAPI {
 	///   - clientID: A valid client ID
 	///   - secret: A valid client Secret
 	///   - scope: Scope of the client.
-	public init(clientID: String, secret: String, scope: KKScope = .all) {
+	public init(clientID: String, secret: String, scope: KKScope = .none) {
 		self.clientID = clientID
 		self.clientSecret = secret
 		self.requestScope = scope
@@ -193,8 +239,8 @@ public class KKBOXOpenAPI {
 	private var clientID: String
 	private var clientSecret: String
 
-	/// Scope of the client. It is KKScope.userProfile by default.
-	public var requestScope: KKScope = .all
+	/// Scope of the client. It is `KKScope.none` by default.
+	public var requestScope: KKScope = .none
 	/// The current access token.
 	public private(set) var accessToken: KKAccessToken? {
 		didSet {
@@ -205,6 +251,8 @@ public class KKBOXOpenAPI {
 			}
 		}
 	}
+	/// MARK: - Authetication
+
 	/// If the user has logged-in into KKBOX or not.
 	public var isLoggedIn: Bool {
 		return accessToken != nil
@@ -297,7 +345,7 @@ extension KKBOXOpenAPI {
 
 	/// Fetch an album by giving an album ID.
 	///
-	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#albums-album_id).
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#albums_album_id).
 	///
 	/// - Parameters:
 	///   - ID: ID of the album.
@@ -313,7 +361,7 @@ extension KKBOXOpenAPI {
 
 	/// Fetch tracks contained in an album.
 	///
-	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#albums-album_id-tracks).
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#albums_album_id_tracks).
 	///
 	/// - Parameters:
 	///   - ID: ID of the album.
@@ -334,7 +382,7 @@ extension KKBOXOpenAPI {
 
 	/// Fetch the profile by giving an artist ID.
 	///
-	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#artists-artist_id).
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#artists_artist_id).
 	///
 	/// - Parameters:
 	///   - ID: ID of the artist.
@@ -350,7 +398,7 @@ extension KKBOXOpenAPI {
 
 	/// Fetch albums of an artist.
 	///
-	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#artists-artist_id-albums).
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#artists_artist_id_albums).
 	///
 	/// - Parameters:
 	///   - ID: ID of the artist.
@@ -368,7 +416,7 @@ extension KKBOXOpenAPI {
 
 	/// Fetch top tracks of an artist.
 	///
-	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#artists-artist_id-toptracks).
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#artists_artist_id_top-tracks).
 	///
 	/// - Parameters:
 	///   - ID: ID of the artist.
@@ -386,7 +434,7 @@ extension KKBOXOpenAPI {
 
 	/// Fetch related artists of an artist.
 	///
-	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#artists-artist_id-relatedartists).
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#artists_artist_id_related-artists).
 	///
 	/// - Parameters:
 	///   - ID: ID of the artist.
@@ -408,7 +456,7 @@ extension KKBOXOpenAPI {
 
 	/// Fetch a playlist's metadata and tracks by giving the playlist ID
 	///
-	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#sharedplaylists-playlist_id).
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#shared-playlists_playlist_id).
 	///
 	/// - Parameters:
 	///   - ID: The playlist ID.
@@ -424,7 +472,7 @@ extension KKBOXOpenAPI {
 
 	/// Fetch tracks contained in a playlist.
 	///
-	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#sharedplaylists-playlist_id-tracks).
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#shared-playlists_playlist_id_tracks).
 	///
 	/// - Parameters:
 	///   - ID: The playlist ID.
@@ -446,7 +494,7 @@ extension KKBOXOpenAPI {
 
 	/// Fetch the featured playlists.
 	///
-	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#featuredplaylists).
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#featured-playlists).
 	///
 	/// - Parameters:
 	///   - territory: The Territory.
@@ -467,7 +515,7 @@ extension KKBOXOpenAPI {
 
 	/// Fetch the New-Hits playlists.
 	///
-	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#newhitsplaylists).
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#new-hits-playlists).
 	///
 	/// - Parameters:
 	///   - territory: The Territory.
@@ -488,7 +536,7 @@ extension KKBOXOpenAPI {
 
 	/// Fetch featured playlist categories.
 	///
-	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#featuredplaylistcategories-category_id).
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#featured-playlist-categories).
 	///
 	/// - Parameters:
 	///   - territory: The Territory.
@@ -505,7 +553,7 @@ extension KKBOXOpenAPI {
 
 	/// Fetch featured playlists in a category.
 	///
-	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#featuredplaylistcategories-category_id-playlists).
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#featured-playlist-categories_category_id).
 	///
 	/// - Parameters:
 	///   - ID: The category ID.
@@ -527,7 +575,7 @@ extension KKBOXOpenAPI {
 
 	/// Fetch mood station categories.
 	///
-	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#moodstations).
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#mood-stations).
 	///
 	/// - Parameters:
 	///   - territory: The Territory.
@@ -544,7 +592,7 @@ extension KKBOXOpenAPI {
 
 	/// Fetch tracks in a mood radio station.
 	///
-	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#moodstations-station_id).
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#mood-stations_station_id).
 	///
 	/// - Parameters:
 	///   - ID: Mood station ID
@@ -564,7 +612,7 @@ extension KKBOXOpenAPI {
 
 	/// Fetch genre station categories.
 	///
-	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#genrestations).
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#genre-stations).
 	///
 	/// - Parameters:
 	///   - territory: The Territory.
@@ -581,7 +629,7 @@ extension KKBOXOpenAPI {
 
 	/// Fetch tracks in a genre radio station.
 	///
-	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#genrestations-station_id).
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#genre-stations_station_id).
 	///
 	/// - Parameters:
 	///   - ID: Genre station ID
@@ -603,7 +651,7 @@ extension KKBOXOpenAPI {
 
 	/// Fetch the categories of the new released albums.
 	///
-	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#newreleasecategories).
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#new-release-categories).
 	///
 	/// - Parameters:
 	///   - territory: The Territory.
@@ -620,7 +668,7 @@ extension KKBOXOpenAPI {
 
 	/// Fetch albums in a given new released albums category.
 	///
-	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#newreleasecategories-category_id).
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#new-release-categories_category_id).
 	///
 	/// - Parameters:
 	///   - ID: The category ID.
