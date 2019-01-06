@@ -354,6 +354,7 @@ public struct KKRadioStationList: Codable {
 
 //MARK: -
 
+/// Represents the search results. See `KKBOXOpenAPI.search(with:types:territory:offset:limit:callback:)`.
 public struct KKSearchResults: Codable {
 	/// Track search results.
 	public internal(set) var trackResults: KKTrackList?

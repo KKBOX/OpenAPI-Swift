@@ -251,7 +251,7 @@ public class KKBOXOpenAPI {
 			}
 		}
 	}
-	/// MARK: - Authetication
+	/// MARK: - Authentication
 
 	/// If the user has logged-in into KKBOX or not.
 	public var isLoggedIn: Bool {

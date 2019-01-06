@@ -8,23 +8,21 @@
 [![Support](https://img.shields.io/badge/watchOS-2-blue.svg)](https://www.apple.com/tw/watchos)&nbsp;
 [![Support](https://img.shields.io/badge/tvOS-9-blue.svg)](https://www.apple.com/tw/tvos)&nbsp;
 
-KKBOX's Open API provides various data from KKBOX's rich music
-archive. It helps you to access data about KKBOX's song tracks,
-albums, artist playlist and so on.
+KKBOX's Open API provides various data from KKBOX's rich music archive. It helps
+you to access data about KKBOX's song tracks, albums, artist playlist and so on.
 
-This is a pure Swift implementation of a client to access KKBOX's Open
-API. You can easily integrate the SDK into your iOS/macOS/watchOS/tvOS
-project using Swift Package Manager or CocoaPods.
+This is a pure Swift implementation of a client to access KKBOX's Open API. You
+can easily integrate the SDK into your iOS/macOS/watchOS/tvOS project using
+Swift Package Manager or CocoaPods.
 
-The SDK leverages lots of powerful features of Swift programming
-language, such as wrapping API responses into enums, and the JSON
-encoder / decoder since Swift 4.
+The SDK leverages lots of powerful features of Swift programming language, such
+as wrapping API responses into enums, and the JSON encoder / decoder since Swift
+4.
 
-On the other hand, the SDK could not be called in your Objective-C
-code directly. If you need to work with KKBOX's Open API in your
-Objective-C code, you may need to wrap the SDK in your own bridging
-code, or, you may want to take a look of KKBOX's
-[Objective-C SDK](https://github.com/KKBOX/OpenAPI-ObjectiveC)
+On the other hand, the SDK could not be called in your Objective-C code
+directly. If you need to work with KKBOX's Open API in your Objective-C code,
+you may need to wrap the SDK in your own bridging code, or, you may want to take
+a look of KKBOX's [Objective-C SDK](https://github.com/KKBOX/OpenAPI-ObjectiveC)
 
 For further information, please visit
 [KKBOX Developer Site](https://docs-en.kkbox.codes).
@@ -33,16 +31,16 @@ For further information, please visit
 
 The SDK supports
 
-- Swift 4
+- Swift 4.2
 - 📱 iOS 9.x or above
 - 💻 Mac OS X 10.10 or above
 - ⌚️ watchOS 2.x or above
 - 📺 tvOS 9.x or above
 
-Ths SDK uses [NSURLSession](https://developer.apple.com/documentation/foundation/nsurlsession)
-to do HTTP connections. Since NSURLSession has not been ported to
-Linux, you cannot run the Swift SDK on Linux yet, even Swift runs on
-Linux.
+Ths SDK uses
+[NSURLSession](https://developer.apple.com/documentation/foundation/nsurlsession)
+to do HTTP connections. Since NSURLSession has not been ported to Linux, you
+cannot run the Swift SDK on Linux yet, even Swift runs on Linux.
 
 ## Build ⚒
 
@@ -57,6 +55,16 @@ The SDK supports both CocoaPods and Swift Package Manager.
 
 The SDK supports CocoaPods. Please add `pod 'KKBOXOpenAPISwift'`
 to your Podfile, and then call `pod install`.
+
+### Carthage
+
+Add the following line to your `Cartfile`
+
+```
+github 'KKBOX/OpenAPI-Swift'
+```
+
+Then run `carthage update`.
 
 ### Swift Package Manager
 
