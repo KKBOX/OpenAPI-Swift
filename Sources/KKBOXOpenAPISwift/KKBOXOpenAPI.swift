@@ -211,12 +211,12 @@ extension Notification.Name {
 
 //MARK: -
 
-/// The class helps you to access KKBOX's Open API in Swift
-/// programming language.
+/// The class helps you to access KKBOX's Open API in Swift programming
+/// language.
 ///
-/// Please create an instance of the class by calling `init(clientID:,
-/// secret:, scope:)` and then fetch an access token by passing
-/// a client credential. Then you can do the other API calls.
+/// Please create an instance of the class by calling
+/// `KKBOXOpenAPI.init(clientID:, secret:, scope:)` and then fetch an access
+/// token by passing a client credential. Then you can do the other API calls.
 public class KKBOXOpenAPI {
 
 	/// Create an instance of KKBOXOpenAPI by giving a client ID and
@@ -324,7 +324,7 @@ extension KKBOXOpenAPI {
 
 	/// Fetch a song track by giving a song track ID.
 	///
-	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#tracks-track_id).
+	/// See [API reference](https://docs-en.kkbox.codes/v1.1/reference#tracks_track_id).
 	///
 	/// - Parameters:
 	///   - ID: ID of the track.

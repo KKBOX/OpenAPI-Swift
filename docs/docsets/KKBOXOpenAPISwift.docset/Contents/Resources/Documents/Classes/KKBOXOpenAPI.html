@@ -14,7 +14,7 @@
     <a title="KKBOXOpenAPI Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">KKBOXOpenAPISwift Docs</a> (89% documented)</p>
+        <p><a href="../index.html">KKBOXOpenAPISwift Docs</a> (98% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -128,16 +128,16 @@
             <h1>KKBOXOpenAPI</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">KKBOXOpenAPI</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">KKBOXOpenAPI</span></code></pre>
 
                 </div>
               </div>
-            <p>The class helps you to access KKBOX&rsquo;s Open API in Swift
-programming language.</p>
+            <p>The class helps you to access KKBOX&rsquo;s Open API in Swift programming
+language.</p>
 
-<p>Please create an instance of the class by calling <code>init(clientID:,
-secret:, scope:)</code> and then fetch an access token by passing
-a client credential. Then you can do the other API calls.</p>
+<p>Please create an instance of the class by calling
+<code>KKBOXOpenAPI.init(clientID:, secret:, scope:)</code> and then fetch an access
+token by passing a client credential. Then you can do the other API calls.</p>
 
           </section>
           <section class="section task-group-section">
@@ -167,7 +167,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">clientID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">secret</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">scope</span><span class="p">:</span> <span class="kt"><a href="../Structs/KKScope.html">KKScope</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">all</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">clientID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">secret</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">scope</span><span class="p">:</span> <span class="kt"><a href="../Structs/KKScope.html">KKScope</a></span> <span class="o">=</span> <span class="o">.</span><span class="k">none</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -230,14 +230,14 @@ Site</a> .</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Scope of the client. It is KKScope.userProfile by default.</p>
+                        <p>Scope of the client. It is <code><a href="../Structs/KKScope.html#/s:17KKBOXOpenAPISwift7KKScopeV4noneACvpZ">KKScope.none</a></code> by default.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">requestScope</span><span class="p">:</span> <span class="kt"><a href="../Structs/KKScope.html">KKScope</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">requestScope</span><span class="p">:</span> <span class="kt"><a href="../Structs/KKScope.html">KKScope</a></span> <span class="o">=</span> <span class="o">.</span><span class="k">none</span></code></pre>
 
                         </div>
                       </div>
@@ -264,7 +264,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">accessToken</span><span class="p">:</span> <span class="kt"><a href="../Structs/KKAccessToken.html">KKAccessToken</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">accessToken</span><span class="p">:</span> <span class="kt"><a href="../Structs/KKAccessToken.html">KKAccessToken</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -284,14 +284,15 @@ Site</a> .</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>If the user has logged-in into KKBOX or not.</p>
+                        <p>MARK: - Authentication
+If the user has logged-in into KKBOX or not.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isLoggedIn</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isLoggedIn</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -318,7 +319,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">logout</span><span class="p">()</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">logout</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -354,7 +355,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchAccessTokenByClientCredential</span><span class="p">(</span><span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKAccessToken.html">KKAccessToken</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchAccessTokenByClientCredential</span><span class="p">(</span><span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKAccessToken.html">KKAccessToken</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -422,7 +423,7 @@ Site</a> .</p>
                       <div class="abstract">
                         <p>Fetch a song track by giving a song track ID.</p>
 
-<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#tracks-track_id">API reference</a>.</p>
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#tracks_track_id">API reference</a>.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     KKBOXOpenAPIError.requireAccessToken.
@@ -434,7 +435,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">track</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKTrackInfo.html">KKTrackInfo</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">track</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKTrackInfo.html">KKTrackInfo</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -526,7 +527,7 @@ Site</a> .</p>
                       <div class="abstract">
                         <p>Fetch an album by giving an album ID.</p>
 
-<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#albums-album_id">API reference</a>.</p>
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#albums_album_id">API reference</a>.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     KKBOXOpenAPIError.requireAccessToken.
@@ -538,7 +539,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">album</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKAlbumInfo.html">KKAlbumInfo</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">album</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKAlbumInfo.html">KKAlbumInfo</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -619,7 +620,7 @@ Site</a> .</p>
                       <div class="abstract">
                         <p>Fetch tracks contained in an album.</p>
 
-<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#albums-album_id-tracks">API reference</a>.</p>
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#albums_album_id_tracks">API reference</a>.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     KKBOXOpenAPIError.requireAccessToken.
@@ -631,7 +632,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">tracksInAlbum</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKTrackList.html">KKTrackList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">tracksInAlbum</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKTrackList.html">KKTrackList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -723,7 +724,7 @@ Site</a> .</p>
                       <div class="abstract">
                         <p>Fetch the profile by giving an artist ID.</p>
 
-<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#artists-artist_id">API reference</a>.</p>
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#artists_artist_id">API reference</a>.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     KKBOXOpenAPIError.requireAccessToken.
@@ -735,7 +736,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">artist</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKArtistInfo.html">KKArtistInfo</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">artist</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKArtistInfo.html">KKArtistInfo</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -816,7 +817,7 @@ Site</a> .</p>
                       <div class="abstract">
                         <p>Fetch albums of an artist.</p>
 
-<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#artists-artist_id-albums">API reference</a>.</p>
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#artists_artist_id_albums">API reference</a>.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     KKBOXOpenAPIError.requireAccessToken.
@@ -828,7 +829,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">albumsBelongToArtist</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKAlbumList.html">KKAlbumList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">albumsBelongToArtist</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKAlbumList.html">KKAlbumList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -933,7 +934,7 @@ Site</a> .</p>
                       <div class="abstract">
                         <p>Fetch top tracks of an artist.</p>
 
-<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#artists-artist_id-toptracks">API reference</a>.</p>
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#artists_artist_id_top-tracks">API reference</a>.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     KKBOXOpenAPIError.requireAccessToken.
@@ -945,7 +946,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">topTracksOfArtist</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKTrackList.html">KKTrackList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">topTracksOfArtist</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKTrackList.html">KKTrackList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -1050,7 +1051,7 @@ Site</a> .</p>
                       <div class="abstract">
                         <p>Fetch related artists of an artist.</p>
 
-<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#artists-artist_id-relatedartists">API reference</a>.</p>
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#artists_artist_id_related-artists">API reference</a>.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     KKBOXOpenAPIError.requireAccessToken.
@@ -1062,7 +1063,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">relatedArtistsOfArtist</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKArtistList.html">KKArtistList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">relatedArtistsOfArtist</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKArtistList.html">KKArtistList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -1178,7 +1179,7 @@ Site</a> .</p>
                       <div class="abstract">
                         <p>Fetch a playlist&rsquo;s metadata and tracks by giving the playlist ID</p>
 
-<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#sharedplaylists-playlist_id">API reference</a>.</p>
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#shared-playlists_playlist_id">API reference</a>.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     KKBOXOpenAPIError.requireAccessToken.
@@ -1190,7 +1191,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">playlist</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKPlaylistInfo.html">KKPlaylistInfo</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">playlist</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKPlaylistInfo.html">KKPlaylistInfo</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -1271,7 +1272,7 @@ Site</a> .</p>
                       <div class="abstract">
                         <p>Fetch tracks contained in a playlist.</p>
 
-<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#sharedplaylists-playlist_id-tracks">API reference</a>.</p>
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#shared-playlists_playlist_id_tracks">API reference</a>.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     KKBOXOpenAPIError.requireAccessToken.
@@ -1283,7 +1284,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">tracksInPlaylist</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKTrackList.html">KKTrackList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">tracksInPlaylist</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKTrackList.html">KKTrackList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -1399,7 +1400,7 @@ Site</a> .</p>
                       <div class="abstract">
                         <p>Fetch the featured playlists.</p>
 
-<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#featuredplaylists">API reference</a>.</p>
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#featured-playlists">API reference</a>.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     KKBOXOpenAPIError.requireAccessToken.
@@ -1411,7 +1412,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchFeaturedPlaylists</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKPlaylistList.html">KKPlaylistList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchFeaturedPlaylists</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKPlaylistList.html">KKPlaylistList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -1515,7 +1516,7 @@ Site</a> .</p>
                       <div class="abstract">
                         <p>Fetch the New-Hits playlists.</p>
 
-<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#newhitsplaylists">API reference</a>.</p>
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#new-hits-playlists">API reference</a>.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     KKBOXOpenAPIError.requireAccessToken.
@@ -1527,7 +1528,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchNewHitsPlaylists</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKPlaylistList.html">KKPlaylistList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchNewHitsPlaylists</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKPlaylistList.html">KKPlaylistList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -1631,7 +1632,7 @@ Site</a> .</p>
                       <div class="abstract">
                         <p>Fetch featured playlist categories.</p>
 
-<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#featuredplaylistcategories-category_id">API reference</a>.</p>
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#featured-playlist-categories">API reference</a>.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     KKBOXOpenAPIError.requireAccessToken.
@@ -1643,7 +1644,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchFeaturedPlaylistCategories</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKFeaturedPlaylistCategoryList.html">KKFeaturedPlaylistCategoryList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchFeaturedPlaylistCategories</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKFeaturedPlaylistCategoryList.html">KKFeaturedPlaylistCategoryList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -1736,7 +1737,7 @@ Site</a> .</p>
                       <div class="abstract">
                         <p>Fetch featured playlists in a category.</p>
 
-<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#featuredplaylistcategories-category_id-playlists">API reference</a>.</p>
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#featured-playlist-categories_category_id">API reference</a>.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     KKBOXOpenAPIError.requireAccessToken.
@@ -1748,7 +1749,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchFeaturedPlaylist</span><span class="p">(</span><span class="n">inCategory</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKFeaturedPlaylistCategory.html">KKFeaturedPlaylistCategory</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchFeaturedPlaylist</span><span class="p">(</span><span class="n">inCategory</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKFeaturedPlaylistCategory.html">KKFeaturedPlaylistCategory</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -1864,7 +1865,7 @@ Site</a> .</p>
                       <div class="abstract">
                         <p>Fetch mood station categories.</p>
 
-<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#moodstations">API reference</a>.</p>
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#mood-stations">API reference</a>.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     KKBOXOpenAPIError.requireAccessToken.
@@ -1876,7 +1877,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchMoodStations</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKRadioStationList.html">KKRadioStationList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchMoodStations</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKRadioStationList.html">KKRadioStationList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -1969,7 +1970,7 @@ Site</a> .</p>
                       <div class="abstract">
                         <p>Fetch tracks in a mood radio station.</p>
 
-<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#moodstations-station_id">API reference</a>.</p>
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#mood-stations_station_id">API reference</a>.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     KKBOXOpenAPIError.requireAccessToken.
@@ -1981,7 +1982,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">tracksInMoodStation</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKRadioStation.html">KKRadioStation</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">tracksInMoodStation</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKRadioStation.html">KKRadioStation</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -2097,7 +2098,7 @@ Site</a> .</p>
                       <div class="abstract">
                         <p>Fetch genre station categories.</p>
 
-<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#genrestations">API reference</a>.</p>
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#genre-stations">API reference</a>.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     KKBOXOpenAPIError.requireAccessToken.
@@ -2109,7 +2110,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchGenreStations</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKRadioStationList.html">KKRadioStationList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchGenreStations</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKRadioStationList.html">KKRadioStationList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -2202,7 +2203,7 @@ Site</a> .</p>
                       <div class="abstract">
                         <p>Fetch tracks in a genre radio station.</p>
 
-<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#genrestations-station_id">API reference</a>.</p>
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#genre-stations_station_id">API reference</a>.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     KKBOXOpenAPIError.requireAccessToken.
@@ -2214,7 +2215,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">tracksInGenreStation</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKRadioStation.html">KKRadioStation</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">tracksInGenreStation</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKRadioStation.html">KKRadioStation</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -2330,7 +2331,7 @@ Site</a> .</p>
                       <div class="abstract">
                         <p>Fetch the categories of the new released albums.</p>
 
-<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#newreleasecategories">API reference</a>.</p>
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#new-release-categories">API reference</a>.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     KKBOXOpenAPIError.requireAccessToken.
@@ -2342,7 +2343,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchNewReleaseAlbumsCategories</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKNewReleasedAlbumsCategoryList.html">KKNewReleasedAlbumsCategoryList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchNewReleaseAlbumsCategories</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKNewReleasedAlbumsCategoryList.html">KKNewReleasedAlbumsCategoryList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -2435,7 +2436,7 @@ Site</a> .</p>
                       <div class="abstract">
                         <p>Fetch albums in a given new released albums category.</p>
 
-<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#newreleasecategories-category_id">API reference</a>.</p>
+<p>See <a href="https://docs-en.kkbox.codes/v1.1/reference#new-release-categories_category_id">API reference</a>.</p>
 <div class="aside aside-throws">
     <p class="aside-title">Throws</p>
     KKBOXOpenAPIError.requireAccessToken.
@@ -2447,7 +2448,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">newReleasedAlbumsUnderCategory</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKNewReleasedAlbumsCategory.html">KKNewReleasedAlbumsCategory</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">newReleasedAlbumsUnderCategory</span> <span class="kt">ID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKNewReleasedAlbumsCategory.html">KKNewReleasedAlbumsCategory</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -2575,7 +2576,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchCharts</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKPlaylistList.html">KKPlaylistList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchCharts</span><span class="p">(</span><span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKPlaylistList.html">KKPlaylistList</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -2691,7 +2692,7 @@ Site</a> .</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">search</span><span class="p">(</span><span class="n">with</span> <span class="nv">keyword</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">types</span><span class="p">:</span> <span class="kt"><a href="../Structs/KKSearchType.html">KKSearchType</a></span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKSearchResults.html">KKSearchResults</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">search</span><span class="p">(</span><span class="n">with</span> <span class="nv">keyword</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">types</span><span class="p">:</span> <span class="kt"><a href="../Structs/KKSearchType.html">KKSearchType</a></span><span class="p">,</span> <span class="nv">territory</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKTerritory.html">KKTerritory</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">taiwan</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="kt"><a href="../Enums/KKAPIResult.html">KKAPIResult</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/KKSearchResults.html">KKSearchResults</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">URLSessionTask</span></code></pre>
 
                         </div>
                       </div>
@@ -2798,8 +2799,8 @@ Site</a> .</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/KKBOX/OpenAPI-Swift/" target="_blank" rel="external">zonble</a>. All rights reserved. (Last updated: 2018-11-13)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="https://github.com/KKBOX/OpenAPI-Swift/" target="_blank" rel="external">zonble</a>. All rights reserved. (Last updated: 2019-01-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

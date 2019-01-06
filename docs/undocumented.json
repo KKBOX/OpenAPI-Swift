@@ -2,127 +2,15 @@
   "warnings": [
     {
       "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/KKBOXOpenAPISwift/KKBOXOpenAPI.swift",
-      "line": 52,
-      "symbol": "KKTerritory.taiwan",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/KKBOXOpenAPISwift/KKBOXOpenAPI.swift",
-      "line": 53,
-      "symbol": "KKTerritory.hongkong",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/KKBOXOpenAPISwift/KKBOXOpenAPI.swift",
-      "line": 54,
-      "symbol": "KKTerritory.singapore",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/KKBOXOpenAPISwift/KKBOXOpenAPI.swift",
-      "line": 55,
-      "symbol": "KKTerritory.malaysia",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/KKBOXOpenAPISwift/KKBOXOpenAPI.swift",
-      "line": 56,
-      "symbol": "KKTerritory.japan",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/KKBOXOpenAPISwift/KKBOXOpenAPI.swift",
-      "line": 57,
-      "symbol": "KKTerritory.thailand",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/KKBOXOpenAPISwift/KKBOXOpenAPI.swift",
-      "line": 71,
+      "line": 84,
       "symbol": "KKSearchType.none",
       "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/KKBOXOpenAPISwift/KKBOXOpenAPI.swift",
-      "line": 99,
-      "symbol": "KKScope",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/KKBOXOpenAPISwift/KKBOXOpenAPI.swift",
-      "line": 105,
-      "symbol": "KKScope.none",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/KKBOXOpenAPISwift/KKBOXOpenAPI.swift",
-      "line": 106,
-      "symbol": "KKScope.userProfile",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/KKBOXOpenAPISwift/KKBOXOpenAPI.swift",
-      "line": 107,
-      "symbol": "KKScope.userTerritory",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/KKBOXOpenAPISwift/KKBOXOpenAPI.swift",
-      "line": 108,
-      "symbol": "KKScope.userAccountStatus",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/KKBOXOpenAPISwift/KKBOXOpenAPI.swift",
-      "line": 109,
-      "symbol": "KKScope.all",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/KKBOXOpenAPISwift/KKBOXOpenAPI.swift",
-      "line": 135,
-      "symbol": "KKAPIResult.success(_:)",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/KKBOXOpenAPISwift/KKBOXOpenAPI.swift",
-      "line": 136,
-      "symbol": "KKAPIResult.error(_:)",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/KKBOXOpenAPISwift/KKBOXOpenAPI.swift",
-      "line": 139,
-      "symbol": "KKBOXOpenAPIError",
-      "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/KKBOXOpenAPISwift/KKBOXOpenAPITypes.swift",
       "line": 125,
       "symbol": "KKTrackInfo",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/KKBOXOpenAPISwift/KKBOXOpenAPITypes.swift",
-      "line": 357,
-      "symbol": "KKSearchResults",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     }
