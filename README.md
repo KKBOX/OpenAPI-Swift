@@ -1,5 +1,8 @@
 # KKBOX Open API Swift Developer SDK for iOS/macOS/watchOS/tvOS
 
+2019 © KKBOX.
+
+[![Actions Status](https://github.com/KKBOX/OpenAPI-Swift/workflows/Build/badge.svg)](https://github.com/KKBOX/OpenAPI-Swift/actions)&nbsp;
 [![build](https://travis-ci.org/KKBOX/OpenAPI-Swift.svg?branch=master)](https://travis-ci.org/KKBOX/OpenAPI-Swift)&nbsp;
 [![License Apache](https://img.shields.io/badge/license-Apache-green.svg?style=flat)](https://raw.githubusercontent.com/KKBOX/OpenAPI-Swift/master/LICENSE)&nbsp;
 [![CocoaPods](http://img.shields.io/cocoapods/v/KKBOXOpenAPISwift.svg?style=flat)](http://cocoapods.org/pods/KKBOXOpenAPISwift)&nbsp;
@@ -81,7 +84,7 @@ let package = Package(
         .executable(name: "KKBOXOpenAPI-test", targets: ["YourTargetName"])
     ],
     dependencies: [
-        .package(url: "https://github.com/KKBOX/OpenAPI-Swift", .upToNextMinor(from: "1.1.2"))
+        .package(url: "https://github.com/KKBOX/OpenAPI-Swift", .upToNextMinor(from: "1.1.6"))
     ],
     targets: [
         .target(name: "YourTargetName", dependencies: ["KKBOXOpenAPISwift"], path: "./Path/To/Your/Sources")
@@ -134,7 +137,7 @@ language, although we have only Swift sample code here.
 
 ## License
 
-Copyright 2018 KKBOX Technologies Limited
+Copyright 2019 KKBOX Technologies Limited
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
