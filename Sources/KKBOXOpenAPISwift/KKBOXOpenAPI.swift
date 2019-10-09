@@ -1,7 +1,7 @@
 //
 // KKBOXOpenAPI.swift
 //
-// Copyright (c) 2018 KKBOX Taiwan Co., Ltd. All Rights Reserved.
+// Copyright (c) 2019 KKBOX Taiwan Co., Ltd. All Rights Reserved.
 //
 
 import Foundation
@@ -19,7 +19,6 @@ private func escape(_ string: String) -> String {
 private func escape_arg(_ string: String) -> String {
 	return string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
 }
-
 
 /// An access token. It is required for making API calls.
 public struct KKAccessToken: Codable {

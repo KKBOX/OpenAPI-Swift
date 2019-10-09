@@ -1,7 +1,7 @@
 //
 // OpenAPI_SwiftTests.swift
 //
-// Copyright (c) 2018 KKBOX Taiwan Co., Ltd. All Rights Reserved.
+// Copyright (c) 2019 KKBOX Taiwan Co., Ltd. All Rights Reserved.
 //
 
 import XCTest
