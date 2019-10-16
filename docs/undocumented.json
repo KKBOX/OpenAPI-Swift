@@ -2,7 +2,7 @@
   "warnings": [
     {
       "file": "/Users/zonble/Work/OpenAPI-Swift/Sources/KKBOXOpenAPISwift/KKBOXOpenAPI.swift",
-      "line": 84,
+      "line": 83,
       "symbol": "KKSearchType.none",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
